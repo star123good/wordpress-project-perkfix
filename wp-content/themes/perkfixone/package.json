@@ -1,0 +1,22 @@
+{
+  "name": "perkfixone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run sass",
+    "sass": "sass scss:",
+    "sass-watch": "sass --watch scss:"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "ddguru777",
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "sass": "^1.23.1"
+  }
+}
