@@ -52,3 +52,33 @@ function get_product_detail($request) {
     $response->set_status(200);
     return $response;
 }
+
+function mysite_js() {
+    wp_enqueue_script('autocomplete', get_stylesheet_directory_uri().'/js/jquery.auto-complete.js', array('jquery'));
+    wp_enqueue_script('mysite-js', get_stylesheet_directory_uri().'/js/mysite.js', array('jquery', 'autocomplete'));
+    wp_enqueue_style('autocomplete.css', get_stylesheet_directory_uri().'/js/jquery.auto-complete.css');
+}
+
+add_action('wp_enqueue_scripts', 'mysite_js');
+
+add_action('wp_ajax_nopriv_get_perkfix_names', 'ajax_listings');
+add_action('wp_ajax_get_perkfix_names', 'ajax_listings');
+
+function ajax_listings() {
+    global $wpdb;
+
+    $name = $wpdb->esc_like(stripslashes($_POST['k'])).'%';
+    $sql = "select post_title from $wpdb->posts where post_title like %s and post_type='perks' and post_status='publish'";
+
+    $sql = $wpdb->prepare($sql, $name);
+
+    $results = $wpdb->get_results($sql);
+
+    $titles = array();
+    foreach( $results as $r)
+        $titles[] = addslashes($r->post_title);
+
+    echo json_encode($titles);
+
+    die();
+}

@@ -2451,6 +2451,30 @@ body .footer-menu .menu-description .terms a {
     padding: 5px 8px;
     outline: none;
   }
+  .product-detail .perkfix-category .support-device {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .product-detail .perkfix-category .support-device .left {
+    font-family: SFProText-Medium;
+    font-size: 0.6875rem;
+  }
+  .product-detail .perkfix-category .support-device .right {
+    font-family: SFProText-Medium;
+    font-size: 0.6875rem;
+  }
+  .product-detail .perkfix-category .helpful-info .title {
+    padding-top: 25px;
+    font-family: SFProText-Medium;
+    font-size: 0.6875rem;
+  }
+  .product-detail .perkfix-category .helpful-info .content {
+    padding-top: 20px;
+    font-family: SFProText-Medium;
+    font-size: 0.625rem;
+  }
 
   .login-page .form .login-form h1 {
     font-size: 1.25rem;

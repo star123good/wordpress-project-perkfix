@@ -109,7 +109,7 @@ foreach ($parent_categories as $i=>$category) {
         </div>
         <div class="pf-search">
           <div class="td input">
-            <input type="text" placeholder="Search for perks like “Stadia”" />
+            <input type="text" id="pf_search" placeholder="Search for perks like “Stadia”" />
           </div>
           <div class="td submit">
             <button type="submit">
@@ -345,7 +345,7 @@ foreach ($parent_categories as $i=>$category) {
   <div class="mobile-flex perkfix-store-search">
     <div class="pf-search">
       <div class="td input">
-        <input type="text" placeholder="Search for perks like “Stadia”" />
+        <input type="text" id="pf_mobile_search" placeholder="Search for perks like “Stadia”" />
       </div>
       <div class="td submit">
         <button type="submit">
@@ -695,5 +695,10 @@ foreach ($parent_categories as $i=>$category) {
 
       $(".perkfix-store-categories").addClass("hidden");
       $(".product-detail").removeClass("hidden");
+    });
+
+    $(".btn-back").on("click", function() {
+      $(".perkfix-store-categories").removeClass("hidden");
+      $(".product-detail").addClass("hidden");
     });
   </script>
