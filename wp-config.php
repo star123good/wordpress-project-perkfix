@@ -17,22 +17,33 @@
  *
  * @package WordPress
  */
+define('WP_HOME','http://perkfix.com');
+define('WP_SITEURL','http://perkfix.com');
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'perkfix_dev' );
+//server
+define( 'DB_NAME', 'pfdev' );
+//local
+//define( 'DB_NAME', 'perkfix_dev' );
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+//server
+define( 'DB_USER', 'pfdevuser' );
+//local
+//define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', '' );
+//server
+define( 'DB_PASSWORD', '!@#QWE123qwe' );
+//local
+//define( 'DB_PASSWORD', '' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8mb4' );
+define( 'DB_CHARSET', 'utf8' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
@@ -46,22 +57,24 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-// define( 'AUTH_KEY',         '1k]j5|-A_4[40 #+}#VM=~t~^ilM4FTsN1/KlYmvGs /~C@N[dN=^hw1AlL@>HBe' );
-// define( 'SECURE_AUTH_KEY',  '}k/Lm-dBPr5&-?gPw zC/+YNP&QJ].FwoBx1A4M?]Jr)VYL_:zhIdbVOd^EI*FmB' );
-// define( 'LOGGED_IN_KEY',    'VYs?4+[+Ba VtiERIzkt7VhOZR_iNPB}yEn!1fNgzM/,K+v7`#O(mPEkgt}f<sGC' );
-// define( 'NONCE_KEY',        '^AzcXs7!n4#Ccu{v).w,0#&DI>EhEHETD3w}u0MXBAy]UW3l&<lX?ypJ(>/cQSU{' );
-// define( 'AUTH_SALT',        'qn^nqt%Ld?[/#,uM~P;J3QC8C V7dtQ&uDR#}1h}kGSv3VPr$0c+RAx9n^Iw3p8c' );
-// define( 'SECURE_AUTH_SALT', 'V>n|x D_thz6*PKnc4Q3AI>d]OGY>yey+T&GHryySr;2JmAj%Nunb+,vgIuLp`Qz' );
-// define( 'LOGGED_IN_SALT',   '<;^(PwKgQ%%|XRDckNepF7o@DS.q;/<d.+N|Cv`i*x[vc/K0srZX>$oH,7bVdrmk' );
-// define( 'NONCE_SALT',       'W;&f4csHq.:-R2GM F]qXeK&+A!L1$!Ve6/(/g??FWb-1fLcphU8VhV-9JM}ugo ' );
-define('AUTH_KEY',         '-:5iA{; !f={D_XRL9I1TO5+HEV1-UtzB~2-qaZsev1EWr:|p+B4TBIxy ]^zP-^');
-define('SECURE_AUTH_KEY',  '1?n#_a^.>[|7p #N$@kue,+f:&`I+#n}Bq;bH1UG66%CK@p-#qx5GT@H{F3thj+y');
-define('LOGGED_IN_KEY',    '[v7^t68pj?R5[k=Im(AY]$PNq|]ca |g{;U,aXZ:-q7y5LqZ9P+7ARx~6!::O?#]');
-define('NONCE_KEY',        's-AO:&G[U=sD,]$YU+(SOkAKt*W5eWZ6$n+7cy?,r)cOi9! Nz[]d!-p};S;Ld]6');
-define('AUTH_SALT',        'cJcC)>-bOMoh,sfj{$JRc^_,X>zlxX{LdJUOWZfP9y<V9/AeJdgM|X|SO$-19bdc');
-define('SECURE_AUTH_SALT', 'lJmn,EL!-[%alZl@b L-T_WPW ,`?C:|LK<:}++`X?_X[D%hGPe(JxNMA{PXc1TA');
-define('LOGGED_IN_SALT',   '}{)#^nl(U$X7yt>TW2TId/A0>@t[yfh1C+u$F4t+,7(@&<y!q+<H,3RV#FLS9yoF');
-define('NONCE_SALT',       '[W[n/B@J9lj[BDbw30Yz+tu:s-`Jg227-|TZ2y3Lpm@<3WjzW0hNO7Z.Y &wwU7d');
+//server
+define('AUTH_KEY',         ')-(g5}0#$+F[6n{w$-IH>f*&.#!E)xnolTnyv?+KoQ69wF:GA[RV{B0JMqKB;3~,');
+define('SECURE_AUTH_KEY',  'i$Q+=L&?4.U+SB9Agp8}B)5)QRHe#WYz?+-8y/io&#0WSV#9fu;#v?7sR[0E,4t5');
+define('LOGGED_IN_KEY',    '-cNDD*o,I?jXf:n&IF_<>D_.,/i>~MBb|@<--i5KrbCm|[F3}DK40fsj+YA+9o`m');
+define('NONCE_KEY',        '32hSv]^Z~(cO-v&R.)@XBgtZqLrSFRcbs[C2RQ]Ht:X4fjAvE s(Jd;Z.$?2ibXE');
+define('AUTH_SALT',        'IclipZQE~tgb^uu$IS4;GBL[iOE6YT-m#xlFO0Khrx;y_f3:e#jsP6tz<$ #|>BF');
+define('SECURE_AUTH_SALT', 'Sv-;bcMKzl57K3jP z7Q<(r_:/{rW3ZCtN*P=Lp21p`$K+<_i5Sb+|7P-Y4+ny-8');
+define('LOGGED_IN_SALT',   'k)|A:PyV+qMdN!x76sTI&&<k^ ~$O{e{]{`OyU7a][05_M`Z.$UQ@d+,Q[z.u-eJ');
+define('NONCE_SALT',       'Bq.Mp,hMuvNuUft9o+e>q?rep#>f_sV.,i_>N}TclexVYSqH<Xwejhjg|lwQ?:|S');
+//local
+// define('AUTH_KEY',         '-:5iA{; !f={D_XRL9I1TO5+HEV1-UtzB~2-qaZsev1EWr:|p+B4TBIxy ]^zP-^');
+// define('SECURE_AUTH_KEY',  '1?n#_a^.>[|7p #N$@kue,+f:&`I+#n}Bq;bH1UG66%CK@p-#qx5GT@H{F3thj+y');
+// define('LOGGED_IN_KEY',    '[v7^t68pj?R5[k=Im(AY]$PNq|]ca |g{;U,aXZ:-q7y5LqZ9P+7ARx~6!::O?#]');
+// define('NONCE_KEY',        's-AO:&G[U=sD,]$YU+(SOkAKt*W5eWZ6$n+7cy?,r)cOi9! Nz[]d!-p};S;Ld]6');
+// define('AUTH_SALT',        'cJcC)>-bOMoh,sfj{$JRc^_,X>zlxX{LdJUOWZfP9y<V9/AeJdgM|X|SO$-19bdc');
+// define('SECURE_AUTH_SALT', 'lJmn,EL!-[%alZl@b L-T_WPW ,`?C:|LK<:}++`X?_X[D%hGPe(JxNMA{PXc1TA');
+// define('LOGGED_IN_SALT',   '}{)#^nl(U$X7yt>TW2TId/A0>@t[yfh1C+u$F4t+,7(@&<y!q+<H,3RV#FLS9yoF');
+// define('NONCE_SALT',       '[W[n/B@J9lj[BDbw30Yz+tu:s-`Jg227-|TZ2y3Lpm@<3WjzW0hNO7Z.Y &wwU7d');
 /**#@-*/
 
 // This will disable wordpress auto updates for every aspect of your site
@@ -90,7 +103,7 @@ $table_prefix = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
 
 /* That's all, stop editing! Happy publishing. */
 
@@ -101,3 +114,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once( ABSPATH . 'wp-settings.php' );
+
+define( 'UPLOADS', 'wp-content/uploads' );
+define( 'FS_METHOD', 'direct' );
+define( 'FS_CHMOD_DIR', (0755 & ~ umask()));
+define( 'FS_CHMOD_FILE', (0644 & ~ umask()));
