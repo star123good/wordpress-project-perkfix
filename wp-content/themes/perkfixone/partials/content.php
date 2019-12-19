@@ -232,7 +232,7 @@
           <img src="<?php bloginfo('template_url'); ?>/img/download.jpg" class="">
         </div>
         <div class="link">
-          <a href="#">More wellness perks  ></a>
+          <a href="#">More Training Perks  ></a>
           <a href="#">Start Trial  ></a>
         </div>
       </div>

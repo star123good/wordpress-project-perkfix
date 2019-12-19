@@ -64,6 +64,12 @@ define('LOGGED_IN_SALT',   '}{)#^nl(U$X7yt>TW2TId/A0>@t[yfh1C+u$F4t+,7(@&<y!q+<H
 define('NONCE_SALT',       '[W[n/B@J9lj[BDbw30Yz+tu:s-`Jg227-|TZ2y3Lpm@<3WjzW0hNO7Z.Y &wwU7d');
 /**#@-*/
 
+// This will disable wordpress auto updates for every aspect of your site
+define( 'automatic_updater_disabled', true );
+
+// This will only disable WordPress auto updates for the core files
+define( 'wp_auto_update_core', false );
+
 /**
  * WordPress Database Table prefix.
  *
