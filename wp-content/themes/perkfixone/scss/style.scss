@@ -65,6 +65,10 @@ body {
   display: flex;
   flex-direction: column;
 
+  .hidden {
+    display: none !important;
+  }
+  
   @media (min-width: 780px) {
     .mobile {
       display: none !important;
@@ -1778,6 +1782,18 @@ body {
       border-color: black;
       border-width: 1px;
       padding: 40px 25px 30px 40px;
+      .d-btn-back {
+        margin-top: -15px;
+        margin-left: -20px;
+        margin-bottom: 15px;
+        .w-btn-back {
+          padding: 5px 20px;
+          color: rgba(0, 145, 255, 1);
+          border-style: solid;
+          border-radius: 7px;
+          border-width: 1px;
+        }
+      }
       .item-title-container {
         width: 100%;
         display: flex;

@@ -63,6 +63,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+body .hidden {
+  display: none !important;
+}
 @media (min-width: 780px) {
   body .mobile {
     display: none !important;
@@ -1690,6 +1693,18 @@ body .perkfix-container .perkfix-content-item {
   border-color: black;
   border-width: 1px;
   padding: 40px 25px 30px 40px;
+}
+body .perkfix-container .perkfix-content-item .d-btn-back {
+  margin-top: -15px;
+  margin-left: -20px;
+  margin-bottom: 15px;
+}
+body .perkfix-container .perkfix-content-item .d-btn-back .w-btn-back {
+  padding: 5px 20px;
+  color: #0091ff;
+  border-style: solid;
+  border-radius: 7px;
+  border-width: 1px;
 }
 body .perkfix-container .perkfix-content-item .item-title-container {
   width: 100%;

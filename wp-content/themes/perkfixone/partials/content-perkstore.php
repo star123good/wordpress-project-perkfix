@@ -60,7 +60,25 @@ foreach ($parent_categories as $i=>$category) {
         <div class="category-list">
           <?php 
             foreach($pf_categories as $category) { 
-              if ($category->category_parent != 0) {
+              if ($category->category_parent != 0 && $category->slug == "popular-perks") {
+          ?>
+          <div id="pfn_<?php echo $category->slug;?>" class="category-item">
+            <input type="hidden" id="h_<?php echo $category->slug;?>" value="<?php echo $category->cat_ID;?>" />
+            <div class="left-item">
+              <img src="<?php echo $category->icon_image_url; ?>">
+              <p><?php echo $category->name; ?></p>
+            </div>
+            <div class="right-item">
+              <img src="<?php bloginfo('template_url'); ?>/img/ico/ico-arrow-right.png">
+            </div>
+          </div>
+          <?php
+              }
+            }
+          ?>
+          <?php 
+            foreach($pf_categories as $category) { 
+              if ($category->category_parent != 0 && $category->slug != "popular-perks") {
           ?>
           <div id="pfn_<?php echo $category->slug;?>" class="category-item">
             <input type="hidden" id="h_<?php echo $category->slug;?>" value="<?php echo $category->cat_ID;?>" />
@@ -103,6 +121,9 @@ foreach ($parent_categories as $i=>$category) {
       //print_r($current_perkslist);
     ?>
     <div class="perkfix-content-item">
+      <div class="d-btn-back hidden">
+        <a class="w-btn-back"><i class="fas fa-chevron-left"></i></a>
+      </div>
       <div class="item-title-container">
         <div class="item-title-label">
           <h1><?php echo $current_cat->name; ?></h1>
@@ -131,6 +152,8 @@ foreach ($parent_categories as $i=>$category) {
                 $top1_item_meta = get_post_meta($current_perkslist[0]->ID);
             ?>
             <div class="top-item">
+              <input type="hidden" id="h_top_<?php echo $current_perkslist[0]->ID;?>" class="prod" value="<?php echo $current_perkslist[0]->ID;?>" />
+              <input type="hidden" id="h_top_<?php echo $category->cat_ID;?>" class="cat" value="<?php echo $category->cat_ID;?>" />
               <div class="pf-item-image">
                 <img src="<?php echo get_the_post_thumbnail_url($current_perkslist[0]);?>">
               </div>
@@ -155,6 +178,8 @@ foreach ($parent_categories as $i=>$category) {
                 $top3_item_meta = get_post_meta($current_perkslist[2]->ID);
             ?>
             <div class="top-item">
+              <input type="hidden" id="h_top_<?php echo $current_perkslist[2]->ID;?>" class="prod" value="<?php echo $current_perkslist[2]->ID;?>" />
+              <input type="hidden" id="h_top_<?php echo $category->cat_ID;?>" class="cat" value="<?php echo $category->cat_ID;?>" />
               <div class="pf-item-image">
                 <img src="<?php echo get_the_post_thumbnail_url($current_perkslist[2]);?>">
               </div>
@@ -182,6 +207,8 @@ foreach ($parent_categories as $i=>$category) {
                 $top2_item_meta = get_post_meta($current_perkslist[1]->ID);
             ?>
             <div class="top-item">
+              <input type="hidden" id="h_top_<?php echo $current_perkslist[1]->ID;?>" class="prod" value="<?php echo $current_perkslist[1]->ID;?>" />
+              <input type="hidden" id="h_top_<?php echo $category->cat_ID;?>" class="cat" value="<?php echo $category->cat_ID;?>" />
               <div class="pf-item-image">
                 <img src="<?php echo get_the_post_thumbnail_url($current_perkslist[1]);?>">
               </div>
@@ -206,6 +233,8 @@ foreach ($parent_categories as $i=>$category) {
                 $top4_item_meta = get_post_meta($current_perkslist[3]->ID);
             ?>
             <div class="top-item">
+              <input type="hidden" id="h_top_<?php echo $current_perkslist[3]->ID;?>" class="prod" value="<?php echo $current_perkslist[3]->ID;?>" />
+              <input type="hidden" id="h_top_<?php echo $category->cat_ID;?>" class="cat" value="<?php echo $category->cat_ID;?>" />
               <div class="pf-item-image">
                 <img src="<?php echo get_the_post_thumbnail_url($current_perkslist[3]);?>">
               </div>
@@ -241,6 +270,8 @@ foreach ($parent_categories as $i=>$category) {
               if ($i % 3 == 0) {
             ?>
               <div class="item">
+                <input type="hidden" id="h_<?php echo $item->ID;?>" class="prod" value="<?php echo $item->ID;?>" />
+                <input type="hidden" id="h_<?php echo $category->cat_ID;?>" class="cat" value="<?php echo $category->cat_ID;?>" />
                 <div class="pf-item-image">
                   <img src="<?php echo $item_thumb_url;?>">
                 </div>
@@ -273,6 +304,8 @@ foreach ($parent_categories as $i=>$category) {
               if ($i % 3 == 1) {
             ?>
               <div class="item">
+                <input type="hidden" id="h_<?php echo $item->ID;?>" class="prod" value="<?php echo $item->ID;?>" />
+                <input type="hidden" id="h_<?php echo $category->cat_ID;?>" class="cat" value="<?php echo $category->cat_ID;?>" />
                 <div class="pf-item-image">
                   <img src="<?php echo $item_thumb_url;?>">
                 </div>
@@ -307,6 +340,8 @@ foreach ($parent_categories as $i=>$category) {
               if ($i % 3 == 2) {
             ?>
               <div class="item">
+                <input type="hidden" id="h_<?php echo $item->ID;?>" class="prod" value="<?php echo $item->ID;?>" />
+                <input type="hidden" id="h_<?php echo $category->cat_ID;?>" class="cat" value="<?php echo $category->cat_ID;?>" />
                 <div class="pf-item-image">
                   <img src="<?php echo $item_thumb_url;?>">
                 </div>
@@ -339,6 +374,9 @@ foreach ($parent_categories as $i=>$category) {
             <img src="<?php bloginfo('template_url'); ?>/img/ico/ico-webarrow-right.png">
           </div>
         </div>
+      </div>
+      <div class="item-detail-content-container hidden">
+        test
       </div>
     </div>
   </div>
@@ -697,8 +735,71 @@ foreach ($parent_categories as $i=>$category) {
       $(".product-detail").removeClass("hidden");
     });
 
+    // mobile back button  
     $(".btn-back").on("click", function() {
       $(".perkfix-store-categories").removeClass("hidden");
       $(".product-detail").addClass("hidden");
+    });
+
+    // web app back button
+    $(".w-btn-back").on("click", function() {
+      $(".item-content-container").removeClass("hidden");
+      $(".d-btn-back").addClass("hidden");
+    });
+
+    // web app - top item click - detail page
+    $(".top-item").on("click", function() {
+      var itemID = $(this).children("input[type=hidden].prod").val();
+      var catID = $(this).children("input[type=hidden].cat").val();
+
+      var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
+
+      console.log('top item');
+      console.log("item-id", itemID);
+      console.log("category-id", catID);
+
+      $(".item-content-container").addClass("hidden");
+      $(".item-detail-content-container").removeClass("hidden");
+      $(".d-btn-back").removeClass("hidden");
+
+      $.ajax({
+        url: endpoint,
+        method: 'GET'
+      }).done(function(response){
+        console.log(response);
+      }).fail(function(response){
+        // Show error message
+        alert(response.responseJSON.message);
+      }).always(function(){
+        // e.g. Remove 'loading' class
+      });
+    });
+
+    // web app - item click - detail page
+    $(".item").on("click", function() {
+      var itemID = $(this).children("input[type=hidden].prod").val();
+      var catID = $(this).children("input[type=hidden].cat").val();
+
+      var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
+
+      console.log('item');
+      console.log("item-id", itemID);
+      console.log("category-id", catID);
+
+      $(".item-content-container").addClass("hidden");
+      $(".item-detail-content-container").removeClass("hidden");
+      $(".d-btn-back").removeClass("hidden");
+
+      $.ajax({
+        url: endpoint,
+        method: 'GET'
+      }).done(function(response){
+        console.log(response);
+      }).fail(function(response){
+        // Show error message
+        alert(response.responseJSON.message);
+      }).always(function(){
+        // e.g. Remove 'loading' class
+      });
     });
   </script>
