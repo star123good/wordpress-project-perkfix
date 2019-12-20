@@ -268,12 +268,13 @@ body .perkfix-home1 {
 }
 body .perkfix-home1 h1 {
   margin: 0;
-  font-size: 60px;
+  font-size: 3.125rem;
   padding-top: 20px;
   justify-content: center;
   text-align: center;
+  margin-top: 50px;
   font-family: SFProText-Bold;
-  margin-bottom: 20px;
+  margin-bottom: 33.5px;
 }
 body .perkfix-home1 .content-img {
   margin-bottom: 40px;
@@ -1152,7 +1153,7 @@ body .perkfix-home18 .content {
 body .perkfix-home18 .content .title {
   margin: 0;
   padding-bottom: 40px;
-  font-size: 50px;
+  font-size: 3.125rem;
   padding-top: 20px;
   justify-content: center;
   text-align: center;
@@ -1201,11 +1202,11 @@ body .perkfix-store {
   width: 100%;
 }
 body .perkfix-store .title {
-  margin-top: 80px;
+  margin-top: 50px;
   padding-left: 15%;
   padding-right: 15%;
-  font-family: SFProText-Heavy;
-  font-size: 50px;
+  font-family: SFProText-Bold;
+  font-size: 3.125rem;
   color: black;
   text-align: center;
 }
@@ -2310,6 +2311,15 @@ body .footer-menu .menu-description .terms a {
   }
 }
 @media (max-width: 780px) {
+  .perkfix-home18 .title {
+    padding: 0px !important;
+    padding-bottom: 20px !important;
+    font-size: 0.9375rem !important;
+  }
+  .perkfix-home18 .movie {
+    width: 100% !important;
+  }
+
   .header {
     height: 45px !important;
     width: 100% !important;
