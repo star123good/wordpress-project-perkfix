@@ -221,7 +221,7 @@ foreach ($parent_categories as $i=>$category) {
                   </div>
                   <div class="pf-item-button">
                   <?php if ($top2_item_meta['button_text'][0] != '') { ?>
-                    <button <?php if ($top2_item_meta['button_link'][0] != "") { ?> onclick="window.location.href='<?php echo $top2_item_meta['button_link'][0];?>'" <?php } ?> class="btn-pink btn-rd"><?php echo $top2_item_meta['button_text'][0];?></button>
+                    <button <?php if ($top2_item_meta['button_link'][0] != "") { ?> onclick="window.open('<?php echo $top2_item_meta['button_link'][0];?>', '_blank')" <?php } ?> class="btn-pink btn-rd"><?php echo $top2_item_meta['button_text'][0];?></button>
                   <?php } ?>
                   </div>
                 </div>
@@ -247,7 +247,7 @@ foreach ($parent_categories as $i=>$category) {
                   </div>
                   <div class="pf-item-button">
                   <?php if ($top4_item_meta['button_text'][0] != '') { ?>
-                    <button <?php if ($top4_item_meta['button_link'][0] != "") { ?> onclick="window.location.href='<?php echo $top4_item_meta['button_link'][0];?>'" <?php } ?> class="btn-pink btn-rd"><?php echo $top4_item_meta['button_text'][0];?></button>
+                    <button <?php if ($top4_item_meta['button_link'][0] != "") { ?> onclick="window.open('<?php echo $top4_item_meta['button_link'][0];?>', '_blank')" <?php } ?> class="btn-pink btn-rd"><?php echo $top4_item_meta['button_text'][0];?></button>
                   <?php } ?>
                   </div>
                 </div>
@@ -284,7 +284,7 @@ foreach ($parent_categories as $i=>$category) {
                     </div>
                     <div class="pf-item-button">
                     <?php if ($item_meta['button_text'][0] != '') { ?>
-                      <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.location.href='<?php echo $item_meta['button_link'][0];?>'" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
+                      <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.open('<?php echo $item_meta['button_link'][0];?>', '_blank')" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
                     <?php } ?>
                     </div>
                   </div>
@@ -318,7 +318,7 @@ foreach ($parent_categories as $i=>$category) {
                     </div>
                     <div class="pf-item-button">
                     <?php if ($item_meta['button_text'][0] != '') { ?>
-                      <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.location.href='<?php echo $item_meta['button_link'][0];?>'" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
+                      <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.open('<?php echo $item_meta['button_link'][0];?>', '_blank')" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
                     <?php } ?>
                     </div>
                   </div>
@@ -354,7 +354,7 @@ foreach ($parent_categories as $i=>$category) {
                     </div>
                     <div class="pf-item-button">
                     <?php if ($item_meta['button_text'][0] != '') { ?>
-                      <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.location.href='<?php echo $item_meta['button_link'][0];?>'" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
+                      <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.open('<?php echo $item_meta['button_link'][0];?>', '_blank')" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
                     <?php } ?>
                     </div>
                   </div>
@@ -503,7 +503,7 @@ foreach ($parent_categories as $i=>$category) {
               </div>
               <div class="pf-item-button">
               <?php if ($item_meta['button_text'][0] != '') { ?>
-                <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.location.href='<?php echo $item_meta['button_link'][0];?>'" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
+                <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.open('<?php echo $item_meta['button_link'][0];?>', '_blank')" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
               <?php } ?>
               </div>
             </div>
@@ -540,7 +540,7 @@ foreach ($parent_categories as $i=>$category) {
               </div>
               <div class="pf-item-button">
               <?php if ($item_meta['button_text'][0] != '') { ?>
-                <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.location.href='<?php echo $item_meta['button_link'][0];?>'" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
+                <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.open('<?php echo $item_meta['button_link'][0];?>', '_blank')" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
               <?php } ?>
               </div>
             </div>
@@ -581,7 +581,7 @@ foreach ($parent_categories as $i=>$category) {
               </div>
               <div class="pf-item-button">
               <?php if ($item_meta['button_text'][0] != '') { ?>
-                <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.location.href='<?php echo $item_meta['button_link'][0];?>'" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
+                <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.open('<?php echo $item_meta['button_link'][0];?>', '_blank')" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
               <?php } ?>
               </div>
             </div>
@@ -642,7 +642,7 @@ foreach ($parent_categories as $i=>$category) {
               </div>
               <div class="pf-item-button">
               <?php if ($item_meta['button_text'][0] != '') { ?>
-                <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.location.href='<?php echo $item_meta['button_link'][0];?>'" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
+                <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.open('<?php echo $item_meta['button_link'][0];?>', '_blank')" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
               <?php } ?>
               </div>
             </div>
@@ -679,7 +679,7 @@ foreach ($parent_categories as $i=>$category) {
               </div>
               <div class="pf-item-button">
               <?php if ($item_meta['button_text'][0] != '') { ?>
-                <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.location.href='<?php echo $item_meta['button_link'][0];?>'" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
+                <button <?php if ($item_meta['button_link'][0] != "") { ?> onclick="window.open('<?php echo $item_meta['button_link'][0];?>', '_blank')" <?php } ?> class="btn-pink btn-rd"><?php echo $item_meta['button_text'][0];?></button>
               <?php } ?>
               </div>
             </div>
