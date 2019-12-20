@@ -9,8 +9,14 @@
                   <input type="text" placeholder="Username (corperate email)"/>
                   <input type="password" placeholder="Password"/>
                   <button>Login</button>
-                  <p class="message">Don't have an account?<br/> <a href="signup.html">Sign up here</a></p>
+                  <p class="message">Don't have an account?<br/> <a href="<?php echo home_url('/trial');?>">Sign up here</a></p>
                 </form>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+    $(function() {
+        $(".header").css("background-color", "rgba(33, 33, 33, 1)");
+    });
+    </script>

@@ -23,7 +23,7 @@
             <a href="<?php echo home_url('/');?>"><img src="<?php bloginfo('template_url'); ?>/img/perkfix-green-logo-pf.png" class="logo mobile-logo"></a>
             <a id="pg_perkstore" class="pg-menu" href="<?php echo home_url('/perkstore');?>">Perk Store</a>
             <a id="pg_platform" class="pg-menu" href="<?php echo home_url('/platform');?>">Platform</a>
-            <a id="pg_login" class="pg-menu mobile-login" href="<?php echo home_url('/login');?>">Log In</a>
+            <a id="pg_login" class="pg-menu mobile-login" href="<?php echo home_url('/log-in');?>">Log In</a>
             <a id="pg_trial" href="<?php echo home_url('/trial');?>" class="btn btn-green">Start trial</a>
         </div>
         <div class="pfo-container">

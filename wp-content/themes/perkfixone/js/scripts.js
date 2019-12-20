@@ -1,12 +1,7 @@
 $('.message a').click(function(){
     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });
-$(".btn-social").on('mousedown', function() {
-    $(this).html("<img src='img/btn-linkedin-on.png'>");
-});
-$(".btn-social").on('mouseup', function() {
-    $(this).html("<img src='img/btn-linkedin.png'>");
-});
+
 
 $("#pg_platform").on("click", function() {
     if($(this).hasClass("btn-on")) {

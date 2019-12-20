@@ -753,24 +753,29 @@ foreach ($parent_categories as $i=>$category) {
     </div>
   </div>
   <script type="text/javascript">
-    $(".category-item").on("click", function() {
-      $(".category-item").children(".right-item").removeClass("selected");
-      $(this).children(".right-item").addClass("selected");
-      var catID = $(this).children("input[type=hidden]").val();
-      var pos = $(document).scrollTop();
-      window.location.href="?category_id="+catID+"&po="+pos;
-    });
-
     $(function() {
       var currentPos = <?php echo $current_pos; ?>;
-      //$(document).scrollTop(currentPos);
       var currentID = <?php echo $current_category_id ?>;
+      
+      if (currentID > 0) {
+        console.log($('.perkfix-content-category').offset().top);
+        $(document).scrollTop($('.perkfix-content-category').offset().top - 20);
+      }
+
       $(".category-item").each(function(index) {
         var catID = $(this).children("input[type=hidden]").val();
         if (catID == currentID) {
           $(this).children(".right-item").addClass("selected");
         }
       });
+    });
+
+    $(".category-item").on("click", function() {
+      $(".category-item").children(".right-item").removeClass("selected");
+      $(this).children(".right-item").addClass("selected");
+      var catID = $(this).children("input[type=hidden]").val();
+      var pos = $(document).scrollTop();
+      window.location.href="?category_id="+catID+"&po="+pos;
     });
 
     // mobile
@@ -807,6 +812,9 @@ foreach ($parent_categories as $i=>$category) {
       $(".item-content-container").removeClass("hidden");
       $(".d-btn-back").addClass("hidden");
       $(".item-detail-content-container").addClass("hidden");
+      $(".perkfix-container").css("background-color", "white");
+      $(".perkfix-content-category").css("background-color", "black");
+      $(".perkfix-content-item").css("background-color", "white");
     });
 
     // web app - top item click - detail page
@@ -823,6 +831,9 @@ foreach ($parent_categories as $i=>$category) {
       $(".item-content-container").addClass("hidden");
       $(".item-detail-content-container").removeClass("hidden");
       $(".d-btn-back").removeClass("hidden");
+      $(".perkfix-container").css("background-color", "black");
+      $(".perkfix-content-category").css("background-color", "#252525");
+      $(".perkfix-content-item").css("background-color", "white");
 
       $.ajax({
         url: endpoint,
@@ -851,6 +862,9 @@ foreach ($parent_categories as $i=>$category) {
       $(".item-content-container").addClass("hidden");
       $(".item-detail-content-container").removeClass("hidden");
       $(".d-btn-back").removeClass("hidden");
+      $(".perkfix-container").css("background-color", "black");
+      $(".perkfix-content-category").css("background-color", "#252525");
+      $(".perkfix-content-item").css("background-color", "white");
 
       $.ajax({
         url: endpoint,

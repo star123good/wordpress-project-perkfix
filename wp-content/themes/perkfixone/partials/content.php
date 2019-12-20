@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="content2-links">
-        <a href="#">More wellness perks  ></a>
+        <a href="<?php echo home_url('/perkstore');?>?category_id=12">More wellness perks  ></a>
         <a href="#">Start Trial  ></a>
       </div>
     </div>
@@ -96,12 +96,12 @@
       </div>
     </div>
     <div class="content-link">
-      <a href="#">More wellness perks  ></a>
+      <a href="<?php echo home_url('/perkstore');?>?category_id=12">More wellness perks  ></a>
       <a href="#">Start Trial  ></a>
     </div>
     <div class="content-img">
       <p class="title">Commute smarter.<br/>Commute better.</p>
-      <p class="content">Employees are more connected<br/>than ever— so are our perks.</p>
+      <p class="content">Employees are more connected<br/>than ever — so are our perks.</p>
       <img src="<?php bloginfo('template_url'); ?>/img/Commute-better.jpg" class="">
     </div>
   </div>
@@ -203,7 +203,7 @@
     <div class="container">
       <div class="title">
         <h1>Learn. Build. Repeat.</h1>
-        <p>World's largest learning resources &ndash; now<br/>aligned to your company's needs.</p>
+        <p>World's largest learning resources — now<br/>aligned to your company's needs.</p>
       </div>
       <img src="<?php bloginfo('template_url'); ?>/img/Training perks.jpg">
     </div>
@@ -232,7 +232,7 @@
           <img src="<?php bloginfo('template_url'); ?>/img/download.jpg" class="">
         </div>
         <div class="link">
-          <a href="#">More Training Perks  ></a>
+          <a href="<?php echo home_url('/perkstore');?>?category_id=102">More Training Perks  ></a>
           <a href="#">Start Trial  ></a>
         </div>
       </div>
