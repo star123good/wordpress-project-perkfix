@@ -17,6 +17,7 @@
  *
  * @package WordPress
  */
+//server
 define('WP_HOME','http://perkfix.com');
 define('WP_SITEURL','http://perkfix.com');
 

@@ -376,7 +376,68 @@ foreach ($parent_categories as $i=>$category) {
         </div>
       </div>
       <div class="item-detail-content-container hidden">
-        test
+        <div class="item-detail">
+          <div class="item-detail-image">
+            <img src="<?php echo $item_thumb_url;?>">
+          </div>
+          <div class="item-detail-text">
+            <div class="pf-item-text">
+              <div class="item-title"><b>Peloton — Digital Membership</b></div>
+              <div class="item-desc">Discover something new everytime you sweat</div>
+              <div class="item-provide"><a href="">Provider Website</a></div>
+            </div>
+            <div class="pf-item-button">
+              <button class="btn-pink btn-rd">Activate</button>
+              <div class="item-price">
+              $39/mo
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item-cosmetic-image-container">
+          <div id="item_left" class="arrow">
+            <img src="<?php bloginfo('template_url'); ?>/img/ico/ico-webarrow-left.png">
+          </div>
+          <div class="item-image-content">
+            <div class="image-list">
+              <div class="image-item">
+                <img src="<?php bloginfo('template_url'); ?>/img/img-perk-store-left.png">
+              </div>
+              <div class="image-item">
+                <img src="<?php bloginfo('template_url'); ?>/img/img-perk-store-left.png">
+              </div>
+              <div class="image-item">
+                <img src="<?php bloginfo('template_url'); ?>/img/img-perk-store-left.png">
+              </div>
+            </div>
+          </div>
+          <div id="item_right" class="arrow">
+            <img src="<?php bloginfo('template_url'); ?>/img/ico/ico-webarrow-right.png">
+          </div>
+        </div>
+        <hr/>
+        <div class="item-support-device">
+          <div class="left">
+            <b>Supported Devices:</b> IOS, Android
+          </div>
+          <div class="right">
+            <a href="" class="item-link">
+            Show All
+            </a>
+          </div>
+        </div>
+        <hr/>
+        <div class="item-helpful-link">
+          <div class="item-title">
+            <b>Helpful Information</b>
+          </div>
+          <div class="item-link">
+            <a href="">The Absolute Beginner's Guide to Pelaton</a>
+          </div>
+          <div class="item-link">
+            <a href="">The Pelaton Bike Brings the Spin Class Party to Your House</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -745,6 +806,7 @@ foreach ($parent_categories as $i=>$category) {
     $(".w-btn-back").on("click", function() {
       $(".item-content-container").removeClass("hidden");
       $(".d-btn-back").addClass("hidden");
+      $(".item-detail-content-container").addClass("hidden");
     });
 
     // web app - top item click - detail page

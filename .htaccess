@@ -5,11 +5,13 @@
 # Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /perkfix/
+RewriteBase /
+#RewriteBase /perkfix/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /perkfix/index.php [L]
+RewriteRule . /index.php [L]
+#RewriteRule . /perkfix/index.php [L]
 </IfModule>
 
 # END WordPress
