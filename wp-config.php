@@ -21,7 +21,7 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-$build = "prod";
+$build = "dev";
 //$build = "dev";
 
 if ($build == "dev") {

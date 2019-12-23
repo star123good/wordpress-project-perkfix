@@ -433,7 +433,7 @@ foreach ($parent_categories as $i=>$category) {
         <hr/>
         <div class="item-helpful-link">
           <div class="item-title">
-            <b></b>
+            <b>Helpful Information</b>
           </div>
           <div class="item-link">
             <a href="" id="helpful1" target="_blank"></a>
