@@ -2606,6 +2606,27 @@ body .footer-menu .menu-description .terms a {
     padding: 5px 8px;
     outline: none;
   }
+  .product-detail .perkfix-category .pick-image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .product-detail .perkfix-category .pick-image-container .item-image-content {
+    width: calc(100% - 0px);
+    overflow-x: scroll;
+  }
+  .product-detail .perkfix-category .pick-image-container .item-image-content .image-list {
+    display: flex;
+    width: 300%;
+  }
+  .product-detail .perkfix-category .pick-image-container .item-image-content .image-list .image-item {
+    width: 100%;
+    padding: 10px;
+  }
+  .product-detail .perkfix-category .pick-image-container .item-image-content .image-list .image-item img {
+    width: 100%;
+  }
   .product-detail .perkfix-category .support-device {
     display: flex;
     justify-content: space-around;

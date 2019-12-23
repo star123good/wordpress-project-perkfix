@@ -2749,7 +2749,27 @@ body {
           }
         }
       }
-
+      .pick-image-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        .item-image-content {
+          width: calc(100% - 0px);
+          overflow-x: scroll;
+          .image-list {
+            display: flex;
+            width: 300%;
+            .image-item {
+              width: 100%;
+              padding: 10px;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
       .support-device {
         display: flex;
         justify-content: space-around;

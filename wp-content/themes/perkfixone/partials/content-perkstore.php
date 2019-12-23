@@ -20,6 +20,7 @@ $pf_categories = array();
 
 foreach ($parent_categories as $i=>$category) {
   if ($category->category_parent == $pf_category_id || $category->cat_ID == $pf_category_id) {
+    
     $icon_image_id = get_term_meta($category->term_id, 'pix_term_icon', true);
     if (!empty($icon_image_id)) {
       $category->icon_image_url = wp_get_attachment_url($icon_image_id);
@@ -118,6 +119,9 @@ foreach ($parent_categories as $i=>$category) {
       }
       $args = array('category' => $current_cat->term_id, 'post_type' => 'perks', 'posts_per_page' => 1000);
       $current_perkslist = get_posts($args);
+
+      $editor_image_1 = get_field('editor_image_1', 'category_'.$current_cat->term_id);
+      $editor_image_2 = get_field('editor_image_2', 'category_'.$current_cat->term_id);
       //print_r($current_perkslist);
     ?>
     <div class="perkfix-content-item">
@@ -146,7 +150,7 @@ foreach ($parent_categories as $i=>$category) {
         </div>
         <div class="item-perkstore-image">
           <div class="img-left">
-            <img class="top-left" src="<?php bloginfo('template_url'); ?>/img/img-perk-store-left.png">
+            <img class="top-left" src="<?php echo $editor_image_1;?>">
             <?php 
               if (isset($current_perkslist[0])) { 
                 $top1_item_meta = get_post_meta($current_perkslist[0]->ID);
@@ -201,7 +205,7 @@ foreach ($parent_categories as $i=>$category) {
             <?php } ?>
           </div>
           <div class="img-right">
-            <img class="top-right" src="<?php bloginfo('template_url'); ?>/img/img-perk-store-right.png">
+            <img class="top-right" src="<?php echo $editor_image_2;?>">
             <?php 
               if (isset($current_perkslist[1])) { 
                 $top2_item_meta = get_post_meta($current_perkslist[1]->ID);
@@ -382,14 +386,14 @@ foreach ($parent_categories as $i=>$category) {
           </div>
           <div class="item-detail-text">
             <div class="pf-item-text">
-              <div class="item-title"><b>Peloton — Digital Membership</b></div>
-              <div class="item-desc">Discover something new everytime you sweat</div>
-              <div class="item-provide"><a href="">Provider Website</a></div>
+              <div class="item-title"><b></b></div>
+              <div class="item-desc"></div>
+              <div class="item-provide"><a href=""></a></div>
             </div>
             <div class="pf-item-button">
-              <button class="btn-pink btn-rd">Activate</button>
+              <button class="btn-pink btn-rd"></button>
               <div class="item-price">
-              $39/mo
+              
               </div>
             </div>
           </div>
@@ -401,13 +405,13 @@ foreach ($parent_categories as $i=>$category) {
           <div class="item-image-content">
             <div class="image-list">
               <div class="image-item">
-                <img src="<?php bloginfo('template_url'); ?>/img/img-perk-store-left.png">
+                <img  id="item1" src="">
               </div>
               <div class="image-item">
-                <img src="<?php bloginfo('template_url'); ?>/img/img-perk-store-left.png">
+                <img  id="item2" src="">
               </div>
-              <div class="image-item">
-                <img src="<?php bloginfo('template_url'); ?>/img/img-perk-store-left.png">
+              <div class="image-item" >
+                <img  id="item3" src="">
               </div>
             </div>
           </div>
@@ -418,10 +422,10 @@ foreach ($parent_categories as $i=>$category) {
         <hr/>
         <div class="item-support-device">
           <div class="left">
-            <b>Supported Devices:</b> IOS, Android
+            <b>Supported Devices:</b>
           </div>
           <div class="right">
-            <a href="" class="item-link">
+            <a href="" class="item-link" target="_blank">
             Show All
             </a>
           </div>
@@ -429,13 +433,13 @@ foreach ($parent_categories as $i=>$category) {
         <hr/>
         <div class="item-helpful-link">
           <div class="item-title">
-            <b>Helpful Information</b>
+            <b></b>
           </div>
           <div class="item-link">
-            <a href="">The Absolute Beginner's Guide to Pelaton</a>
+            <a href="" id="helpful1" target="_blank"></a>
           </div>
           <div class="item-link">
-            <a href="">The Pelaton Bike Brings the Spin Class Party to Your House</a>
+            <a href="" id="helpful2" target="_blank"></a>
           </div>
         </div>
       </div>
@@ -712,43 +716,55 @@ foreach ($parent_categories as $i=>$category) {
     </div>
     <div class="category-title">
       <div class="left">
-        <img src="<?php echo $category->icon_image_url; ?>">
-        <b><?php echo $category->name; ?></b>
+        <img src="">
+        <b></b>
       </div>
     </div>
     <div class="perkfix-category">
       <div class="row">
         <div class="pf-item1">
           <div class="pf-item-image">
-            <img src="<?php echo $item_thumb_url;?>">
+            <img src="">
           </div>
           <div class="pf-item-detail-container">
             <div class="pf-item-detail">
               <div class="pf-item-text">
-                <div class="item-title"><b>Test</b></div>
-                <div class="item-desc">Test</div>
-                <div class="item-price">$10/mo</div>
+                <div class="item-title"><b></b></div>
+                <div class="item-desc"></div>
+                <div class="item-price"></div>
               </div>
               <div class="pf-item-button">
-                <button onclick="#" class="btn-pink btn-rd">Activate</button>
+                <button onclick="#" class="btn-pink btn-rd"></button>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="row pick-image-container">
-        
+        <div class="item-image-content">
+          <div class="image-list">
+            <div class="image-item">
+              <img  id="mb-item1" src="">
+            </div>
+            <div class="image-item">
+              <img  id="mb-item2" src="">
+            </div>
+            <div class="image-item" >
+              <img  id="mb-item3" src="">
+            </div>
+          </div>
+        </div>
       </div>
       <hr/>
       <div class="support-device">
-        <div class="left"><b>Supported Devices:</b>IOS, Android</div>
-        <div class="right"><a href='#'>See All</a></div>
+        <div class="left"><b>Supported Devices:</b></div>
+        <div class="right"><a href='#' class="item-link" target="_blank">See All</a></div>
       </div>
       <hr/>
       <div class="helpful-info">
         <div class="title"><b>Helpful Information</b></div>
-        <div class="content"><a href="#">The Absolute Beginner’s Guide to Peloton</a></div>
-        <div class="content"><a href="#">The Peloton Bike Brings the Spin Class Party to Your House</a></div>
+        <div class="content"><a id="mb-helpful1" href="#" target="_blank"></a></div>
+        <div class="content"><a id="mb-helpful2" href="#" target="_blank"></a></div>
       </div>
     </div>
   </div>
@@ -790,6 +806,24 @@ foreach ($parent_categories as $i=>$category) {
         method: 'GET'
       }).done(function(response){
         console.log(response);
+        $(".product-detail .category-title .left img").attr("src", response['icon_image_url']);
+        $(".product-detail .category-title .left b").html(response['cat_name']);
+        $(".product-detail .perkfix-category .pf-item-image img").attr("src", response['product_image_url']);
+        $(".product-detail .perkfix-category .pf-item-text .item-title b").html(response['perk_name']);
+        $(".product-detail .perkfix-category .item-desc").html(response['perk_detail']);
+        //$(".item-detail-content-container .item-provide a").attr("href", response['provider_website_link']);
+        $(".product-detail .perkfix-category .pf-item-button button").html(response['button_text']);
+        $(".product-detail .perkfix-category .pf-item-button button").attr("onclick", "window.open('"+response['button_link']+"', '_blank')");
+        $(".product-detail .perkfix-category .item-price").html(response['currency_symbol']+response['price']+'/'+response['price_type']);
+        $(".product-detail #mb-item1").attr("src", response['cosmetic_image_1']);
+        $(".product-detail #mb-item2").attr("src", response['cosmetic_image_2']);
+        $(".product-detail #mb-item3").attr("src", response['cosmetic_image_3']);
+        $(".product-detail .perkfix-category .support-device .left").html("<b>Supported Devices:</b>"+" "+response['compatible_devices']);
+        $(".product-detail .perkfix-category .support-device .item-link").attr("href", response['compatible_devices_link']);
+        $(".product-detail #mb-helpful1").html(response['helpful_information_title_1']);
+        $(".product-detail #mb-helpful2").html(response['helpful_information_title_2']);
+        $(".product-detail #mb-helpful1").attr("href", response['helpful_information_link_1']);
+        $(".product-detail #mb-helpful2").attr("href", response['helpful_information_link_2']);
       }).fail(function(response){
         // Show error message
         alert(response.responseJSON.message);
@@ -840,6 +874,22 @@ foreach ($parent_categories as $i=>$category) {
         method: 'GET'
       }).done(function(response){
         console.log(response);
+        $(".item-detail-content-container .item-detail-image img").attr("src", response['product_image_url']);
+        $(".item-detail-content-container .pf-item-text .item-title b").html(response['perk_name']);
+        $(".item-detail-content-container .item-desc").html(response['perk_detail']);
+        $(".item-detail-content-container .item-provide a").attr("href", response['provider_website_link']);
+        $(".item-detail-content-container .pf-item-button button").html(response['button_text']);
+        $(".item-detail-content-container .pf-item-button button").attr("onclick", "window.open('"+response['button_link']+"', '_blank')");
+        $(".item-detail-content-container .item-price").html(response['currency_symbol']+response['price']+'/'+response['price_type']);
+        $("#item1").attr("src", response['cosmetic_image_1']);
+        $("#item2").attr("src", response['cosmetic_image_2']);
+        $("#item3").attr("src", response['cosmetic_image_3']);
+        $(".item-detail-content-container .item-support-device .left").html("<b>Supported Devices:</b>"+" "+response['compatible_devices']);
+        $(".item-detail-content-container .item-support-device .item-link").attr("href", response['compatible_devices_link']);
+        $("#helpful1").html(response['helpful_information_title_1']);
+        $("#helpful2").html(response['helpful_information_title_2']);
+        $("#helpful1").attr("href", response['helpful_information_link_1']);
+        $("#helpful2").attr("href", response['helpful_information_link_2']);
       }).fail(function(response){
         // Show error message
         alert(response.responseJSON.message);
@@ -870,7 +920,22 @@ foreach ($parent_categories as $i=>$category) {
         url: endpoint,
         method: 'GET'
       }).done(function(response){
-        console.log(response);
+        $(".item-detail-content-container .item-detail-image img").attr("src", response['product_image_url']);
+        $(".item-detail-content-container .pf-item-text .item-title b").html(response['perk_name']);
+        $(".item-detail-content-container .item-desc").html(response['perk_detail']);
+        $(".item-detail-content-container .item-provide a").attr("href", response['provider_website_link']);
+        $(".item-detail-content-container .pf-item-button button").html(response['button_text']);
+        $(".item-detail-content-container .pf-item-button button").attr("onclick", "window.open('"+response['button_link']+"', '_blank')");
+        $(".item-detail-content-container .item-price").html(response['currency_symbol']+response['price']+'/'+response['price_type']);
+        $("#item1").attr("src", response['cosmetic_image_1']);
+        $("#item2").attr("src", response['cosmetic_image_2']);
+        $("#item3").attr("src", response['cosmetic_image_3']);
+        $(".item-detail-content-container .item-support-device .left").html("<b>Supported Devices:</b>"+" "+response['compatible_devices']);
+        $(".item-detail-content-container .item-support-device .item-link").attr("href", response['compatible_devices_link']);
+        $("#helpful1").html(response['helpful_information_title_1']);
+        $("#helpful2").html(response['helpful_information_title_2']);
+        $("#helpful1").attr("href", response['helpful_information_link_1']);
+        $("#helpful2").attr("href", response['helpful_information_link_2']);
       }).fail(function(response){
         // Show error message
         alert(response.responseJSON.message);

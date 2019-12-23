@@ -33,12 +33,28 @@ $(window).on('resize', function(){
 
 $("#perkstore_left").on("click", function() {
     console.log('left');
-    $(".item-content").animate({scrollLeft: "-=250px"}, 800);
+    $(".item-content").animate({scrollLeft: "-=250px"}, 300);
 });
 
 $("#perkstore_right").on("click", function() {
     console.log('right');
-    $(".item-content").animate({scrollLeft: "+=250px"}, 800);
+    $(".item-content").animate({scrollLeft: "+=250px"}, 300);
+});
+
+$("#item_left").on("click", function() {
+    console.log('left');
+    var width = $(".image-item").width()+20;
+    var currentMarginLeft = parseInt($(".image-list").css("marginLeft").replace('px', ''));
+    if (currentMarginLeft < 0)
+        $(".image-list").animate({marginLeft: "+="+width+"px"}, 300);
+});
+
+$("#item_right").on("click", function() {
+    console.log('right');
+    var width = $(".image-item").width()+20;
+    var currentMarginLeft = parseInt($(".image-list").css("marginLeft").replace('px', ''));
+    if (currentMarginLeft == 0)
+        $(".image-list").animate({marginLeft: "-="+width+"px"}, 300);
 });
 
 $(document).mouseup(e => {

@@ -45,9 +45,31 @@ function get_search_results_by_category($request) {
 
 function get_product_detail($request) {
     $ret = array();
-    $ret['category_id'] = $request['category_id'];
-    $ret['product_id'] = $request['product_id'];
+    $category_id = $request['category_id'];
+    $product_id = $request['product_id'];
 
+    $icon_image_id = get_term_meta($category_id, 'pix_term_icon', true);
+    $ret['icon_image_url'] = wp_get_attachment_url($icon_image_id);
+    $ret['cat_name'] = get_cat_name($category_id);
+    $ret['button_link'] = get_field('button_link', $product_id);
+    $ret['button_text'] = get_field('button_text', $product_id);
+    $ret['compatible_devices'] = get_field('compatible_devices', $product_id);
+    $ret['currency_symbol'] = get_field('currency_symbol', $product_id);
+    $ret['note'] = get_field('note', $product_id);
+    $ret['perk_detail'] = get_field('perk_detail', $product_id);
+    $ret['perk_name'] = get_field('perk_name', $product_id);
+    $ret['price'] = get_field('price', $product_id);
+    $ret['cosmetic_image_1'] = get_field('cosmetic_image_1', $product_id);
+    $ret['cosmetic_image_2'] = get_field('cosmetic_image_2', $product_id);
+    $ret['cosmetic_image_3'] = get_field('cosmetic_image_3', $product_id);
+    $ret['provider_website_link'] = get_field('provider_website_link', $product_id);
+    $ret['compatible_devices_link'] = get_field('compatible_devices_link', $product_id);
+    $ret['helpful_information_title_1'] = get_field('helpful_information_title_1', $product_id);
+    $ret['helpful_information_link_1'] = get_field('helpful_information_link_1', $product_id);
+    $ret['helpful_information_title_2'] = get_field('helpful_information_title_2', $product_id);
+    $ret['helpful_information_link_2'] = get_field('helpful_information_link_2', $product_id);
+    $ret['price_type'] = get_field('price_type', $product_id);
+    $ret['product_image_url'] = wp_get_attachment_url(get_post_thumbnail_id($product_id));
     $response = new WP_REST_Response($ret);
     $response->set_status(200);
     return $response;
