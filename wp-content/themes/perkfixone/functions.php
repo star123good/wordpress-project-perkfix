@@ -301,11 +301,11 @@ function get_product_list($request) {
                                     <hr/>
                                 </div>
                             </div>
-                            <div class='item'>
-                            </div>";
+                            ";
         }
     }        
-              $html .= "</div>
+              $html .= "<div class='item'>
+                        </div></div>
                         <div class='row'>";
     
     foreach($current_perkslist as $i => $item) {
@@ -333,14 +333,14 @@ function get_product_list($request) {
                                     <hr/>
                                 </div>
                             </div>
-                            <div class='item'>
-                            </div>
-                            <div class='item'>
-                            </div>";
+                            ";
         }
     }
             
-              $html .= "</div>
+              $html .= "<div class='item'>
+              </div>
+              <div class='item'>
+              </div></div>
                     </div>
                     <div id='perkstore_right' class='arrow'>
                         <img src='".get_template_directory_uri()."/img/ico/ico-webarrow-right.png'>
@@ -462,16 +462,14 @@ add_action('wp_ajax_get_perkfix_names', 'ajax_listings');
 function ajax_listings() {
     global $wpdb;
 
-    $name = $wpdb->esc_like(stripslashes($_POST['k'])).'%';
-    $sql = "select post_title from $wpdb->posts where post_title like %s and post_type='perks' and post_status='publish'";
-
-    $sql = $wpdb->prepare($sql, $name);
-
-    $results = $wpdb->get_results($sql);
-
+    $name = $wpdb->esc_like(stripslashes($_POST['k']));
+    
+    $tag_query = array( 'tag' => $name, 'post_type' => 'perks' );
+    $posts_array = get_posts( $tag_query );
     $titles = array();
-    foreach( $results as $r)
-        $titles[] = addslashes($r->post_title);
+    foreach ($posts_array as $item) {
+        $titles[] = $item->post_title;
+    }
 
     echo json_encode($titles);
 

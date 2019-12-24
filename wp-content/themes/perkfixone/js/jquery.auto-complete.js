@@ -38,9 +38,11 @@
 
             that.updateSC = function(resize, next){
                 that.sc.css({
-                    top: that.offset().top + that.outerHeight(),
-                    left: that.offset().left,
-                    width: that.outerWidth()
+                    top: that.offset().top + that.outerHeight()-4,
+                    left: $(".pf-search").offset().left,
+                    width: $(".pf-search").outerWidth(),
+                    'border-bottom-left-radius': '10px',
+                    'border-bottom-right-radius': '10px',
                 });
                 if (!resize) {
                     that.sc.show();
@@ -95,7 +97,7 @@
                 var val = that.val();
                 that.cache[val] = data;
                 if (data.length && val.length >= o.minChars) {
-                    var s = '';
+                    var s = '<div class="autocomplete-suggestion-desc"><b>RELATED PERKS</b></div><hr/>';
                     for (var i=0;i<data.length;i++) s += o.renderItem(data[i], val);
                     that.sc.html(s);
                     that.updateSC(0);
@@ -160,7 +162,7 @@
         delay: 150,
         cache: 1,
         menuClass: '',
-        renderItem: function (item, search){
+        renderItem: function (item, search) {
             // escape special characters
             search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
             var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");

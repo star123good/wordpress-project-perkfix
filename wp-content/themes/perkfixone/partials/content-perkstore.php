@@ -1,4 +1,5 @@
 <?php
+
 //Template name: Perkstore Page
 if (isset($_GET['category_id'])) {
   $current_category_id = $_GET['category_id'];
