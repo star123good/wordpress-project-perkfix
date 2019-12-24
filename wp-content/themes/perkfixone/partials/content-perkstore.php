@@ -138,7 +138,7 @@ foreach ($parent_categories as $i=>$category) {
             <input type="text" id="pf_search" placeholder="Search for perks like “Stadia”" />
           </div>
           <div class="td submit">
-            <button type="submit">
+            <button type="button" class="search">
               <img src="<?php bloginfo('template_url'); ?>/img/ico/ico-search-perkstore.png">
             </button>
           </div>
@@ -452,7 +452,7 @@ foreach ($parent_categories as $i=>$category) {
         <input type="text" id="pf_mobile_search" placeholder="Search for perks like “Stadia”" />
       </div>
       <div class="td submit">
-        <button type="submit">
+        <button type="button" class="search">
           <img src="<?php bloginfo('template_url'); ?>/img/ico/ico-search-perkstore.png">
         </button>
       </div>
@@ -963,5 +963,26 @@ foreach ($parent_categories as $i=>$category) {
       }).always(function(){
         // e.g. Remove 'loading' class
       });
+    });
+
+    $(document).on('keyup', ".pf-search input", function (e) {
+      if (e.keyCode === 13) {
+        var keyword = $(this).val();
+
+        var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/search-results';
+
+        $.ajax({
+          url: endpoint,
+          method: 'POST',
+          data: {'keyword': keyword},
+        }).done(function(response){
+          console.log(response);
+        }).fail(function(response){
+          // Show error message
+          alert(response.responseJSON.message);
+        }).always(function(){
+          // e.g. Remove 'loading' class
+        });
+      }
     });
   </script>

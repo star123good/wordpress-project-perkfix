@@ -63,6 +63,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+body .search:hover {
+  cursor: pointer;
+}
 body .hidden {
   display: none !important;
 }

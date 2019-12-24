@@ -12,16 +12,9 @@ add_action('admin_head', 'add_favicon');
 
 // Add code here.
 add_action('rest_api_init', function() {
-    register_rest_route( 'perkstore/v1', 'search-results/(?P<category_id>\d+)', array(
-        'methods' => 'GET',
-        'callback' => 'get_search_results_by_category',
-        'args' => array(
-            'category_id' => array(
-                'validate_callback' => function($param, $request, $key) {
-                    return is_numeric($param);
-                }
-            )
-        )
+    register_rest_route( 'perkstore/v1', 'search-results', array(
+        'methods' => 'POST',
+        'callback' => 'get_search_results'
     ));
 
     register_rest_route( 'perkstore/v1', 'item-detail/(?P<category_id>\d+)/(?P<product_id>\d+)', array(
@@ -54,18 +47,15 @@ add_action('rest_api_init', function() {
     ));
 });
 
-function get_search_results_by_category($request) {
-    $args = array(
-        'category' => $request['category_id'],
-        'post_type' => 'perks'
-    );
+function get_search_results($request) {
+    global $wpdb;
 
-    $perks = get_posts($args);
-    if (empty($perks)) {
-        return new WP_Error('empty_category', 'there is no perk in this category', array('status' => 404));
-    }
+    $keyword = '%'.$wpdb->esc_like(stripslashes($request['keyword'])).'%';
+    $sql = "SELECT * FROM $wpdb->posts WHERE post_title LIKE %s AND post_type='perks' AND post_status = 'publish'";
+    $sql = $wpdb->prepare($sql, $keyword);
+    $results = $wpdb->get_results($sql);
 
-    $response = new WP_REST_Response($perks);
+    $response = new WP_REST_Response($results);
     $response->set_status(200);
 
     return $response;

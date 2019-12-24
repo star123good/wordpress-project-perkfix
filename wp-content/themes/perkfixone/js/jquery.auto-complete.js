@@ -37,10 +37,19 @@
             that.last_val = '';
 
             that.updateSC = function(resize, next){
+                var offset = 0;
+                var width = 0;
+                if ($(window).width() >= 768) {
+                    offset = $(".perkfix-container .pf-search").offset().left;
+                    width = $(".perkfix-container .pf-search").outerWidth();
+                } else {
+                    offset = $(".perkfix-store-search .pf-search").offset().left;
+                    width = $(".perkfix-store-search .pf-search").outerWidth();
+                }
                 that.sc.css({
                     top: that.offset().top + that.outerHeight()-4,
-                    left: $(".pf-search").offset().left,
-                    width: $(".pf-search").outerWidth(),
+                    left: offset,
+                    width: width,
                     'border-bottom-left-radius': '10px',
                     'border-bottom-right-radius': '10px',
                 });
