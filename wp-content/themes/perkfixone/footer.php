@@ -122,7 +122,7 @@
                     <div>Country:&nbsp;&nbsp;</div><img class="flag" src="<?php bloginfo('template_url'); ?>/img/img-flag-us.png">
                 </div>
                 <div class="copyright">
-                    Copyright © 2019, Perkfix Inc. All rights reserved.
+                    Copyright © 2020, Perkfix Inc. All rights reserved.
                 </div>
                 <div class="terms">
                     <a>Privacy</a> | <a href="<?php echo home_url('/terms'); ?>">Terms & Conditions</a> | <a>Site Map</a>

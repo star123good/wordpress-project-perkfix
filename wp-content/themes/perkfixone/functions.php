@@ -1,4 +1,15 @@
 <?php
+
+// First, create a function that includes the path to your favicon
+function add_favicon() {
+    $favicon_url = get_stylesheet_directory_uri()."/img/perkfix-logo.png";
+    echo '<link rel="icon" href="' . $favicon_url . '" />';
+}
+
+// Now, just make sure that function runs when you're on the login page and admin pages  
+add_action('login_head', 'add_favicon');
+add_action('admin_head', 'add_favicon');
+
 // Add code here.
 add_action('rest_api_init', function() {
     register_rest_route( 'perkstore/v1', 'search-results/(?P<category_id>\d+)', array(

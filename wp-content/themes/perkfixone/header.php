@@ -15,6 +15,7 @@
         <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri().'/js/jquery-3.4.1.js'; ?>"></script>
         <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri().'/js/jquery-ui.min.js'; ?>"></script>
         <?php wp_head(); ?>
+        <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/perkfix-logo.png" />
     </head>
 
     <body>
