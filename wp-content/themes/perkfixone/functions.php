@@ -115,3 +115,14 @@ function ajax_listings() {
 
     die();
 }
+
+function my_login_logo_one() { 
+?> 
+<style type="text/css"> 
+body.login div#login h1 a {
+    background-image: url(<?php echo get_stylesheet_directory_uri()."/img/perkfix-logo.png"; ?>); 
+    padding-bottom: 30px; 
+} 
+</style>
+    <?php 
+} add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
