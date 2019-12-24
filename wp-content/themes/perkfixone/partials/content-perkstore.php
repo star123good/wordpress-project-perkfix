@@ -786,16 +786,32 @@ foreach ($parent_categories as $i=>$category) {
       });
     });
 
-    $(".category-item").on("click", function() {
+    //$(".category-item").on("click", function() {
+    $(document).on("click", ".category-item", function() {
       $(".category-item").children(".right-item").removeClass("selected");
       $(this).children(".right-item").addClass("selected");
       var catID = $(this).children("input[type=hidden]").val();
-      var pos = $(document).scrollTop();
-      window.location.href="?category_id="+catID+"&po="+pos;
+      //var pos = $(document).scrollTop();
+      //window.location.href="?category_id="+catID+"&po="+pos;
+      var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/item-list/'+catID;
+
+      $.ajax({
+        url: endpoint,
+        method: 'GET'
+      }).done(function(response){
+        console.log(response);
+        $('.perkfix-content-item').html(response);
+      }).fail(function(response){
+        // Show error message
+        alert(response.responseJSON.message);
+      }).always(function(){
+        // e.g. Remove 'loading' class
+      });
     });
 
     // mobile
-    $(".pf-item").on("click", function() {
+    //$(".pf-item").on("click", function() {
+    $(document).on("click", ".pf-item", function() {
       var itemID = $(this).children("input[type=hidden].prod").val();
       var catID = $(this).children("input[type=hidden].cat").val();
 
@@ -836,7 +852,8 @@ foreach ($parent_categories as $i=>$category) {
     });
 
     // mobile back button  
-    $(".btn-back").on("click", function() {
+    //$(".btn-back").on("click", function() {
+    $(document).on("click", ".btn-back", function() {
       $(".perkfix-store-categories").removeClass("hidden");
       $(".product-detail").addClass("hidden");
     });
@@ -852,7 +869,8 @@ foreach ($parent_categories as $i=>$category) {
     });
 
     // web app - top item click - detail page
-    $(".top-item").on("click", function() {
+    //$(".top-item").on("click", function() {
+    $(document).on("click", ".top-item", function() {
       var itemID = $(this).children("input[type=hidden].prod").val();
       var catID = $(this).children("input[type=hidden].cat").val();
 
@@ -899,7 +917,8 @@ foreach ($parent_categories as $i=>$category) {
     });
 
     // web app - item click - detail page
-    $(".item").on("click", function() {
+    //$(".item").on("click", function() {
+    $(document).on("click", ".item", function() {
       var itemID = $(this).children("input[type=hidden].prod").val();
       var catID = $(this).children("input[type=hidden].cat").val();
 

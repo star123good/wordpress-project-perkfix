@@ -32,6 +32,23 @@ add_action('rest_api_init', function() {
                 'validate_callack' => function($param, $request, $key) {
                     return is_numeric($param);
                 }
+            ),
+            'product_id' => array(
+                'validate_callack' => function($param, $request, $key) {
+                    return is_numeric($param);
+                }
+            )
+        )
+    ));
+
+    register_rest_route( 'perkstore/v1', 'item-list/(?P<category_id>\d+)', array(
+        'methods' => 'GET',
+        'callback' => 'get_product_list',
+        'args' => array(
+            'category_id' => array(
+                'validate_callack' => function($param, $request, $key) {
+                    return is_numeric($param);
+                }
             )
         )
     ));
@@ -51,6 +68,351 @@ function get_search_results_by_category($request) {
     $response = new WP_REST_Response($perks);
     $response->set_status(200);
 
+    return $response;
+}
+
+function get_product_list($request) {
+    $ret = array();
+    $category_id = $request['category_id'];
+
+    if ($category_id == 0) {
+        $current_cat = get_category_by_slug('popular-perks');
+    } else {
+        $current_cat = get_category($category_id);
+    }
+    $args = array('category' => $current_cat->term_id, 'post_type' => 'perks', 'posts_per_page' => 1000);
+    $current_perkslist = get_posts($args);
+
+    $editor_image_1 = get_field('editor_image_1', 'category_'.$current_cat->term_id);
+    $editor_image_2 = get_field('editor_image_2', 'category_'.$current_cat->term_id);
+    $html = "";
+    $html = "<div class='d-btn-back hidden'>
+                <a class='w-btn-back'><i class='fas fa-chevron-left'></i></a>
+            </div>
+            <div class='item-title-container'>
+                <div class='item-title-label'>
+                    <h1>".$current_cat->name."</h1>
+                </div>
+                <div class='pf-search'>
+                    <div class='td input'>
+                        <input type='text' id='pf_search' placeholder='Search for perks like “Stadia”' />
+                    </div>
+                    <div class='td submit'>
+                        <button type='submit'>
+                            <img src='".get_template_directory_uri()."/img/ico/ico-search-perkstore.png'>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div class='item-content-container'>
+                <div class='item-content-label'>
+                    <p>Editor's Pick</p>
+                </div>
+                <div class='item-perkstore-image'>
+                    <div class='img-left'>";
+                    if ($editor_image_1) {
+                        $html .= "<img class='top-left' src='".$editor_image_1."'>";
+                    } else {
+                        $html .= "<img class='top-left' src=''>";
+                    }
+    if (isset($current_perkslist[0])) { 
+        $top1_item_meta = get_post_meta($current_perkslist[0]->ID);
+
+        $html .= "<div class='top-item'>
+                    <input type='hidden' id='h_top_".$current_perkslist[0]->ID."' class='prod' value='".$current_perkslist[0]->ID."' />
+                    <input type='hidden' id='h_top_".$category_id."' class='cat' value='".$category_id."' />
+                    <div class='pf-item-image'>
+                        <img src='".get_the_post_thumbnail_url($current_perkslist[0])."'>
+                    </div>
+                    <div class='pf-item-detail-container'>
+                        <div class='pf-item-detail'>
+                            <div class='pf-item-text'>
+                                <div class='item-title'><b>".$top1_item_meta['perk_name'][0]."</b></div>
+                                <div class='item-desc'>";
+                                    $html .= $top1_item_meta['perk_detail'][0]; 
+                      $html .= "</div>
+                                <div class='item-price'>";
+                                    $html .= $top1_item_meta['currency_symbol'][0].$top1_item_meta['price'][0]."/".get_field('price_type', $current_perkslist[0]->ID);   
+                      $html .= "</div>
+                            </div>
+                            <div class='pf-item-button'>
+                                <button onclick=\"window.open('".$top1_item_meta['button_link'][0]."', '_blank')\" class='btn-pink btn-rd'>".$top1_item_meta['button_text'][0]."</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
+    }
+
+    if (isset($current_perkslist[2])) { 
+        $top3_item_meta = get_post_meta($current_perkslist[2]->ID);
+
+        $html .= "<div class='top-item'>
+                    <input type='hidden' id='h_top_".$current_perkslist[2]->ID."' class='prod' value='".$current_perkslist[2]->ID."' />
+                    <input type='hidden' id='h_top_".$category_id."' class='cat' value='".$category_id."' />
+                    <div class='pf-item-image'>
+                        <img src='".get_the_post_thumbnail_url($current_perkslist[2])."'>
+                    </div>
+                    <div class='pf-item-detail-container'>
+                        <div class='pf-item-detail'>
+                            <div class='pf-item-text'>
+                                <div class='item-title'><b>".$top3_item_meta['perk_name'][0]."</b></div>
+                                <div class='item-desc'>";
+                                    $html .= $top3_item_meta['perk_detail'][0]; 
+                      $html .= "</div>
+                                <div class='item-price'>";
+                                    $html .= $top3_item_meta['currency_symbol'][0].$top3_item_meta['price'][0]."/".get_field('price_type', $current_perkslist[2]->ID);   
+                      $html .= "</div>
+                            </div>
+                            <div class='pf-item-button'>
+                                <button onclick=\"window.open('".$top3_item_meta['button_link'][0]."', '_blank')\" class='btn-pink btn-rd'>".$top3_item_meta['button_text'][0]."</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
+    }
+          $html .= "</div>";
+
+          $html .= "<div class='img-right'>";
+                        if ($editor_image_2) {
+                            $html .= "<img class='top-right' src='".$editor_image_2."'>";
+                        } else {
+                            $html .= "<img class='top-right' src=''>";
+                        }
+    
+    if (isset($current_perkslist[1])) { 
+        $top2_item_meta = get_post_meta($current_perkslist[1]->ID);
+
+        $html .= "<div class='top-item'>
+                    <input type='hidden' id='h_top_".$current_perkslist[1]->ID."' class='prod' value='".$current_perkslist[1]->ID."' />
+                    <input type='hidden' id='h_top_".$category_id."' class='cat' value='".$category_id."' />
+                    <div class='pf-item-image'>
+                        <img src='".get_the_post_thumbnail_url($current_perkslist[1])."'>
+                    </div>
+                    <div class='pf-item-detail-container'>
+                        <div class='pf-item-detail'>
+                            <div class='pf-item-text'>
+                                <div class='item-title'><b>".$top2_item_meta['perk_name'][0]."</b></div>
+                                <div class='item-desc'>";
+                                    $html .= $top2_item_meta['perk_detail'][0]; 
+                      $html .= "</div>
+                                <div class='item-price'>";
+                                    $html .= $top2_item_meta['currency_symbol'][0].$top2_item_meta['price'][0]."/".get_field('price_type', $current_perkslist[1]->ID);   
+                      $html .= "</div>
+                            </div>
+                            <div class='pf-item-button'>
+                                <button onclick=\"window.open('".$top2_item_meta['button_link'][0]."', '_blank')\" class='btn-pink btn-rd'>".$top2_item_meta['button_text'][0]."</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
+    }
+
+    if (isset($current_perkslist[3])) { 
+        $top4_item_meta = get_post_meta($current_perkslist[3]->ID);
+            
+        $html .= "<div class='top-item'>
+                    <input type='hidden' id='h_top_".$current_perkslist[3]->ID."' class='prod' value='".$current_perkslist[3]->ID."' />
+                    <input type='hidden' id='h_top_".$category_id."' class='cat' value='".$category_id."' />
+                    <div class='pf-item-image'>
+                        <img src='".get_the_post_thumbnail_url($current_perkslist[3])."'>
+                    </div>
+                    <div class='pf-item-detail-container'>
+                        <div class='pf-item-detail'>
+                            <div class='pf-item-text'>
+                                <div class='item-title'><b>".$top4_item_meta['perk_name'][0]."</b></div>
+                                <div class='item-desc'>";
+                                    $html .= $top4_item_meta['perk_detail'][0]; 
+                    $html .= "</div>
+                                <div class='item-price'>";
+                                    $html .= $top4_item_meta['currency_symbol'][0].$top4_item_meta['price'][0]."/".get_field('price_type', $current_perkslist[3]->ID);   
+                    $html .= "</div>
+                            </div>
+                            <div class='pf-item-button'>
+                                <button onclick=\"window.open('".$top4_item_meta['button_link'][0]."', '_blank')\" class='btn-pink btn-rd'>".$top4_item_meta['button_text'][0]."</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
+    }
+            
+          $html .= "</div>
+                </div>
+                <hr/>
+                <div class='item-list-container'>
+                    <div id='perkstore_left' class='arrow'>
+                        <img src='".get_template_directory_uri()."/img/ico/ico-webarrow-left.png'>
+                    </div>
+                    <div class='item-content'>
+                        <div class='row'>";
+            
+    foreach($current_perkslist as $i => $item) {
+        $item_thumb_url = get_the_post_thumbnail_url($item);
+        $item_meta = get_post_meta($item->ID);
+        if ($i % 3 == 0) {
+
+                  $html .= "<div class='item'>
+                                <input type='hidden' id='h_".$item->ID."' class='prod' value='".$item->ID."' />
+                                <input type='hidden' id='h_".$category_id."' class='cat' value='".$category_id."' />
+                                <div class='pf-item-image'>
+                                    <img src='".$item_thumb_url."'>
+                                </div>
+                                <div class='pf-item-detail-container'>
+                                    <div class='pf-item-detail'>
+                                        <div class='pf-item-text'>
+                                            <div class='item-title'><b>".$item_meta['perk_name'][0]."</b></div>
+                                            <div class='item-desc'>".$item_meta['perk_detail'][0]."</div>
+                                            <div class='item-price'>".$item_meta['currency_symbol'][0].$item_meta['price'][0]."/".get_field('price_type', $item->ID)."</div>
+                                        </div>
+                                        <div class='pf-item-button'>
+                                            <button onclick=\"window.open('".$item_meta['button_link'][0]."', '_blank')\" class='btn-pink btn-rd'>".$item_meta['button_text'][0]."</button>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                </div>
+                            </div>";
+        }
+    }
+    
+              $html .= "</div>
+                        <div class='row'>";
+    foreach($current_perkslist as $i => $item) {
+        $item_thumb_url = get_the_post_thumbnail_url($item);
+        $item_meta = get_post_meta($item->ID);
+        if ($i % 3 == 1) {
+
+                    $html .= "<div class='item'>
+                                <input type='hidden' id='h_".$item->ID."' class='prod' value='".$item->ID."' />
+                                <input type='hidden' id='h_".$category_id."' class='cat' value='".$category_id."' />
+                                <div class='pf-item-image'>
+                                    <img src='".$item_thumb_url."'>
+                                </div>
+                                <div class='pf-item-detail-container'>
+                                    <div class='pf-item-detail'>
+                                        <div class='pf-item-text'>
+                                            <div class='item-title'><b>".$item_meta['perk_name'][0]."</b></div>
+                                            <div class='item-desc'>".$item_meta['perk_detail'][0]."</div>
+                                            <div class='item-price'>".$item_meta['currency_symbol'][0].$item_meta['price'][0]."/".get_field('price_type', $item->ID)."</div>
+                                        </div>
+                                        <div class='pf-item-button'>
+                                            <button onclick=\"window.open('".$item_meta['button_link'][0]."', '_blank')\" class='btn-pink btn-rd'>".$item_meta['button_text'][0]."</button>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                </div>
+                            </div>
+                            <div class='item'>
+                            </div>";
+        }
+    }        
+              $html .= "</div>
+                        <div class='row'>";
+    
+    foreach($current_perkslist as $i => $item) {
+        $item_thumb_url = get_the_post_thumbnail_url($item);
+        $item_meta = get_post_meta($item->ID);
+        if ($i % 3 == 2) {
+
+                    $html .= "<div class='item'>
+                                <input type='hidden' id='h_".$item->ID."' class='prod' value='".$item->ID."' />
+                                <input type='hidden' id='h_".$category_id."' class='cat' value='".$category_id."' />
+                                <div class='pf-item-image'>
+                                    <img src='".$item_thumb_url."'>
+                                </div>
+                                <div class='pf-item-detail-container'>
+                                    <div class='pf-item-detail'>
+                                        <div class='pf-item-text'>
+                                            <div class='item-title'><b>".$item_meta['perk_name'][0]."</b></div>
+                                            <div class='item-desc'>".$item_meta['perk_detail'][0]."</div>
+                                            <div class='item-price'>".$item_meta['currency_symbol'][0].$item_meta['price'][0]."/".get_field('price_type', $item->ID)."</div>
+                                        </div>
+                                        <div class='pf-item-button'>
+                                            <button onclick=\"window.open('".$item_meta['button_link'][0]."', '_blank')\" class='btn-pink btn-rd'>".$item_meta['button_text'][0]."</button>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                </div>
+                            </div>
+                            <div class='item'>
+                            </div>
+                            <div class='item'>
+                            </div>";
+        }
+    }
+            
+              $html .= "</div>
+                    </div>
+                    <div id='perkstore_right' class='arrow'>
+                        <img src='".get_template_directory_uri()."/img/ico/ico-webarrow-right.png'>
+                    </div>
+                </div>
+            </div>
+            <div class='item-detail-content-container hidden'>
+                <div class='item-detail'>
+                    <div class='item-detail-image'>
+                        <img src=''>
+                    </div>
+                    <div class='item-detail-text'>
+                        <div class='pf-item-text'>
+                            <div class='item-title'><b></b></div>
+                            <div class='item-desc'></div>
+                            <div class='item-provide'><a href=''></a></div>
+                        </div>
+                        <div class='pf-item-button'>
+                            <button class='btn-pink btn-rd'></button>
+                            <div class='item-price'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='item-cosmetic-image-container'>
+                    <div id='item_left' class='arrow'>
+                        <img src='".get_template_directory_uri()."/img/ico/ico-webarrow-left.png'>
+                    </div>
+                    <div class='item-image-content'>
+                        <div class='image-list'>
+                            <div class='image-item'>
+                                <img id='item1' src=''>
+                            </div>
+                            <div class='image-item'>
+                                <img id='item2' src=''>
+                            </div>
+                            <div class='image-item'>
+                                <img id='item3' src=''>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='item_right' class='arrow'>
+                        <img src='".get_template_directory_uri()."/img/ico/ico-webarrow-right.png'>
+                    </div>
+                </div>
+                <hr/>
+                <div class='item-support-device'>
+                    <div class='left'>
+                        <b>Supported Devices:</b>
+                    </div>
+                    <div class='right'>
+                        <a href='' class='item-link' target='_blank'>
+                        Show All
+                        </a>
+                    </div>
+                </div>
+                <hr/>
+                <div class='item-helpful-link'>
+                    <div class='item-title'>
+                        <b>Helpful Information</b>
+                    </div>
+                    <div class='item-link'>
+                        <a href='' id='helpful1' target='_blank'></a>
+                    </div>
+                    <div class='item-link'>
+                        <a href='' id='helpful2' target='_blank'></a>
+                    </div>
+                </div>
+            </div>";
+
+    $response = new WP_REST_Response($html);
+    $response->set_status(200);
     return $response;
 }
 
