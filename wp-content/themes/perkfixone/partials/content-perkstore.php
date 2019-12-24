@@ -859,7 +859,8 @@ foreach ($parent_categories as $i=>$category) {
     });
 
     // web app back button
-    $(".w-btn-back").on("click", function() {
+    //$(".w-btn-back").on("click", function() {
+    $(document).on("click", ".w-btn-back", function() {
       $(".item-content-container").removeClass("hidden");
       $(".d-btn-back").addClass("hidden");
       $(".item-detail-content-container").addClass("hidden");
