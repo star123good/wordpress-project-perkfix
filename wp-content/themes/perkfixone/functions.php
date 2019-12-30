@@ -53,9 +53,22 @@ function get_search_results($request) {
     $keyword = '%'.$wpdb->esc_like(stripslashes($request['keyword'])).'%';
     $sql = "SELECT * FROM $wpdb->posts WHERE post_title LIKE %s AND post_type='perks' AND post_status = 'publish'";
     $sql = $wpdb->prepare($sql, $keyword);
-    $results = $wpdb->get_results($sql);
+    $post_results = $wpdb->get_results($sql);
+    
+    $tag_query = array( 'tag' => $keyword, 'post_type' => 'perks' );
+    $tag_results = get_posts( $tag_query );
 
-    $response = new WP_REST_Response($results);
+    $results = array_merge($post_results, $tag_results);
+
+    $html = "";
+
+    // if no result
+    if (count($results) == 0) {
+        $html .= "<h2>No results</h2>";
+    } else if (count($results) > 0) {
+        $html .= "<h2>Results</h2>";
+    }
+    $response = new WP_REST_Response($html);
     $response->set_status(200);
 
     return $response;
@@ -88,8 +101,11 @@ function get_product_list($request) {
                         <input type='text' id='pf_search' placeholder='Search for perks like “Stadia”' />
                     </div>
                     <div class='td submit'>
-                        <button type='submit'>
+                        <button type='button' class='search' id='btn_search'>
                             <img src='".get_template_directory_uri()."/img/ico/ico-search-perkstore.png'>
+                        </button>
+                        <button type='button' class='close hidden' id='btn_close'>
+                            <img src='".get_template_directory_uri()."/img/ico/ico-search-close.png'>
                         </button>
                     </div>
                 </div>
@@ -399,6 +415,9 @@ function get_product_list($request) {
                         <a href='' id='helpful2' target='_blank'></a>
                     </div>
                 </div>
+            </div>
+            <div class='item-search-content-container hidden'>
+            Search Results
             </div>";
 
     $response = new WP_REST_Response($html);

@@ -447,6 +447,9 @@ foreach ($parent_categories as $i=>$category) {
           </div>
         </div>
       </div>
+      <div class="item-search-content-container hidden">
+      Search Result
+      </div>
     </div>
   </div>
   <div class="mobile-flex perkfix-store-search">
@@ -978,12 +981,17 @@ foreach ($parent_categories as $i=>$category) {
 
         var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/search-results';
 
+        $(".item-content-container").addClass("hidden");
+        $(".item-detail-content-container").addClass("hidden");
+        $(".item-search-content-container").removeClass("hidden");
+        $(".d-btn-back").addClass("hidden");
+
         $.ajax({
           url: endpoint,
           method: 'POST',
           data: {'keyword': keyword},
         }).done(function(response){
-          console.log('search result');
+          $(".item-search-content-container").html(response);
         }).fail(function(response){
           // Show error message
           alert(response.responseJSON.message);
