@@ -167,9 +167,8 @@
 
     $.fn.autoComplete.defaults = {
         source: 0,
-        minChars: 3,
+        minChars: 1,
         delay: 150,
-        cache: 1,
         menuClass: '',
         renderItem: function (item, search) {
             // escape special characters

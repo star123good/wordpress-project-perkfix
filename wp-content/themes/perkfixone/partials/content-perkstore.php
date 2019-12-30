@@ -138,8 +138,11 @@ foreach ($parent_categories as $i=>$category) {
             <input type="text" id="pf_search" placeholder="Search for perks like “Stadia”" />
           </div>
           <div class="td submit">
-            <button type="button" class="search">
+            <button type="button" class="search" id="btn_search">
               <img src="<?php bloginfo('template_url'); ?>/img/ico/ico-search-perkstore.png">
+            </button>
+            <button type="button" class="close hidden" id="btn_close">
+              <img src="<?php bloginfo('template_url'); ?>/img/ico/ico-search-close.png">
             </button>
           </div>
         </div>
@@ -452,8 +455,11 @@ foreach ($parent_categories as $i=>$category) {
         <input type="text" id="pf_mobile_search" placeholder="Search for perks like “Stadia”" />
       </div>
       <div class="td submit">
-        <button type="button" class="search">
+        <button type="button" class="search" id="mb_btn_search">
           <img src="<?php bloginfo('template_url'); ?>/img/ico/ico-search-perkstore.png">
+        </button>
+        <button type="button" class="close hidden" id="mb_btn_close">
+          <img src="<?php bloginfo('template_url'); ?>/img/ico/ico-search-close.png">
         </button>
       </div>
     </div>
@@ -772,11 +778,11 @@ foreach ($parent_categories as $i=>$category) {
   </div>
   <script type="text/javascript">
     $(function() {
-      var currentPos = <?php echo $current_pos; ?>;
       var currentID = <?php echo $current_category_id ?>;
       
       if (currentID > 0) {
-        $(document).scrollTop($('.perkfix-content-category').offset().top - 20);
+        var nScrollTop = $('.perkfix-content-category').offset().top - 20;
+        $("html, body").animate({scrollTop: nScrollTop+"px"},500);
       }
 
       $(".category-item").each(function(index) {
@@ -955,8 +961,19 @@ foreach ($parent_categories as $i=>$category) {
       });
     });
 
-    $(document).on('keyup', ".pf-search input", function (e) {
+    $(document).on('keyup', ".pf-search input", function(e) {
+      var nLen = $(this).val().length;
+
+      if (nLen > 0) {
+        $(".search").addClass("hidden");
+        $(".close").removeClass("hidden");
+      } else {
+        $(".search").removeClass("hidden");
+        $(".close").addClass("hidden");
+      }
+
       if (e.keyCode === 13) {
+
         var keyword = $(this).val();
 
         var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/search-results';
@@ -966,6 +983,7 @@ foreach ($parent_categories as $i=>$category) {
           method: 'POST',
           data: {'keyword': keyword},
         }).done(function(response){
+          console.log('search result');
         }).fail(function(response){
           // Show error message
           alert(response.responseJSON.message);
@@ -973,5 +991,11 @@ foreach ($parent_categories as $i=>$category) {
           // e.g. Remove 'loading' class
         });
       }
+    });
+
+    $(document).on("click", ".close", function() {
+      $(".pf-search input").val("");
+      $(".search").removeClass("hidden");
+      $(".close").addClass("hidden");
     });
   </script>
