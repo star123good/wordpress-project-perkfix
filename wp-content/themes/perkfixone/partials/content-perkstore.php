@@ -818,6 +818,7 @@ foreach ($parent_categories as $i=>$category) {
     // mobile
     //$(".pf-item").on("click", function() {
     $(document).on("click", ".pf-item", function() {
+      alert('asdf');
       var itemID = $(this).children("input[type=hidden].prod").val();
       var catID = $(this).children("input[type=hidden].cat").val();
 
