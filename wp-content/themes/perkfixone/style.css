@@ -2121,6 +2121,12 @@ body .perkfix-container .perkfix-content-item .item-detail-content-container .it
 body .perkfix-container .perkfix-content-item .item-detail-content-container .item-helpful-link .item-link a {
   color: #0091ff;
 }
+body .perkfix-container .perkfix-content-item .item-search-content-container {
+  width: 100%;
+  min-width: 500px;
+  border-style: solid;
+  overflow-y: scroll;
+}
 body .footer {
   padding: 33px 17% 100px 17%;
   background-color: black;

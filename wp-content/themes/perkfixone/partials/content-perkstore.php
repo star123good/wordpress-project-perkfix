@@ -779,6 +779,7 @@ foreach ($parent_categories as $i=>$category) {
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri().'/js/mysite.js'; ?>"></script>
   <script type="text/javascript">
     $(function() {
       var currentID = <?php echo $current_category_id ?>;
@@ -794,6 +795,9 @@ foreach ($parent_categories as $i=>$category) {
           $(this).children(".right-item").addClass("selected");
         }
       });
+
+      nHeight = $(".perkfix-content-item").height() - 60;
+      $(".item-search-content-container").height(nHeight);
     });
 
     //$(".category-item").on("click", function() {
@@ -985,12 +989,14 @@ foreach ($parent_categories as $i=>$category) {
         $(".item-detail-content-container").addClass("hidden");
         $(".item-search-content-container").removeClass("hidden");
         $(".d-btn-back").addClass("hidden");
+        $(".autocomplete-suggestions").css("display", "none");
 
         $.ajax({
           url: endpoint,
           method: 'POST',
           data: {'keyword': keyword},
         }).done(function(response){
+          console.log(response);
           $(".item-search-content-container").html(response);
         }).fail(function(response){
           // Show error message

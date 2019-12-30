@@ -2221,6 +2221,13 @@ body {
           }
         }
       }
+      .item-search-content-container {
+        width: 100%;
+        min-width: 500px;
+        //height: calc(-70px + 100%);
+        border-style: solid;
+        overflow-y: scroll;
+      }
     }
   }
 
