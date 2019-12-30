@@ -817,8 +817,7 @@ foreach ($parent_categories as $i=>$category) {
 
     // mobile
     //$(".pf-item").on("click", function() {
-    $(document).on("click", ".pf-item", function() {
-      alert('asdf');
+    $(document).on("click touchstart", ".pf-item", function() {
       var itemID = $(this).children("input[type=hidden].prod").val();
       var catID = $(this).children("input[type=hidden].cat").val();
 
@@ -859,7 +858,7 @@ foreach ($parent_categories as $i=>$category) {
 
     // mobile back button  
     //$(".btn-back").on("click", function() {
-    $(document).on("click", ".btn-back", function() {
+    $(document).on("click touchstart", ".btn-back", function() {
       $(".perkfix-store-categories").removeClass("hidden");
       $(".product-detail").addClass("hidden");
     });
@@ -994,7 +993,7 @@ foreach ($parent_categories as $i=>$category) {
       }
     });
 
-    $(document).on("click", ".close", function() {
+    $(document).on("click touchstart", ".close", function() {
       $(".pf-search input").val("");
       $(".search").removeClass("hidden");
       $(".close").addClass("hidden");
