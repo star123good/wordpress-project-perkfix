@@ -796,7 +796,7 @@ foreach ($parent_categories as $i=>$category) {
         }
       });
 
-      nHeight = $(".perkfix-content-item").height() - 60;
+      var nHeight = $(".perkfix-content-item").height() - 60;
       $(".item-search-content-container").height(nHeight);
     });
 
@@ -998,6 +998,8 @@ foreach ($parent_categories as $i=>$category) {
         }).done(function(response){
           console.log(response);
           $(".item-search-content-container").html(response);
+          var nHeight = $(".perkfix-content-item").height() - 60;
+          $(".item-search-content-container").height(nHeight);
         }).fail(function(response){
           // Show error message
           alert(response.responseJSON.message);
