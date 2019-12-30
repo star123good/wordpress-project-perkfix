@@ -33,19 +33,16 @@ $(window).on('resize', function(){
 
 //$("#perkstore_left").on("click", function() {
 $(document).on("click", "#perkstore_left", function() {
-    console.log('left');
     $(".item-content").animate({scrollLeft: "-=250px"}, 300);
 });
 
 //$("#perkstore_right").on("click", function() {
 $(document).on("click", "#perkstore_right", function() {
-    console.log('right');
     $(".item-content").animate({scrollLeft: "+=250px"}, 300);
 });
 
 //$("#item_left").on("click", function() {
 $(document).on("click", "#item_left", function() {
-    console.log('left');
     var width = $(".image-item").width()+20;
     var currentMarginLeft = parseInt($(".image-list").css("marginLeft").replace('px', ''));
     if (currentMarginLeft < 0)
@@ -54,7 +51,6 @@ $(document).on("click", "#item_left", function() {
 
 //$("#item_right").on("click", function() {
 $(document).on("click", "#item_right", function() {
-    console.log('right');
     var width = $(".image-item").width()+20;
     var currentMarginLeft = parseInt($(".image-list").css("marginLeft").replace('px', ''));
     if (currentMarginLeft == 0)
@@ -149,11 +145,9 @@ function sub_arrow_up() {
     var prev_margin = parseInt($(".sub-ico-content").css('margin-top'));
     if (prev_margin < -80) {
         var current_margin = prev_margin + 80;
-        console.log(prev_margin);
         $(".sub-ico-content").animate({marginTop: "+=80"}, 300);
     } else {
         var current_margin = 0;
-        console.log(prev_margin);
         $(".sub-ico-content").animate({marginTop: current_margin}, 300);
     }
 }
@@ -162,7 +156,6 @@ function sub_arrow_down() {
     var prev_margin = parseInt($(".sub-ico-content").css('margin-top'));
     var top_margin = parseInt($(".inner").css('height')) - parseInt($(".sub-ico-content").css('height'));
     if (prev_margin > top_margin+80) {
-        console.log(prev_margin, ";", top_margin);
         var current_margin = prev_margin - 80;
         $(".sub-ico-content").animate({marginTop: "-=80"}, 300);
     } else {
@@ -226,7 +219,6 @@ $(".perkfix-category").on("touchend", function(e) {
     if ((deltaX < -20) && current_offset > -limit) {
         $(this).children(".row").animate({marginLeft: "-="+step}, 500);
     } else if ((deltaX > 20) && current_offset < 0) {
-        console.log(limit+current_offset);
         var step1 = $(".pf-item").width();
         $(this).children(".row").animate({marginLeft: "+="+step}, 500);
     }

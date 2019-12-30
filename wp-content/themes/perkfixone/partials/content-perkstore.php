@@ -389,7 +389,7 @@ foreach ($parent_categories as $i=>$category) {
             <div class="pf-item-text">
               <div class="item-title"><b></b></div>
               <div class="item-desc"></div>
-              <div class="item-provide"><a href=""></a></div>
+              <div class="item-provide"><a href="">Provider Website</a></div>
             </div>
             <div class="pf-item-button">
               <button class="btn-pink btn-rd"></button>
@@ -732,10 +732,11 @@ foreach ($parent_categories as $i=>$category) {
               <div class="pf-item-text">
                 <div class="item-title"><b></b></div>
                 <div class="item-desc"></div>
-                <div class="item-price"></div>
+                <div class='item-provide'><a href='' target='_blank'>Provider Website</a></div>
               </div>
               <div class="pf-item-button">
                 <button onclick="#" class="btn-pink btn-rd"></button>
+                <div class="item-price"></div>
               </div>
             </div>
           </div>
@@ -775,7 +776,6 @@ foreach ($parent_categories as $i=>$category) {
       var currentID = <?php echo $current_category_id ?>;
       
       if (currentID > 0) {
-        console.log($('.perkfix-content-category').offset().top);
         $(document).scrollTop($('.perkfix-content-category').offset().top - 20);
       }
 
@@ -800,7 +800,6 @@ foreach ($parent_categories as $i=>$category) {
         url: endpoint,
         method: 'GET'
       }).done(function(response){
-        console.log(response);
         $('.perkfix-content-item').html(response);
       }).fail(function(response){
         // Show error message
@@ -822,13 +821,12 @@ foreach ($parent_categories as $i=>$category) {
         url: endpoint,
         method: 'GET'
       }).done(function(response){
-        console.log(response);
         $(".product-detail .category-title .left img").attr("src", response['icon_image_url']);
         $(".product-detail .category-title .left b").html(response['cat_name']);
         $(".product-detail .perkfix-category .pf-item-image img").attr("src", response['product_image_url']);
         $(".product-detail .perkfix-category .pf-item-text .item-title b").html(response['perk_name']);
         $(".product-detail .perkfix-category .item-desc").html(response['perk_detail']);
-        //$(".item-detail-content-container .item-provide a").attr("href", response['provider_website_link']);
+        $(".product-detail .perkfix-category .item-provide a").attr("href", response['provider_website_link']);
         $(".product-detail .perkfix-category .pf-item-button button").html(response['button_text']);
         $(".product-detail .perkfix-category .pf-item-button button").attr("onclick", "window.open('"+response['button_link']+"', '_blank')");
         $(".product-detail .perkfix-category .item-price").html(response['currency_symbol']+response['price']+'/'+response['price_type']);
@@ -878,10 +876,6 @@ foreach ($parent_categories as $i=>$category) {
 
       var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
 
-      console.log('top item');
-      console.log("item-id", itemID);
-      console.log("category-id", catID);
-
       $(".item-content-container").addClass("hidden");
       $(".item-detail-content-container").removeClass("hidden");
       $(".d-btn-back").removeClass("hidden");
@@ -893,7 +887,6 @@ foreach ($parent_categories as $i=>$category) {
         url: endpoint,
         method: 'GET'
       }).done(function(response){
-        console.log(response);
         $(".item-detail-content-container .item-detail-image img").attr("src", response['product_image_url']);
         $(".item-detail-content-container .pf-item-text .item-title b").html(response['perk_name']);
         $(".item-detail-content-container .item-desc").html(response['perk_detail']);
@@ -926,9 +919,6 @@ foreach ($parent_categories as $i=>$category) {
 
       var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
 
-      console.log('item');
-      console.log("item-id", itemID);
-      console.log("category-id", catID);
 
       $(".item-content-container").addClass("hidden");
       $(".item-detail-content-container").removeClass("hidden");
@@ -976,7 +966,6 @@ foreach ($parent_categories as $i=>$category) {
           method: 'POST',
           data: {'keyword': keyword},
         }).done(function(response){
-          console.log(response);
         }).fail(function(response){
           // Show error message
           alert(response.responseJSON.message);

@@ -63,6 +63,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+body #wellness, body #fitness, body #commuter, body #training, body #lifestyle {
+  cursor: pointer;
+}
 body .search:hover {
   cursor: pointer;
 }
@@ -2443,7 +2446,7 @@ body .footer-menu .menu-description .terms a {
     margin-bottom: 10px;
   }
   .perkfix-store-categories .perkfix-category .row .pf-item {
-    width: calc(-60px + 100vw);
+    width: calc(-45px + 100vw);
     display: flex;
     justify-content: flex-start;
   }
@@ -2583,9 +2586,13 @@ body .footer-menu .menu-description .terms a {
     font-family: SFProText-Light;
     font-size: 0.8125rem;
   }
-  .product-detail .perkfix-category .row .pf-item1 .pf-item-detail .pf-item-text .item-price {
+  .product-detail .perkfix-category .row .pf-item1 .pf-item-detail .pf-item-text .item-provide {
     font-family: SFProText-Light;
     font-size: 0.8125rem;
+  }
+  .product-detail .perkfix-category .row .pf-item1 .pf-item-detail .pf-item-text .item-provide a {
+    color: #006aff;
+    text-decoration: none;
   }
   .product-detail .perkfix-category .row .pf-item1 .pf-item-detail .pf-item-button {
     display: flex;
@@ -2609,6 +2616,11 @@ body .footer-menu .menu-description .terms a {
     padding: 5px 8px;
     outline: none;
   }
+  .product-detail .perkfix-category .row .pf-item1 .pf-item-detail .pf-item-button .item-price {
+    font-family: SFProText-Light;
+    font-size: 0.8125rem;
+    text-align: center;
+  }
   .product-detail .perkfix-category .pick-image-container {
     display: flex;
     justify-content: space-between;
@@ -2621,11 +2633,11 @@ body .footer-menu .menu-description .terms a {
   }
   .product-detail .perkfix-category .pick-image-container .item-image-content .image-list {
     display: flex;
-    width: 300%;
+    width: 285%;
   }
   .product-detail .perkfix-category .pick-image-container .item-image-content .image-list .image-item {
-    width: 100%;
-    padding: 10px;
+    width: 95%;
+    padding: 1px;
   }
   .product-detail .perkfix-category .pick-image-container .item-image-content .image-list .image-item img {
     width: 100%;
@@ -3089,7 +3101,7 @@ body .footer-menu .menu-description .terms a {
     margin-bottom: 10px;
   }
   .perkfix-store-categories .perkfix-category .row .pf-item {
-    width: calc(-60px + 100vw);
+    width: calc(-45px + 100vw);
     display: flex;
     justify-content: flex-start;
   }
@@ -3451,7 +3463,7 @@ body .footer-menu .menu-description .terms a {
     margin-bottom: 10px;
   }
   .perkfix-store-categories .perkfix-category .row .pf-item {
-    width: calc(-60px + 100vw);
+    width: calc(-45px + 100vw);
     display: flex;
     justify-content: flex-start;
   }

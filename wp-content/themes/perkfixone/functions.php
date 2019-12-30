@@ -346,7 +346,7 @@ function get_product_list($request) {
                         <div class='pf-item-text'>
                             <div class='item-title'><b></b></div>
                             <div class='item-desc'></div>
-                            <div class='item-provide'><a href=''></a></div>
+                            <div class='item-provide'><a href='' target='_blank'>Provider Website</a></div>
                         </div>
                         <div class='pf-item-button'>
                             <button class='btn-pink btn-rd'></button>

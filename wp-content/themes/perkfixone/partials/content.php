@@ -252,7 +252,7 @@
         <p><span class="bold-title">Lifestyle</span> | Perks</p>
       </div>
       <div class="content-link">
-        <a href="#">More lifestyle perks  ></a>
+        <a href="<?php echo home_url('/perkstore');?>?category_id=15">More lifestyle perks  ></a>
         <a href="#">Start Trial  ></a>
       </div>
     </div>

@@ -65,6 +65,10 @@ body {
   display: flex;
   flex-direction: column;
 
+  #wellness, #fitness, #commuter, #training, #lifestyle {
+    cursor: pointer;
+  }
+
   .search:hover {
     cursor: pointer;
   }
@@ -2584,7 +2588,7 @@ body {
         display: inline-flex;
         margin-bottom: 10px;
         .pf-item {
-          width: calc(-60px + 100vw);
+          width: calc(-45px + 100vw);
           display: flex;
           justify-content: flex-start;
           .pf-item-image {
@@ -2723,10 +2727,15 @@ body {
                 font-family: SFProText-Light;
                 font-size: 0.8125rem;
               }
-              .item-price {
+              .item-provide {
                 font-family: SFProText-Light;
                 font-size: 0.8125rem;
+                a {
+                  color: rgba(0, 106, 255, 1);
+                  text-decoration: none;
+                }
               }
+              
             }
             .pf-item-button {
               display: flex;
@@ -2749,6 +2758,11 @@ body {
                 padding: 5px 8px;
                 outline: none;
               }
+              .item-price {
+                font-family: SFProText-Light;
+                font-size: 0.8125rem;
+                text-align: center;
+              }
             }
           }
         }
@@ -2763,10 +2777,10 @@ body {
           overflow-x: scroll;
           .image-list {
             display: flex;
-            width: 300%;
+            width: 285%;
             .image-item {
-              width: 100%;
-              padding: 10px;
+              width: 95%;
+              padding: 1px;
               img {
                 width: 100%;
               }
@@ -3249,7 +3263,7 @@ body {
         display: inline-flex;
         margin-bottom: 10px;
         .pf-item {
-          width: calc(-60px + 100vw);
+          width: calc(-45px + 100vw);
           display: flex;
           justify-content: flex-start;
           .pf-item-image {
@@ -3622,7 +3636,7 @@ body {
         display: inline-flex;
         margin-bottom: 10px;
         .pf-item {
-          width: calc(-60px + 100vw);
+          width: calc(-45px + 100vw);
           display: flex;
           justify-content: flex-start;
           .pf-item-image {

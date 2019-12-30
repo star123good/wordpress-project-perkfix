@@ -17,6 +17,10 @@ wp-content/themes/twenty*/
 # ignore node dependency directories
 node_modules/
 
+# ignore backup directories
+dbbackup/
+perkfix-uploads-backup/
+
 # ignore log files and databases
 *.log
 *.sql
