@@ -61,59 +61,56 @@ function get_search_results($request) {
     $results = array_merge($post_results, $tag_results);
 
     $html = "";
+    $cat_id = '';
 
     // if no result
     if (count($results) == 0) {
         $html .= "<h2>No results</h2>";
     } else if (count($results) > 0) {
-        //<div class="item-detail">
-//         <div class="item-detail-image">
-//         <img src="http://localhost/perkfix/wp-content/uploads/2019/12/audible-icon-24-3x.png">
-//     </div>
-//     <div class="item-detail-text">
-//         <div class="pf-item-text">
-//             <div class="item-title"><b>Audible</b></div>
-//             <div class="item-desc">Over 470,000 Audio Titles</div>
-//             <div class="item-provide"><a target="_blank">Provider Website</a></div>
-//         </div>
-//         <div class="pf-item-button">
-//             <button class="btn-pink btn-rd" onclick="window.open('https://www.amazon.com/ap/signin?clientContext=131-8053910-7132055&amp;openid.return_to=https%3A%2F%2Fwww.audible.com%2Fsubscription%2Fconfirmation%3Fref%3Da_ep_audibl_c0_member_cta%26membershipAsin%3DB003CV3S4E%26%3D&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=audible_shared_web_us&amp;openid.mode=checkid_setup&amp;marketPlaceId=AF2M0KC94RCEA&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;pageId=amzn_audible_bc_us&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.pape.max_auth_age=900&amp;siteState=audibleid.userType%3Damzn%2Caudibleid.mode%3Did_res%2CclientContext%3D143-5374534-1334951%2CsourceUrl%3Dhttps%253A%252F%252Fwww.audible.com%252Fsubscription%252Fconfirmation%253Fref%25253Da_ep_audibl_c0_member_cta%252526membershipAsin%25253DB003CV3S4E%252526%2Csignature%3DiJ4yiu0Fw7IOvRtj4s2Wrj2F1jQDoj3D', '_blank')">Activate</button>
-//             <div class="item-price">/null</div>
-//         </div>
-//     </div>
-// </div>
         foreach($results as $item) {
-            $perk_name = get_field('perk_name', $item->ID);
-            $perk_desc = get_field('perk_detail', $item->ID);
-            $provider_link = get_field('provider_website_link', $item->ID);
-            $button_link = get_field('button_link', $item->ID);
-            $button_text = get_field('button_text', $item->ID);
-            $price = get_field('price', $item->ID);
-            $currency_symbol = get_field('currency_symbol', $item->ID);
-            $price_type = get_field('price_type', $item->ID);
+            $category = get_the_category($item->ID);
+            if (count($category) > 0) {
+                $perk_name = get_field('perk_name', $item->ID);
+                $perk_desc = get_field('perk_detail', $item->ID);
+                $provider_link = get_field('provider_website_link', $item->ID);
+                $button_link = get_field('button_link', $item->ID);
+                $button_text = get_field('button_text', $item->ID);
+                $price = get_field('price', $item->ID);
+                $currency_symbol = get_field('currency_symbol', $item->ID);
+                $price_type = get_field('price_type', $item->ID);
+                $cosmetic_image = get_field('cosmetic_image_1', $item->ID);
 
-            $btn_link_text = "window.open('".$button_link."', '_blank')";
+                $btn_link_text = "window.open('".$button_link."', '_blank')";
             
-            $html .= "<div class='item-detail'>
-                        <div class='item-detail-image'>
-                            <img src='".get_the_post_thumbnail_url($item)."'>
+                $html .= "
+                    <div class='item'>
+                        <input type='hidden' id='sh_".$item->ID."' class='prod' value='".$item->ID."' />
+                        <input type='hidden' id='sh_".$category[0]->cat_ID."' class='cat' value='".$category[0]->cat_ID."' />
+                        <div class='item-detail'>
+                            <div class='item-detail-image'>
+                                <img src='".get_the_post_thumbnail_url($item)."'>
+                            </div>
+                            <div class='item-detail-text'>
+                                <div class='pf-item-text'>
+                                    <div class='item-title'>
+                                        <b>".$perk_name."</b>
+                                    </div>
+                                    <div class='item-desc'>".$perk_desc."</div>
+                                    <div class='item-provide'>
+                                        <a href='".$provider_link."' target='_blank'>Provider Website</a>
+                                    </div>
+                                </div>
+                                <div class='pf-item-button'>
+                                    <button class='btn-pink btn-rd' onclick=\"".$btn_link_text."\">".$button_text."</button>
+                                    <div class='item-price'>".$currency_symbol.$price."/".$price_type."</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class='item-detail-text'>
-                            <div class='pf-item-text'>
-                                <div class='item-title'>
-                                    <b>".$perk_name."</b>
-                                </div>
-                                <div class='item-desc'>".$perk_desc."</div>
-                                <div class='item-provide'>
-                                    <a href='".$provider_link."' target='_blank'>Provider Website</a>
-                                </div>
-                            </div>
-                            <div class='pf-item-button'>
-                                <button class='btn-pink btn-rd' onclick=\"".$btn_link_text."\">".$button_text."</button>
-                                <div class='item-price'>".$currency_symbol.$price."/".$price_type."</div>
-                            </div>
+                        <div class='item-cos-image'>
+                            <img src='".$cosmetic_image."'>
                         </div>
                     </div>";
+            }
         }
     }
     $response = new WP_REST_Response($html);

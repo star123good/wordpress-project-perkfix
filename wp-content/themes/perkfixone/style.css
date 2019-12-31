@@ -2124,10 +2124,80 @@ body .perkfix-container .perkfix-content-item .item-detail-content-container .it
   color: #0091ff;
 }
 body .perkfix-container .perkfix-content-item .item-search-content-container {
-  width: 100%;
-  min-width: 500px;
-  border-style: solid;
   overflow-y: scroll;
+  overflow-x: scroll;
+  padding-top: 10px;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-image {
+  padding: 10px;
+  margin-right: 10px;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-image img {
+  width: 90px;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-text {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-text .pf-item-text .item-title {
+  font-family: SFProText-Medium;
+  font-size: 0.875rem;
+  padding: 4px;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-text .pf-item-text .item-desc {
+  font-family: SFProText-Light;
+  font-size: 0.8125rem;
+  padding: 4px;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-text .pf-item-text .item-provide {
+  font-family: SFProText-Light;
+  font-size: 0.8125rem;
+  padding: 4px;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-text .pf-item-text .item-provide a {
+  color: #006aff;
+  text-decoration: none;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-text .pf-item-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: SFProText-Semibold;
+  font-size: 0.8125rem;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-text .pf-item-button .btn-pink {
+  color: white;
+  background-color: #ff338d;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-text .pf-item-button .btn-pink:hover {
+  color: white;
+  background-color: #ff1754;
+  cursor: pointer;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-text .pf-item-button .btn-rd {
+  border-style: none;
+  border-radius: 15px;
+  padding: 8px 10px;
+  outline: none;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-detail .item-detail-text .pf-item-button .item-price {
+  font-family: SFProText-Light;
+  font-size: 0.8125rem;
+  text-align: center;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-cos-image {
+  padding: 10px;
+  width: 300px;
+}
+body .perkfix-container .perkfix-content-item .item-search-content-container .item-cos-image img {
+  width: 100%;
 }
 body .footer {
   padding: 33px 17% 100px 17%;

@@ -935,6 +935,7 @@ foreach ($parent_categories as $i=>$category) {
 
       $(".item-content-container").addClass("hidden");
       $(".item-detail-content-container").removeClass("hidden");
+      $(".item-search-content-container").addClass("hidden");
       $(".d-btn-back").removeClass("hidden");
       $(".perkfix-container").css("background-color", "black");
       $(".perkfix-content-category").css("background-color", "#252525");
@@ -997,9 +998,12 @@ foreach ($parent_categories as $i=>$category) {
           data: {'keyword': keyword},
         }).done(function(response){
           console.log(response);
+          $(".perkfix-content-item .item-title-label").html('<h1>Results for "'+keyword+'"</h1>');
           $(".item-search-content-container").html(response);
           var nHeight = $(".perkfix-content-item").height() - 60;
+          var nWidth = $(".perkfix-content-item").width() - 30;
           $(".item-search-content-container").height(nHeight);
+          $(".item-search-content-container").height(nWidth);
         }).fail(function(response){
           // Show error message
           alert(response.responseJSON.message);
