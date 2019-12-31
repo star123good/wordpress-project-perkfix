@@ -1741,12 +1741,14 @@ body {
               img {
                 width: 12px;
                 height: 20px;
-                opacity: 0%;
+                opacity: 0;
+                filter: alpha(opacity=0);
               }
             }
             .selected {
               img {
-                opacity: 100%;
+                opacity: 1.0;
+                filter: alpha(opacity=100);
               }
             }
           }
