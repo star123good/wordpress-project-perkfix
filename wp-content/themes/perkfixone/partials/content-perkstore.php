@@ -824,9 +824,9 @@ foreach ($parent_categories as $i=>$category) {
 
     // mobile
     //$(".pf-item").on("click", function() {
-    $(document).on("click touchstart", ".pf-item", function() {
-      var itemID = $(this).children("input[type=hidden].prod").val();
-      var catID = $(this).children("input[type=hidden].cat").val();
+    $(document).on("click touchend", ".pf-item .pf-item-image img", function() {
+      var itemID = $(this).parent().siblings("input[type=hidden].prod").val();
+      var catID = $(this).parent().siblings("input[type=hidden].cat").val();
 
       var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
 
@@ -865,7 +865,7 @@ foreach ($parent_categories as $i=>$category) {
 
     // mobile back button  
     //$(".btn-back").on("click", function() {
-    $(document).on("click touchstart", ".btn-back", function() {
+    $(document).on("click touchend", ".btn-back", function() {
       $(".perkfix-store-categories").removeClass("hidden");
       $(".product-detail").addClass("hidden");
     });
@@ -1013,7 +1013,7 @@ foreach ($parent_categories as $i=>$category) {
       }
     });
 
-    $(document).on("click touchstart", ".close", function() {
+    $(document).on("click touchend", ".close", function() {
       $(".pf-search input").val("");
       $(".search").removeClass("hidden");
       $(".close").addClass("hidden");
