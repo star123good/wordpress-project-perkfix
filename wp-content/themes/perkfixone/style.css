@@ -1594,6 +1594,80 @@ body .aboutus-content .txt-content {
   border-radius: 25px;
   margin-bottom: 80px;
 }
+body .ourvalues-content .ourvalues-title-content {
+  background: url("img/img-our-values.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 280px;
+  height: 420px;
+  margin-bottom: 58px;
+}
+body .ourvalues-content .ourvalues-title-content .title {
+  text-align: center;
+  font-family: SFProText-Heavy;
+  font-size: 4.5rem;
+}
+body .ourvalues-content .ourvalues-part {
+  padding: 80px 15% 100px 15%;
+  height: 900px;
+  position: relative;
+}
+body .ourvalues-content .ourvalues-part hr {
+  width: 490px;
+  height: 6px;
+  border: none;
+}
+body .ourvalues-content .ourvalues-part .title {
+  font-family: SFProText-Bold;
+  font-size: 3.1875rem;
+}
+body .ourvalues-content .ourvalues-part .content {
+  font-family: SFProText-Light;
+  font-size: 2.25rem;
+}
+body .ourvalues-content .ourvalues-part .content1 {
+  font-family: SFProText-MediumItalic;
+  font-size: 2.25rem;
+}
+body .ourvalues-content .ourvalues-part .img {
+  position: absolute;
+  right: 15%;
+  bottom: 100px;
+}
+body .ourvalues-content .part1, body .ourvalues-content .part2, body .ourvalues-content .part3, body .ourvalues-content .part4 {
+  background-color: #fd345a;
+}
+body .ourvalues-content .part1 hr, body .ourvalues-content .part2 hr, body .ourvalues-content .part3 hr, body .ourvalues-content .part4 hr {
+  color: white;
+  /* old IE */
+  background-color: white;
+  /* Modern Browsers */
+}
+body .ourvalues-content .part1 .title, body .ourvalues-content .part2 .title, body .ourvalues-content .part3 .title, body .ourvalues-content .part4 .title {
+  color: white;
+}
+body .ourvalues-content .part1 .content, body .ourvalues-content .part2 .content, body .ourvalues-content .part3 .content, body .ourvalues-content .part4 .content {
+  color: white;
+}
+body .ourvalues-content .part1 .content1, body .ourvalues-content .part2 .content1, body .ourvalues-content .part3 .content1, body .ourvalues-content .part4 .content1 {
+  margin-top: 220px;
+  color: white;
+}
+body .ourvalues-content .part5 {
+  background-color: white;
+}
+body .ourvalues-content .part5 hr {
+  color: #ed4839;
+  background-color: #ed4839;
+}
+body .ourvalues-content .part5 .title {
+  color: black;
+}
+body .ourvalues-content .part5 .content {
+  color: black;
+}
 body .perkfix-container {
   width: calc(-60px + 100%);
   padding: 50px 30px 30px 30px;

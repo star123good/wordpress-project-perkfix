@@ -1681,6 +1681,80 @@ body {
       margin-bottom: 80px;
     }
   }
+  .ourvalues-content {
+    .ourvalues-title-content {
+      background: url('img/img-our-values.png') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      padding-top: 280px;
+      height: 420px;
+      margin-bottom: 58px;
+      .title {
+        text-align: center;
+        font-family: SFProText-Heavy;
+        font-size: 4.5rem;
+      }
+    }
+    .ourvalues-part {
+      padding: 80px 15% 100px 15%;
+      height: 900px;
+      position: relative;
+      hr {
+        width: 490px;
+        height: 6px;
+        border: none;
+      }
+      .title {
+        font-family: SFProText-Bold;
+        font-size: 3.1875rem;
+      }
+      .content {
+        font-family: SFProText-Light;
+        font-size: 2.25rem;
+      }
+      .content1 {
+        font-family: SFProText-MediumItalic;
+        font-size: 2.25rem;
+      }
+      .img {
+        position: absolute;
+        right: 15%;
+        bottom: 100px;
+      }
+    }
+    .part1, .part2, .part3, .part4 {
+      background-color: #fd345a;
+      hr {
+        color: white;    /* old IE */
+        background-color: white;     /* Modern Browsers */
+      }
+      .title {
+        color: white;
+      }
+      .content {
+        color: white;
+      }
+      .content1 {
+        margin-top: 220px;
+        color: white;
+      }
+    }
+    .part5 {
+      background-color: white;
+      hr {
+        color: #ed4839;
+        background-color: #ed4839;
+      }
+      .title {
+        color: black;
+      }
+      .content {
+        color: black;
+      }
+    }
+  }
   .perkfix-container {
     width: calc(-60px + 100%);
     padding: 50px 30px 30px 30px;

@@ -96,7 +96,7 @@
                     Contact Us
                 </div>
                 <div class="menu-item">
-                    Our Values
+                    <a href="<?php echo home_url('/ourvalues');?>">Our Values</a>
                 </div>
                 <div class="menu-item">
                     Resources
