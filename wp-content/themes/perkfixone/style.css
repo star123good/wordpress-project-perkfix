@@ -2475,9 +2475,10 @@ body .footer-menu .menu-description .terms a {
     font-size: 0.9375rem !important;
   }
   .perkfix-home18 .movie {
-    width: 100% !important;
+    width: auto !important;
     height: auto !important;
-    object-fit: cover;
+    max-width: 100% !important;
+    -ms-interpolation-mode: bicubic;
   }
 
   .header {

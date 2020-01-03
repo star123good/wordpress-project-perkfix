@@ -2617,9 +2617,10 @@ body {
       font-size: 0.9375rem !important;
     }
     .movie {
-      width: 100% !important;
+      width: auto !important;
       height: auto !important;
-      object-fit: cover;
+      max-width: 100% !important;
+      -ms-interpolation-mode: bicubic;
     }
   }
   .header {
