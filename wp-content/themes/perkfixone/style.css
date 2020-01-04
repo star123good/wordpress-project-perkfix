@@ -2474,11 +2474,8 @@ body .footer-menu .menu-description .terms a {
     padding-bottom: 20px !important;
     font-size: 0.9375rem !important;
   }
-  .perkfix-home18 .movie {
-    width: auto !important;
-    height: auto !important;
-    max-width: 100% !important;
-    -ms-interpolation-mode: bicubic;
+  .perkfix-home18 .movie-container img {
+    width: 100% !important;
   }
 
   .header {

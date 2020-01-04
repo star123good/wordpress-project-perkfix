@@ -2616,11 +2616,10 @@ body {
       padding-bottom: 20px !important;
       font-size: 0.9375rem !important;
     }
-    .movie {
-      width: auto !important;
-      height: auto !important;
-      max-width: 100% !important;
-      -ms-interpolation-mode: bicubic;
+    .movie-container {
+      img {
+        width: 100% !important;
+      }
     }
   }
   .header {
