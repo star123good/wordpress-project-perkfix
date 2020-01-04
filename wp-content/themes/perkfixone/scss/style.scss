@@ -2623,7 +2623,7 @@ body {
         img {
           margin: 0;
           width: 100% !important;
-          max-width: 100% !important;
+          min-height: 100px !important;
         }
       }
     }
