@@ -2470,10 +2470,10 @@ body .footer-menu .menu-description .terms a {
 }
 @media (max-width: 780px) {
   .perkfix-home18 {
-    width: 100%;
+    width: 100% !important;
   }
   .perkfix-home18 .content {
-    width: 100%;
+    width: 100% !important;
   }
   .perkfix-home18 .content .title {
     padding: 0px !important;
@@ -2481,6 +2481,7 @@ body .footer-menu .menu-description .terms a {
     font-size: 0.9375rem !important;
   }
   .perkfix-home18 .content .movie-container img {
+    margin: auto;
     width: 100% !important;
     height: auto !important;
   }

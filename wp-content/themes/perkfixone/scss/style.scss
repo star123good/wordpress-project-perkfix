@@ -2611,9 +2611,9 @@ body {
 
 @media (max-width: 780px) {
   .perkfix-home18 {
-    width: 100%;
+    width: 100% !important;
     .content {
-      width: 100%;
+      width: 100% !important;
       .title {
         padding: 0px !important;
         padding-bottom: 20px !important;
@@ -2621,6 +2621,7 @@ body {
       }
       .movie-container {
         img {
+          margin: auto;
           width: 100% !important;
           height: auto !important;
         }
