@@ -135,7 +135,7 @@ foreach ($parent_categories as $i=>$category) {
         </div>
         <div class="pf-search">
           <div class="td input">
-            <input type="text" id="pf_search" placeholder="Search for perks like “Stadia”" />
+            <input type="text" id="pf_search" placeholder="Search for perks like “ClassPass”" />
           </div>
           <div class="td submit">
             <button type="button" class="search" id="btn_search">
@@ -455,7 +455,7 @@ foreach ($parent_categories as $i=>$category) {
   <div class="mobile-flex perkfix-store-search">
     <div class="pf-search">
       <div class="td input">
-        <input type="text" id="pf_mobile_search" placeholder="Search for perks like “Stadia”" />
+        <input type="text" id="pf_mobile_search" placeholder="Search for perks like “ClassPass”" />
       </div>
       <div class="td submit">
         <button type="button" class="search" id="mb_btn_search">
