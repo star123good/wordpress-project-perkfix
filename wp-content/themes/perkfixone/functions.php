@@ -143,7 +143,7 @@ function get_product_list($request) {
                 </div>
                 <div class='pf-search'>
                     <div class='td input'>
-                        <input type='text' id='pf_search' placeholder='Search for perks like ClassPass' />
+                        <input type='text' id='pf_search' placeholder='Search for perks like “ClassPass”' />
                     </div>
                     <div class='td submit'>
                         <button type='button' class='search' id='btn_search'>
