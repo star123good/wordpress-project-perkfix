@@ -1817,7 +1817,7 @@ body .perkfix-container .perkfix-content-item .item-title-container .pf-search .
   padding-left: 15px;
 }
 body .perkfix-container .perkfix-content-item .item-title-container .pf-search .input input {
-  width: calc(-15px + 100%);
+  width: calc(-5px + 100%);
   height: 90%;
   outline: none;
   border-style: none;
@@ -2535,7 +2535,7 @@ body .footer-menu .menu-description .terms a {
     padding-left: 15px;
   }
   .perkfix-store-search .pf-search .input input {
-    width: calc(-15px + 100%);
+    width: calc(-5px + 100%);
     height: 90%;
     outline: none;
     border-style: none;
@@ -3190,7 +3190,7 @@ body .footer-menu .menu-description .terms a {
     padding-left: 15px;
   }
   .perkfix-store-search .pf-search .input input {
-    width: calc(-15px + 100%);
+    width: calc(-5px + 100%);
     height: 90%;
     outline: none;
     border-style: none;
@@ -3556,7 +3556,7 @@ body .footer-menu .menu-description .terms a {
     padding-left: 15px;
   }
   .perkfix-store-search .pf-search .input input {
-    width: calc(-15px + 100%);
+    width: calc(-5px + 100%);
     height: 90%;
     outline: none;
     border-style: none;
