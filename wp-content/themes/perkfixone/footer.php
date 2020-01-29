@@ -1,4 +1,21 @@
-            
+<?php 
+    global $wp; 
+    $uri = $wp->request;
+    $title = "";
+    if ($uri == "perkstore") {
+        $title = "Perk Store";
+    } else if ($uri == "platform") {
+        $title = "Platform";
+    } else if ($uri == "aboutus") {
+        $title = "About Us";
+    } else if ($uri == "ourvalues") {
+        $title = "Our Values";
+    } else if ($uri == "terms") {
+        $title = "Terms & Conditions";
+    } else {
+        $title = "Home Page";
+    }
+?>            
         </div>
         <div class="mobile footer">
             <div class="subfooter-container">
@@ -23,7 +40,7 @@
         </div>
         <div class="mobile footer-menu">
             <div class="menu-title">
-                <div><img class="logo" src="<?php bloginfo('template_url'); ?>/img/perkfix-green-logo-pf.png">&nbsp;<img class="arrow" src="<?php bloginfo('template_url'); ?>/img/img-left-arrow.png"></div>&nbsp;<div class="logo-label">Home Page</div>
+                <div><img class="logo" src="<?php bloginfo('template_url'); ?>/img/perkfix-green-logo-pf.png">&nbsp;<img class="arrow" src="<?php bloginfo('template_url'); ?>/img/img-left-arrow.png"></div>&nbsp;<div class="logo-label"><?php echo $title;?></div>
             </div>
             <div class="menu-items">
                 <div class="menu-item">
@@ -86,7 +103,7 @@
         </div>
         <div class="non-mobile footer-menu">
             <div class="menu-title">
-                <div><img class="logo" src="<?php bloginfo('template_url'); ?>/img/perkfix-green-logo-pf.png">&nbsp;<img class="arrow" src="<?php bloginfo('template_url'); ?>/img/img-left-arrow.png"></div>&nbsp;<div class="logo-label">Home Page</div>
+                <div><img class="logo" src="<?php bloginfo('template_url'); ?>/img/perkfix-green-logo-pf.png">&nbsp;<img class="arrow" src="<?php bloginfo('template_url'); ?>/img/img-left-arrow.png"></div>&nbsp;<div class="logo-label"><?php echo $title; ?></div>
             </div>
             <div class="menu-items">
                 <div class="menu-item">
