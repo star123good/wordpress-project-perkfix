@@ -2,10 +2,10 @@
 // Template name: Static Front Page
 ?>
   <div class="perkfix perkfix-home1">
-      <h1>Perks that redefine perks.</h1>
+      <h1>Say hello to happier,<br/> more productive teams.</h1>
       <div class="content-img">
         <!--<p class="title"><span>Watch the film</span>&nbsp;&nbsp;&nbsp;<a><i class="fas fa-play-circle"></i></a></p>-->
-        <img src="<?php bloginfo('template_url'); ?>/img/bbh-singapore-7-ux-yc-whwb-9-q-unsplash.jpg" class="">
+        <img src="<?php bloginfo('template_url'); ?>/img/img-hello-to-happier.png" class="">
       </div>
   </div>
   
