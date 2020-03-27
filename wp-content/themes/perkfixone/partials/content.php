@@ -9,7 +9,7 @@
       </div>
   </div>
   
-  <div class="perkfix perkfix-home2">
+  <!-- <div class="perkfix perkfix-home2">
     <div class="content2">
       <div>
         <h1>Work. Life.<br/>Balance.</h1>
@@ -53,7 +53,7 @@
           <img src="<?php bloginfo('template_url'); ?>/img/bitmap.jpg" class="stone">
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="perkfix perkfix-home3">
     <div class="header-home2">
       <h1>Their goals are your goals.</h1>
