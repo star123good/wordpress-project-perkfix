@@ -1147,15 +1147,144 @@ body {
     }
   }
 
+  // .perkfix-home10 {
+  //   width: 100%;
+  //   background-color: black;
+  //   .title {
+  //     color: white;
+  //     text-align: center;
+  //     h1 {
+  //       font-size: 50px;
+  //       font-family: SFProText-Heavy;
+  //     }
+  //   }
+  //   .content {
+  //     padding-top: 40px;
+  //     padding-left: 200px;
+  //     color: #3a3a3a;
+  //     font-family: SFProText-Semibold;
+  //     font-size: 30px;
+
+  //     .btn-number {
+  //       padding: 20px 30px;
+  //       font-size: 3rem;
+  //       border-color: #3a3a3a;
+  //       border-radius: 25px;
+  //       border-style: solid;
+  //       border-width: 3px;
+  //     }
+
+  //     .active {
+  //       color: white;
+
+  //       a {
+  //         border-color: white;
+  //       }
+  //     }
+
+  //     .option {
+  //       display: flex;
+  //       p {
+  //         margin-top: -35px;
+  //         padding: 20px 30px;
+  //         font-size: 2rem;
+  //       }
+
+  //       margin-bottom: 80px;
+  //       cursor: pointer;
+  //     }
+  //     // .option:hover {
+  //     //   display: flex;
+
+  //     //   p {
+  //     //     margin-top: -35px;
+  //     //     padding: 20px 30px;
+  //     //     font-size: 2rem;
+  //     //   }
+  //     //   a {
+  //     //     border-color: white;
+  //     //   }
+  //     //   margin-bottom: 80px;
+  //     //   color: white;
+  //     // }
+  //   }
+  // }
   .perkfix-home10 {
     width: 100%;
-    background-color: black;
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    .txt-switch-on {
+      display:none;
+    }
+    .txt-switch-off {
+      display:inline;
+    }
     .title {
-      color: white;
+      color: black;
       text-align: center;
       h1 {
         font-size: 50px;
         font-family: SFProText-Heavy;
+      }
+    }
+    .setting {
+      text-align: center;
+      .txt-switch {
+        font-family: SFProText-Heavy;
+        color: rgba(0, 145, 255, 1);
+        font-size: 26px;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 26px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: .4s;
+          transition: .4s;
+          border-radius: 34px;
+        }
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 0px;
+          bottom: 0px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+          border-radius: 50%;
+        }
+
+        input:checked + .slider {
+          background-color: rgba(38, 194, 129, 1);
+        }
+        
+        input:focus + .slider {
+          box-shadow: 0 0 1px rgba(38, 194, 129, 1);
+        }
+        
+        input:checked + .slider:before {
+          -webkit-transform: translateX(34px);
+          -ms-transform: translateX(34px);
+          transform: translateX(34px);
+        }
       }
     }
     .content {
@@ -1166,31 +1295,41 @@ body {
       font-size: 30px;
 
       .btn-number {
-        padding: 20px 30px;
+        padding: 13px 30px;
         font-size: 3rem;
         border-color: #3a3a3a;
-        border-radius: 25px;
+        border-radius: 45px;
         border-style: solid;
         border-width: 3px;
       }
 
       .active {
-        color: white;
+        color: black;
 
         a {
-          border-color: white;
+          border-color: black;
         }
       }
 
       .option {
         display: flex;
+        text-align: left;
+
         p {
-          margin-top: -35px;
-          padding: 20px 30px;
+          margin-top: -20px;
+          margin-bottom: 0px;
+          padding: 20px 30px 0px;
+        }
+
+        .txt-title {
           font-size: 2rem;
         }
 
-        margin-bottom: 80px;
+        .txt-content {
+          font-size: 1.3rem;
+        }
+
+        margin-bottom: 120px;
         cursor: pointer;
       }
       // .option:hover {
@@ -1209,7 +1348,27 @@ body {
       // }
     }
   }
+  .perkfix-home10.checked {
+    background-color: black;
+    .txt-switch-on {
+      display:inline;
+    }
+    .txt-switch-off {
+      display:none;
+    }
+    .title {
+      color: white;
+    }
+    .content {
+      .active {
+        color: white;
 
+        a {
+          border-color: white;
+        }
+      }
+    }
+  }
   .perkfix-home14 {
     width: 100%;
     .moving-content {

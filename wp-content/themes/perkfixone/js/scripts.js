@@ -225,3 +225,11 @@ $(".perkfix-category").on("touchend", function(e) {
 });
 
 $(".item-list-container").width($(".perkfix-content-item").width()-10);
+
+$(document).on("click", ".setting .switch", function() {
+    if ($(this).find('input[type=checkbox]:checked').length == 1) {
+        $(this).parent().parent().parent().addClass("checked");
+    } else {
+        $(this).parent().parent().parent().removeClass("checked");
+    }
+});

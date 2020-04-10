@@ -388,7 +388,7 @@
       </div>
     </div>
   </div>
-  <div id="perkfix_home10" class="perkfix perkfix-home10">
+  <!-- <div id="perkfix_home10" class="perkfix perkfix-home10">
     <div class="title">
       <h1>How it works</h1>
     </div>
@@ -423,6 +423,48 @@
         </div>
         <div>
           <p>And use their PerkCard<sup>TM</sup> as the payment method <br/> to activate perks.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div id="perkfix_home10" class="perkfix perkfix-home10">
+    <div class="title">
+      <h1>How it works</h1>
+    </div>
+    <div class="setting">
+      <h2 class="txt-switch"><span class="txt-switch-off">For Employees</span><span class="txt-switch-on">For HR/ People Ops</span>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </h2>
+    </div>
+    <div class="content subpage1 subpage">
+      <div class="option active">
+        <div>
+          <a class="btn-number">1</a>
+        </div>
+        <div>
+          <p class="txt-title">Sign-up</p>
+          <p class="txt-content"><span class="txt-switch-on">Sign-up to perkfix.com once invited by your HR.</span><span class="txt-switch-off">Setup your company account on perkfix.com.</span></p>
+        </div>
+      </div>
+      <div class="option active">
+        <div>
+          <a class="btn-number">2</a>
+        </div>
+        <div>
+          <p class="txt-title"><span class="txt-switch-on">Explore</span><span class="txt-switch-off">Program</span></p>
+          <p class="txt-content"><span class="txt-switch-on">Select preapproved perks from program.</span><span class="txt-switch-off">Build a customizable perks program for your employees.</span></p>
+        </div>
+      </div>
+      <div class="option active">
+        <div>
+          <a class="btn-number">3</a>
+        </div>
+        <div>
+          <p class="txt-title"><span class="txt-switch-on">Reimburse</span><span class="txt-switch-off">Invite</span></p>
+          <p class="txt-content"><span class="txt-switch-on">Reimburse perks</span><span class="txt-switch-off">Invite your team to join the program.</span></p>
         </div>
       </div>
     </div>

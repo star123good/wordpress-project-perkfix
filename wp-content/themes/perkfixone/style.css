@@ -963,15 +963,79 @@ body .perkfix-home9 .container .row .bottom-right .landing {
 }
 body .perkfix-home10 {
   width: 100%;
-  background-color: black;
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+body .perkfix-home10 .txt-switch-on {
+  display: none;
+}
+body .perkfix-home10 .txt-switch-off {
+  display: inline;
 }
 body .perkfix-home10 .title {
-  color: white;
+  color: black;
   text-align: center;
 }
 body .perkfix-home10 .title h1 {
   font-size: 50px;
   font-family: SFProText-Heavy;
+}
+body .perkfix-home10 .setting {
+  text-align: center;
+}
+body .perkfix-home10 .setting .txt-switch {
+  font-family: SFProText-Heavy;
+  color: #0091ff;
+  font-size: 26px;
+}
+body .perkfix-home10 .setting .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 26px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+body .perkfix-home10 .setting .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+body .perkfix-home10 .setting .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+body .perkfix-home10 .setting .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 0px;
+  bottom: 0px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+body .perkfix-home10 .setting .switch input:checked + .slider {
+  background-color: #26c281;
+}
+body .perkfix-home10 .setting .switch input:focus + .slider {
+  box-shadow: 0 0 1px #26c281;
+}
+body .perkfix-home10 .setting .switch input:checked + .slider:before {
+  -webkit-transform: translateX(34px);
+  -ms-transform: translateX(34px);
+  transform: translateX(34px);
 }
 body .perkfix-home10 .content {
   padding-top: 40px;
@@ -981,28 +1045,53 @@ body .perkfix-home10 .content {
   font-size: 30px;
 }
 body .perkfix-home10 .content .btn-number {
-  padding: 20px 30px;
+  padding: 13px 30px;
   font-size: 3rem;
   border-color: #3a3a3a;
-  border-radius: 25px;
+  border-radius: 45px;
   border-style: solid;
   border-width: 3px;
 }
 body .perkfix-home10 .content .active {
-  color: white;
+  color: black;
 }
 body .perkfix-home10 .content .active a {
-  border-color: white;
+  border-color: black;
 }
 body .perkfix-home10 .content .option {
   display: flex;
-  margin-bottom: 80px;
+  text-align: left;
+  margin-bottom: 120px;
   cursor: pointer;
 }
 body .perkfix-home10 .content .option p {
-  margin-top: -35px;
-  padding: 20px 30px;
+  margin-top: -20px;
+  margin-bottom: 0px;
+  padding: 20px 30px 0px;
+}
+body .perkfix-home10 .content .option .txt-title {
   font-size: 2rem;
+}
+body .perkfix-home10 .content .option .txt-content {
+  font-size: 1.3rem;
+}
+body .perkfix-home10.checked {
+  background-color: black;
+}
+body .perkfix-home10.checked .txt-switch-on {
+  display: inline;
+}
+body .perkfix-home10.checked .txt-switch-off {
+  display: none;
+}
+body .perkfix-home10.checked .title {
+  color: white;
+}
+body .perkfix-home10.checked .content .active {
+  color: white;
+}
+body .perkfix-home10.checked .content .active a {
+  border-color: white;
 }
 body .perkfix-home14 {
   width: 100%;
