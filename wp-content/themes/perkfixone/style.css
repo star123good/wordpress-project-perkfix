@@ -383,12 +383,18 @@ body .perkfix-home2 .content3 .img-container .stone {
   width: 80%;
 }
 body .perkfix-home3 {
+  background-color: black;
   width: 100%;
+  padding-bottom: 149px;
 }
 body .perkfix-home3 .header-home2 {
-  background-color: #eff0f1;
+  padding-top: 20px;
+  padding-left: 204px;
+  padding-bottom: 30px;
+  height: 182px;
+  width: 511px;
+  color: white;
   display: flex;
-  padding: 40px;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -398,10 +404,12 @@ body .perkfix-home3 .header-home2 h1 {
   font-size: 60px;
   font-family: SFProText-Heavy;
 }
+body .perkfix-home3 .content4 {
+  padding-left: 204px;
+}
 body .perkfix-home3 .content4 .txt-fitness {
   position: absolute;
-  margin-left: 180px;
-  margin-top: 50px;
+  margin-top: 540px;
   font-family: SFProText-Medium;
   font-size: 25px;
   color: white;
@@ -499,18 +507,48 @@ body .perkfix-home4 .content-img {
   margin-bottom: 100px;
 }
 body .perkfix-home4 .content-img .title {
-  width: 100%;
   position: absolute;
-  margin-top: 38px;
-  text-align: center;
-  color: white;
+  margin-left: 50%;
+  margin-top: 30px;
+  text-align: left;
+  background: linear-gradient(to right, red, blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: SFProText-Heavy;
-  font-size: 60px;
+  font-size: 45px;
+}
+body .perkfix-home4 .content-img .sub-icons {
+  width: 120px;
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: white;
+  border-radius: 10px;
+  position: absolute;
+  margin-left: 18%;
+  margin-top: 20%;
+}
+body .perkfix-home4 .content-img .sub-icons .image1 {
+  width: 50px;
+  margin-bottom: 20px;
+}
+body .perkfix-home4 .content-img .sub-icons .image2 {
+  width: 80px;
+}
+body .perkfix-home4 .content-img .sub-icons .image3 {
+  width: 60px;
+}
+body .perkfix-home4 .content-img .sub-icons .title-image3 {
+  font-family: SFProText-Medium;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 body .perkfix-home4 .content-img .content {
   position: absolute;
-  margin-top: 396px;
-  margin-left: 147px;
+  margin-left: 250px;
+  margin-top: 630px;
   color: white;
   font-family: SFProText-Medium;
   font-size: 25px;
@@ -2380,9 +2418,13 @@ body .footer-menu .menu-description .terms a {
     display: block !important;
   }
 
+  .perkfix-home3 .content4 .txt-fitness {
+    margin-top: 450px !important;
+  }
+
   .perkfix-home4 .content-img .content {
-    margin-left: 100px !important;
-    margin-top: 330px !important;
+    margin-left: 250px !important;
+    margin-top: 550px !important;
   }
 
   .perkfix-home5 .man .txt-man {
@@ -2440,9 +2482,13 @@ body .footer-menu .menu-description .terms a {
     display: block !important;
   }
 
+  .perkfix-home3 .content4 .txt-fitness {
+    margin-top: 340px !important;
+  }
+
   .perkfix-home4 .content-img .content {
-    margin-left: 80px !important;
-    margin-top: 300px !important;
+    margin-left: 250px !important;
+    margin-top: 430px !important;
   }
 
   .perkfix-home5 .man .txt-man {

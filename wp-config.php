@@ -22,7 +22,7 @@
 /** The name of the database for WordPress */
 
 $build = "prod";
-//$build = "dev";
+// $build = "dev";
 
 if ($build == "dev") {
 	define( 'DB_NAME', 'perkfix_dev' );

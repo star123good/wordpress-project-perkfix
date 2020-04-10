@@ -54,7 +54,7 @@
       </div>
     </div>
   </div> -->
-  <div class="perkfix perkfix-home3">
+  <!-- <div class="perkfix perkfix-home3">
     <div class="header-home2">
       <h1>Their goals are your goals.</h1>
     </div>
@@ -62,8 +62,17 @@
       <p class="txt-fitness">Our fitness perks let your<br/>employees push their boundaries at<br/>the gym — and at work. </p>
       <img src="<?php bloginfo('template_url'); ?>/img/img-fitness-perks.jpg" class="fitness">
     </div>
+  </div> -->
+  <div class="perkfix perkfix-home3">
+    <div class="header-home2">
+      <h1>Their goals,<br>&nbsp;are your goals.</h1>
+    </div>
+    <div class="content4">
+      <p class="txt-fitness">Our fitness perks let your<br/>employees push their boundaries at<br/>the gym — and at work. </p>
+      <img src="<?php bloginfo('template_url'); ?>/img/img-fitness-perks.png" class="fitness">
+    </div>
   </div>
-  <div class="perkfix perkfix-home4">
+  <!-- <div class="perkfix perkfix-home4">
     <div class="header-home3">
       <p><span class="bold-title">Fitness</span> | Perks</p>
     </div>
@@ -103,6 +112,54 @@
       <p class="title">Commute smarter.<br/>Commute better.</p>
       <p class="content">Employees are more connected<br/>than ever — so are our perks.</p>
       <img src="<?php bloginfo('template_url'); ?>/img/Commute-better.jpg" class="">
+    </div>
+  </div> -->
+  <div class="perkfix perkfix-home4">
+    <div class="header-home3">
+      <p><span class="bold-title">Fitness</span> | Perks</p>
+    </div>
+    <div class="content-icon">
+      <div class="icon-blank">
+        
+      </div>
+      <div class="icon-sect">
+        <div class="pelaton">
+          <img src="<?php bloginfo('template_url'); ?>/img/pelaton.jpg" class="">
+          <div>Pelaton</div>
+        </div>
+        <div class="classpass">
+          <img src="<?php bloginfo('template_url'); ?>/img/classpass.jpg" class="">
+          <div>Classpass</div>
+        </div>
+        <div class="aaptiv">
+          <img src="<?php bloginfo('template_url'); ?>/img/aaptiv.jpg" class="">
+          <div>Aaptiv</div>
+        </div>
+      </div>
+      <div class="icon-desc">
+        <div>
+          <h1>59%</h1>
+        </div>
+        <div>
+          <p>of employees agree that wellness perks<br/>
+          increase loyalty.<sup>4</sup></p> 
+        </div>
+      </div>
+    </div>
+    <div class="content-link">
+      <a href="<?php echo home_url('/perkstore');?>?category_id=12">More wellness perks  ></a>
+      <a href="#">Start Trial  ></a>
+    </div>
+    <div class="content-img">
+      <p class="title">Remote work.<br/>Business as usual.</p>
+      <div class="sub-icons">
+        <img class="image1" src="<?php bloginfo('template_url'); ?>/img/ico/ico-nordvpn.png">
+        <img class="image2" src="<?php bloginfo('template_url'); ?>/img/ico/ico-instacart.png">
+        <img class="image3" src="<?php bloginfo('template_url'); ?>/img/ico/ico-grubhubplus.png">
+        <p class="title-image3">GrubHub+</p>
+      </div>
+      <p class="content">Our virtual perks ensure work and life<br/>don't clash - they collaberate.</p>
+      <img src="<?php bloginfo('template_url'); ?>/img/img-remotework-perk.png" class="image">
     </div>
   </div>
   <div class="perkfix perkfix-home5">
@@ -398,7 +455,7 @@
         </div>
     </div>
   </div>
-  <div class="perkfix-home16">
+  <!-- <div class="perkfix-home16">
     <div class="title">
       <h1>Pricing</h1>
     </div>
@@ -456,4 +513,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
