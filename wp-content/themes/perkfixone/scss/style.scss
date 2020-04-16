@@ -446,7 +446,7 @@ body {
     padding-bottom: 149px;
     .header-home2 {
       padding-top: 20px;
-      padding-left: 204px;
+      padding-left: 13%;
       padding-bottom: 30px;
       height: 182px;
       width: 511px;
@@ -462,17 +462,24 @@ body {
       }
     }
     .content4 {
-      padding-left: 204px;
+      text-align: center;
+      // padding-left: 204px;
       .txt-fitness {
+        text-align: left;
         position: absolute;
         margin-top: 540px;
+        margin-left: 13%;
         font-family: SFProText-Medium;
         font-size: 25px;
         color: white;
       }
-      .fitness {
-        width: 100%;
-        height: 100%;
+      // .fitness {
+      //   width: 100%;
+      //   height: 100%;
+      // }
+      img {
+        text-align: center;
+        width: 74%;
       }
     }
   }
