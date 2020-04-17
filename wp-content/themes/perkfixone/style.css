@@ -116,20 +116,35 @@ body .mobile-min {
 body .login {
   height: 100vh;
   background-color: black;
-  @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-}
-body .login .form .login-form h1 {
-  font-size: 20px;
-  font-family: SFProText-Semibold;
-}
-body .login .form .register-form h1 {
-  font-size: 30px;
-  font-family: SFProText-Bold;
 }
 body .login .login-page {
   width: 70%;
-  padding: 8% 0 0;
+  padding: 4% 0 0;
   margin: auto;
+  font-family: SFProText-Bold;
+  text-align: center;
+}
+body .login .login-page h1 {
+  text-align: center;
+  color: white;
+}
+body .login .login-page .btn-group {
+  padding: 12% 0 0;
+}
+body .login .login-page .btn-group .btn {
+  font-family: SFProText-Regular;
+  font-size: 1.5rem;
+  margin: 0.3em;
+  width: 9em;
+  height: 4em;
+  border-radius: 10px;
+  border: transparent;
+}
+body .login .login-page .btn-group .btn-employers {
+  background: linear-gradient(to right, #d051b8, #a13dc3);
+}
+body .login .login-page .btn-group .btn-employees {
+  background: linear-gradient(to right, #de5325, #d09e51);
 }
 body .login .form {
   border-radius: 10px;
@@ -268,6 +283,85 @@ body .header a {
 body .header .logo {
   width: 24px;
   height: 31px;
+}
+body .auth {
+  height: 100vh;
+  background-color: black;
+}
+body .auth .auth-page {
+  width: 70%;
+  padding: 20% 0 0;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+body .auth .auth-page h1 {
+  font-family: SFProText-Bold;
+}
+body .auth .auth-page p {
+  font-family: SFProText-Light;
+}
+body .auth .auth-page a {
+  font-family: SFProText-Regular;
+  color: #009cff;
+}
+body .get-started {
+  height: 100vh;
+  background-color: black;
+}
+body .get-started .clearfix {
+  clear: both;
+}
+body .get-started .float-left {
+  float: left;
+}
+body .get-started .float-right {
+  float: right;
+}
+body .get-started .get-started-page {
+  width: 40%;
+  padding: 3% 0 0;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+body .get-started .get-started-page h1 {
+  font-family: SFProText-Bold;
+  margin-bottom: 0px;
+}
+body .get-started .get-started-page p {
+  margin: 5px 0px 25px;
+  font-family: SFProText-Light;
+}
+body .get-started .get-started-page .content h4 {
+  font-family: SFProText-Bold;
+  margin: 10px 0px 0px;
+}
+body .get-started .get-started-page .content p {
+  margin-top: 25px;
+  display: flex;
+}
+body .get-started .get-started-page .content a {
+  font-family: SFProText-Regular;
+  color: #009cff;
+}
+body .get-started .get-started-page .content span.red {
+  color: red;
+}
+body .get-started .get-started-page .content input[type=text] {
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+  height: 3.5em;
+  margin: 1% 0;
+}
+body .get-started .get-started-page .content input.part-name {
+  width: 48%;
+}
+body .get-started .get-started-page .content input[type=checkbox] {
+  width: 15px;
+  height: 15px;
 }
 body .perkfix-home1 {
   width: 100%;
@@ -2606,6 +2700,10 @@ body .footer-menu .menu-description .terms a {
   }
 }
 @media (max-width: 780px) {
+  .get-started .get-started-page {
+    width: 55% !important;
+  }
+
   .perkfix-home18 {
     width: 100% !important;
   }
@@ -3278,6 +3376,10 @@ body .footer-menu .menu-description .terms a {
   }
 }
 @media (min-width: 425px) and (max-width: 767px) {
+  .get-started .get-started-page {
+    width: 75% !important;
+  }
+
   .header {
     height: 45px !important;
     width: 100% !important;
@@ -3644,6 +3746,10 @@ body .footer-menu .menu-description .terms a {
   }
 }
 @media (min-width: 320px) and (max-width: 424px) {
+  .get-started .get-started-page {
+    width: 85% !important;
+  }
+
   .header {
     height: 45px !important;
     width: 100% !important;

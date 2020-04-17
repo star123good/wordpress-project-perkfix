@@ -125,27 +125,181 @@ body {
     display: none;
   }
 
+  // .login {
+  //   height: 100vh;
+  //   background-color: black;
+  //   @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+  //   .form .login-form {
+  //     h1 {
+  //       font-size: 20px;
+  //       font-family: SFProText-Semibold;
+  //     }
+  //   }
+  //   .form .register-form {
+  //     h1 {
+  //       font-size: 30px;
+  //       font-family: SFProText-Bold;
+  //     }
+  //   }
+  //   .login-page {
+  //     width: 70%;
+  //     padding: 8% 0 0;
+  //     margin: auto;
+  //   }
+  //   .form {
+  //     border-radius: 10px;
+  //     position: relative;
+  //     z-index: 1;
+  //     background: #ffffff;
+  //     max-width: 360px;
+  //     margin: 0 auto 100px;
+  //     padding: 45px;
+  //     text-align: center;
+  //     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  //   }
+  //   .form input {
+  //     font-family: "Roboto", sans-serif;
+  //     outline: 0;
+  //     background: #f2f2f2;
+  //     width: 100%;
+  //     border: 0;
+  //     margin: 0 0 15px;
+  //     padding: 15px;
+  //     box-sizing: border-box;
+  //     font-size: 14px;
+  //   }
+  //   .form button {
+  //     text-transform: uppercase;
+  //     outline: 0;
+  //     background: #00c887;
+  //     width: 100%;
+  //     border: 0;
+  //     padding: 15px;
+  //     color: #ffffff;
+  //     -webkit-transition: all 0.3 ease;
+  //     transition: all 0.3 ease;
+  //     cursor: pointer;
+  //     margin-bottom: 20px;
+  //   }
+
+  //   .btn-social {
+  //     width: 100%;
+  //     img {
+  //       width: 100%;
+  //     }
+  //     cursor: pointer;
+  //   }
+  //   .btn-social:active {
+  //     width: 100%;
+  //     img {
+  //       width: 100%;
+  //     }
+  //     cursor: pointer;
+  //   }
+
+  //   .form button:hover,
+  //   .form button:active,
+  //   .form button:focus {
+  //     background: #43a047;
+  //   }
+  //   .form .message {
+  //     margin: 15px 0 0;
+  //     color: #b3b3b3;
+  //     font-size: 12px;
+  //     font-family: SFProText-Regular;
+  //   }
+  //   .form .message a {
+  //     color: #4caf50;
+  //     text-decoration: none;
+  //   }
+  //   .form .register-form {
+  //     display: block;
+  //     font-size: 23px;
+  //     font-family: SFProText-Heavy;
+  //   }
+  //   .container {
+  //     position: relative;
+  //     z-index: 1;
+  //     max-width: 300px;
+  //     margin: 0 auto;
+  //   }
+  //   .container:before,
+  //   .container:after {
+  //     content: "";
+  //     display: block;
+  //     clear: both;
+  //   }
+  //   .container .info {
+  //     margin: 50px auto;
+  //     text-align: center;
+  //   }
+  //   .container .info h1 {
+  //     margin: 0 0 15px;
+  //     padding: 0;
+  //     font-size: 20px;
+  //     font-family: SFProText-Semibold;
+  //     color: #1a1a1a;
+  //   }
+  //   .container .info span {
+  //     color: #4d4d4d;
+  //     font-size: 12px;
+  //   }
+  //   .container .info span a {
+  //     color: #000000;
+  //     text-decoration: none;
+  //   }
+  //   .container .info span .fa {
+  //     color: #ef3b3a;
+  //   }
+  //   button {
+  //     font-family: SFProText-Regular;
+  //     font-size: 14px;
+  //   }
+  //   body {
+  //     background: #76b852; /* fallback for old browsers */
+  //     background: -webkit-linear-gradient(right, #76b852, #8dc26f);
+  //     background: -moz-linear-gradient(right, #76b852, #8dc26f);
+  //     background: -o-linear-gradient(right, #76b852, #8dc26f);
+  //     background: linear-gradient(to left, #76b852, #8dc26f);
+  //     font-family: "Roboto", sans-serif;
+  //     -webkit-font-smoothing: antialiased;
+  //     -moz-osx-font-smoothing: grayscale;
+  //   }
+  // }
+
   .login {
     height: 100vh;
     background-color: black;
-    @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-    .form .login-form {
-      h1 {
-        font-size: 20px;
-        font-family: SFProText-Semibold;
-      }
-    }
-    .form .register-form {
-      h1 {
-        font-size: 30px;
-        font-family: SFProText-Bold;
-      }
-    }
     .login-page {
       width: 70%;
-      padding: 8% 0 0;
+      padding: 4% 0 0;
       margin: auto;
+      font-family: SFProText-Bold;
+      text-align: center;
+      h1 {
+        text-align: center;
+        color: white;
+      }
+      .btn-group {
+        padding: 12% 0 0;
+        .btn {
+          font-family: SFProText-Regular;
+          font-size: 1.5rem;
+          margin: 0.3em;
+          width: 9em;
+          height: 4em;
+          border-radius: 10px;
+          border: transparent;
+        }
+        .btn-employers {
+          background: linear-gradient(to right, rgba(208, 81, 184, 1), rgba(161, 61, 195, 1));
+        }
+        .btn-employees {
+          background: linear-gradient(to right, rgba(222, 83, 37, 1), rgba(208, 158, 81, 1));
+        }
+      }
     }
     .form {
       border-radius: 10px;
@@ -286,6 +440,89 @@ body {
     .logo {
       width: 24px;
       height: 31px;
+    }
+  }
+
+  .auth {
+    height: 100vh;
+    background-color: black;
+    .auth-page {
+      width: 70%;
+      padding: 20% 0 0;
+      margin: auto;
+      text-align: center;
+      color: white;
+      h1 {
+        font-family: SFProText-Bold;
+      }
+      p {
+        font-family: SFProText-Light;
+      }
+      a {
+        font-family: SFProText-Regular;
+        color: rgba(0, 156, 255, 1);
+      }
+    }
+  }
+
+  .get-started {
+    height: 100vh;
+    background-color: black;
+    .clearfix {
+      clear: both;
+    }
+    .float-left {
+      float: left;
+    }
+    .float-right {
+      float:right;
+    }
+    .get-started-page {
+      width: 40%;
+      padding: 3% 0 0;
+      margin: auto;
+      text-align: center;
+      color: white;
+      h1 {
+        font-family: SFProText-Bold;
+        margin-bottom: 0px;
+      }
+      p {
+        margin: 5px 0px 25px;
+        font-family: SFProText-Light;
+      }
+      .content {
+        h4 {
+          font-family: SFProText-Bold;
+          margin: 10px 0px 0px;
+        }
+        p {
+          margin-top: 25px;
+          display:flex;
+        }
+        a {
+          font-family: SFProText-Regular;
+          color: rgba(0, 156, 255, 1);
+        }
+        span.red {
+          color: red;
+        }
+        input[type=text] {
+          text-align: center;
+          border-radius: 10px;
+          font-size: 1rem;
+          width: 100%;
+          height: 3.5em;
+          margin: 1% 0;
+        }
+        input.part-name {
+          width: 48%;
+        }
+        input[type=checkbox] {
+          width: 15px;
+          height: 15px;
+        }
+      }
     }
   }
 
@@ -2982,6 +3219,11 @@ body {
 }
 
 @media (max-width: 780px) {
+  .get-started {
+    .get-started-page {
+      width: 55% !important;
+    }
+  }
   .perkfix-home18 {
     width: 100% !important;
     .content {
@@ -3675,6 +3917,11 @@ body {
 }
 
 @media (min-width: 425px) and (max-width: 767px) {
+  .get-started {
+    .get-started-page {
+      width: 75% !important;
+    }
+  }
   .header {
     height: 45px !important;
     width: 100% !important;
@@ -4052,6 +4299,11 @@ body {
 }
 
 @media (min-width: 320px) and (max-width: 424px) {
+  .get-started {
+    .get-started-page {
+      width: 85% !important;
+    }
+  }
   .header {
     height: 45px !important;
     width: 100% !important;
