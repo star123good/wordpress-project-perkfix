@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 // Template name: Trial Page
 ?>
     <div class="login">
@@ -26,4 +26,4 @@
     $(".btn-social").on('mouseup', function() {
         $(this).html("<img src='<?php bloginfo('template_url'); ?>/img/btn-linkedin.png'>");
     });
-    </script>
+    </script> -->
