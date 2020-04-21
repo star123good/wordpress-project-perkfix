@@ -45,6 +45,11 @@ add_action('rest_api_init', function() {
             )
         )
     ));
+
+    register_rest_route( 'perkstore/v1', 'get_started', array(
+        'methods' => 'POST',
+        'callback' => 'post_get_started'
+    ));
 });
 
 function get_search_results($request) {
@@ -501,6 +506,46 @@ function get_product_detail($request) {
     $response = new WP_REST_Response($ret);
     $response->set_status(200);
     return $response;
+}
+
+function post_get_started($request) {
+    // print_r($request['firstname']); exit;
+
+    $userdata = array(
+        'user_pass' => 'test1234',
+        'user_login' => $request['email'], 
+        'user_email' => $request['email'],
+        'first_name' => $request['firstname'],
+        'last_name' => $request['lastname'],
+        'show_admin_bar_front' => false,
+        'role' => 'hr_trial'
+    );
+
+    $user_id = wp_insert_user($userdata);
+
+    $ret = array();
+    // On success
+    if (!is_wp_error($user_id)) {
+        // $to_email = $request['email'];
+        // $subject = "Simple Email Test via PHP";
+        // $body = "Hi,nn This is test email send by PHP Script";
+        // $headers = "From: sender\'s email";
+        
+
+        // if (mail($to_email, $subject, $body, $headers)) {
+        //     echo "Email successfully sent to $to_email...";exit();
+        // } else {
+        //     echo "Email sending failed...";exit();
+        // }
+        $url = get_site_url() . '/authentication/';
+        wp_redirect($url, 301);
+    } else {
+        $url = get_site_url() . '/get-started/';
+        //print_r($user_id); exit();
+        wp_redirect($url, 301);
+       // wp_redirect($url, 301);
+    }
+    exit();
 }
 
 function mysite_js() {

@@ -116,35 +116,20 @@ body .mobile-min {
 body .login {
   height: 100vh;
   background-color: black;
+  @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+}
+body .login .form .login-form h1 {
+  font-size: 20px;
+  font-family: SFProText-Semibold;
+}
+body .login .form .register-form h1 {
+  font-size: 30px;
+  font-family: SFProText-Bold;
 }
 body .login .login-page {
   width: 70%;
-  padding: 4% 0 0;
+  padding: 8% 0 0;
   margin: auto;
-  font-family: SFProText-Bold;
-  text-align: center;
-}
-body .login .login-page h1 {
-  text-align: center;
-  color: white;
-}
-body .login .login-page .btn-group {
-  padding: 12% 0 0;
-}
-body .login .login-page .btn-group .btn {
-  font-family: SFProText-Regular;
-  font-size: 1.5rem;
-  margin: 0.3em;
-  width: 9em;
-  height: 4em;
-  border-radius: 10px;
-  border: transparent;
-}
-body .login .login-page .btn-group .btn-employers {
-  background: linear-gradient(to right, #d051b8, #a13dc3);
-}
-body .login .login-page .btn-group .btn-employees {
-  background: linear-gradient(to right, #de5325, #d09e51);
 }
 body .login .form {
   border-radius: 10px;
@@ -264,6 +249,159 @@ body .login body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body .trial {
+  height: 100vh;
+  background-color: black;
+}
+body .trial .login-page {
+  width: 70%;
+  padding: 4% 0 0;
+  margin: auto;
+  font-family: SFProText-Bold;
+  text-align: center;
+}
+body .trial .login-page h1 {
+  text-align: center;
+  color: white;
+}
+body .trial .login-page .btn-group {
+  padding: 12% 0 0;
+}
+body .trial .login-page .btn-group .btn {
+  font-family: SFProText-Regular;
+  font-size: 1.5rem;
+  margin: 0.3em;
+  width: 9em;
+  height: 4em;
+  border-radius: 10px;
+  border: transparent;
+}
+body .trial .login-page .btn-group .btn-employers {
+  background: linear-gradient(to right, #d051b8, #a13dc3);
+  cursor: pointer;
+}
+body .trial .login-page .btn-group .btn-employees {
+  background: linear-gradient(to right, #de5325, #d09e51);
+  cursor: pointer;
+}
+body .trial .form {
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+body .trial .form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+body .trial .form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #00c887;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+body .trial .btn-social {
+  width: 100%;
+  cursor: pointer;
+}
+body .trial .btn-social img {
+  width: 100%;
+}
+body .trial .btn-social:active {
+  width: 100%;
+  cursor: pointer;
+}
+body .trial .btn-social:active img {
+  width: 100%;
+}
+body .trial .form button:hover,
+body .trial .form button:active,
+body .trial .form button:focus {
+  background: #43a047;
+}
+body .trial .form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+  font-family: SFProText-Regular;
+}
+body .trial .form .message a {
+  color: #4caf50;
+  text-decoration: none;
+}
+body .trial .form .register-form {
+  display: block;
+  font-size: 23px;
+  font-family: SFProText-Heavy;
+}
+body .trial .container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+body .trial .container:before,
+body .trial .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+body .trial .container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+body .trial .container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 20px;
+  font-family: SFProText-Semibold;
+  color: #1a1a1a;
+}
+body .trial .container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+body .trial .container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+body .trial .container .info span .fa {
+  color: #ef3b3a;
+}
+body .trial button {
+  font-family: SFProText-Regular;
+  font-size: 14px;
+}
+body .trial body {
+  background: #76b852;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8dc26f);
+  background: -moz-linear-gradient(right, #76b852, #8dc26f);
+  background: -o-linear-gradient(right, #76b852, #8dc26f);
+  background: linear-gradient(to left, #76b852, #8dc26f);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 body .header {
   width: 100%;
   height: 68px;
@@ -356,12 +494,29 @@ body .get-started .get-started-page .content input[type=text] {
   height: 3.5em;
   margin: 1% 0;
 }
+body .get-started .get-started-page .content input[type=email] {
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+  height: 3.5em;
+  margin: 1% 0;
+}
 body .get-started .get-started-page .content input.part-name {
   width: 48%;
 }
 body .get-started .get-started-page .content input[type=checkbox] {
   width: 15px;
   height: 15px;
+}
+body .get-started .get-started-page .content .submit-btn {
+  font-family: SFProText-Regular;
+  color: #009cff;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 16px;
 }
 body .perkfix-home1 {
   width: 100%;
