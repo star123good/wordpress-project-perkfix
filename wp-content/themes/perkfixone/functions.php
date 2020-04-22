@@ -570,13 +570,13 @@ function post_get_started($request) {
         
         try {
             $response = $sendgrid->send($email);
-            print $response->statusCode() . "\n";
-            print_r($response->headers());
-            print $response->body() . "\n";
+            // print $response->statusCode() . "\n";
+            // print_r($response->headers());
+            // print $response->body() . "\n";
         } catch (Exception $e) {
-            echo 'Caught exception: ',  $e->getMessage(), "\n";
+            // echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
-        die();
+        // die();
 
         $url = get_site_url() . '/authentication/';
         wp_redirect($url, 301);
