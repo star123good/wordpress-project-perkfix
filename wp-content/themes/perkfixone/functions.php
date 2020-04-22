@@ -582,8 +582,8 @@ function post_get_started($request) {
         wp_redirect($url, 301);
     } else {
         $url = get_site_url() . '/get-started/';
-        print_r($user_id); exit();
-        // wp_redirect($url, 301);
+        // print_r($user_id); exit();
+        wp_redirect($url, 301);
     }
     exit();
 }
