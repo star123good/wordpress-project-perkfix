@@ -26,3 +26,4 @@ perkfix-uploads-backup/
 *.sql
 *.sqlite
 .htaccess
+wp-config.php
