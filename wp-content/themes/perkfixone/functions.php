@@ -509,7 +509,6 @@ function get_product_detail($request) {
 }
 
 function post_get_started($request) {
-    // print_r($request['firstname']); exit;
 
     $userdata = array(
         'user_pass' => 'test1234',
@@ -537,6 +536,48 @@ function post_get_started($request) {
         // } else {
         //     echo "Email sending failed...";exit();
         // }
+
+        // sendgrid
+        include_once( ABSPATH.'wp-content/sendgrid-php/sendgrid-php.php');
+
+        $API_KEY_SENDGRID = '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';
+
+        $templateId = "d-f66183a7168b4df7b9e188f760d66e43";
+
+        $emailFrom = "aj@perkfix.com";
+        $nameFrom = "A J";
+
+        $emailSubject = "Verify From perkfix.com";
+
+        $emailTo = $request['email'];
+        $nameTo = $request['firstname'] . " " . $request['lastname'];
+
+        // $emailHtml = file_get_contents("sendmail.html");
+        
+        $email = new \SendGrid\Mail\Mail();
+        $email->setFrom($emailFrom, $nameFrom);
+        $email->setSubject($emailSubject);
+        $email->addTo($emailTo, $nameTo);
+        // $email->addContent("text/html", $emailHtml);
+        $email->setTemplateId($templateId);
+        $email->addSubstitution("firstname", $nameTo);
+        $email->addSubstitution("youremail", $emailTo);
+        $email->addSubstitution("linkurl", "http://perkfix.com/thanks/");
+        $email->addSubstitution("inserthyperlink", 'http://perkfix.com');
+        $email->addSubstitution("bookcall", "https://calendly.com/aj-perkfix");
+        
+        $sendgrid = new \SendGrid($API_KEY_SENDGRID);
+        
+        try {
+            $response = $sendgrid->send($email);
+            print $response->statusCode() . "\n";
+            print_r($response->headers());
+            print $response->body() . "\n";
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+        die();
+
         $url = get_site_url() . '/authentication/';
         wp_redirect($url, 301);
     } else {

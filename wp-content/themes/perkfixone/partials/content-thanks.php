@@ -63,6 +63,12 @@
             <div class="content">
                 <p style="color: black;">One of our perk specialists will get in touch with you.</p>
                 <p style="color: black;">Let's setup a quick call to understand you needs.</p>
+
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/steven-249/perkfix" style="min-width:320px;height:1630px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+                <!-- Calendly inline widget end -->
+
                 <a href="https://calendly.com/event_types/user/me">Book Call</a>
                 OR
 

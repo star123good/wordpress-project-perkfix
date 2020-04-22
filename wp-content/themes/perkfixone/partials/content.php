@@ -469,34 +469,6 @@
       </div>
     </div>
   </div>
-  <div id="perkfix_home14" class="perkfix perkfix-home14">
-    <div class="title">
-      <h1>Personal. Simple. Transparent.</h1>
-    </div>
-      <!-- <div class="spacer s0" id="trigger"></div> -->
-      <div class="content perk-card-content">
-        <div id="perk_card" class="perk-card">
-          <img id="plane" src="<?php bloginfo('template_url'); ?>/img/perk-card.png">
-          <!-- <a href="#">Watch the film <i class="fas fa-play-circle"></i></a>-->
-        </div>
-        <div id="moving-content" class="moving-content">
-          <div class="desc perk-card-desc">
-            <h1>PerkCard<sup>TM</sup></h1>
-            <p>Perks that live in your phone
-            with our virtual cards. And, in
-            your wallet with our physical cards.</p>
-          </div>
-          <div class="perk-card-pay">
-            <a class="btn-pay" href="#"><img src="<?php bloginfo('template_url'); ?>/img/btn-apple-pay.png"></a>
-            <a class="btn-pay btn-border" href="#"><img src="<?php bloginfo('template_url'); ?>/img/btn-google-pay.png"></a>
-            <a class="btn-pay" href="#"><img src="<?php bloginfo('template_url'); ?>/img/btn-samsung-pay.png"></a>
-          </div>
-          <!-- <div class="perk-card-desc-bottom">
-            <img src="img/img-perk-phone.png">
-          </div> -->
-        </div>
-    </div>
-  </div>
   <!-- <div class="perkfix-home16">
     <div class="title">
       <h1>Pricing</h1>
