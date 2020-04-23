@@ -581,7 +581,7 @@ function post_get_started($request) {
         $url = get_site_url() . '/authentication/';
         wp_redirect($url, 301);
     } else {
-        $url = get_site_url() . '/get-started/';
+        $url = get_site_url() . '/get-started/?error=wrong';
         // print_r($user_id); exit();
         wp_redirect($url, 301);
     }

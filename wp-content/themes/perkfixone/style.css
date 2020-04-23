@@ -2754,6 +2754,11 @@ body .footer-menu .menu-description .terms a {
   color: white;
 }
 
+@media screen and (max-width: 1440px) {
+  .perkfix-home3 .content4 .txt-fitness {
+    margin-top: 500px !important;
+  }
+}
 @media screen and (max-width: 1368px) {
   .perkfix-home2 {
     display: block !important;

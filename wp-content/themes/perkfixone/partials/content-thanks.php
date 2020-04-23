@@ -82,7 +82,7 @@
                 </div>
                 
             </div>
-            <div class="call-content" style="display: flex; justify-content: space-around;">
+            <div class="call-content" style="display: flex; justify-content: space-around; margin-bottom: 50px;">
                 <a class="call" href="home_url();" style="color: white; background-color: gray;">Cancel</a>
                 <a class="call" style="color: white;">Call Me Now</a>
             </div>

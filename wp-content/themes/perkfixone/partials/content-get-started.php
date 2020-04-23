@@ -7,6 +7,9 @@
                 <h1>Let's Get Started</h1>
                 <p>We need some details from you</p>
             </div>
+            <div <?php echo (isset($_REQUEST['error']) && $_REQUEST['error'] == "wrong")?"":"hidden"; ?> >
+                <h3 style="color: red; border: 1px solid red;">You must input correct informations.</h3>
+            </div>
             <form id="get_started" method="POST" action="<?php echo site_url().'/wp-json/perkstore/v1/get_started/'; ?>">
                 <div class="content">
                     <h4>Legal Entity Name <span class="red">*</span></h4>
