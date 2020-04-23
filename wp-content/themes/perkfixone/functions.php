@@ -50,6 +50,16 @@ add_action('rest_api_init', function() {
         'methods' => 'POST',
         'callback' => 'post_get_started'
     ));
+
+    register_rest_route( 'perkstore/v1', 'send_email', array(
+        'methods' => 'GET',
+        'callback' => 'send_email'
+    ));
+
+    register_rest_route( 'perkstore/v1', 'contact_us', array(
+        'methods' => 'POST',
+        'callback' => 'post_contact_us'
+    ));
 });
 
 function get_search_results($request) {
@@ -508,6 +518,77 @@ function get_product_detail($request) {
     return $response;
 }
 
+function send_email_without_request($emailFrom, $nameFrom, $emailTo, $nameTo, $emailSubject, $textBody=null) {
+    
+    // $to_email = $request['email'];
+    // $subject = "Simple Email Test via PHP";
+    // $body = "Hi,nn This is test email send by PHP Script";
+    // $headers = "From: sender\'s email";
+    
+
+    // if (mail($to_email, $subject, $body, $headers)) {
+    //     echo "Email successfully sent to $to_email...";exit();
+    // } else {
+    //     echo "Email sending failed...";exit();
+    // }
+
+    // sendgrid
+    include_once( ABSPATH.'wp-content/sendgrid-php/sendgrid-php.php');
+
+    $API_KEY_SENDGRID = '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';
+
+    $templateId = "d-f66183a7168b4df7b9e188f760d66e43";
+
+    // $emailHtml = file_get_contents("sendmail.html");
+    
+    $email = new \SendGrid\Mail\Mail();
+    $email->setFrom($emailFrom, $nameFrom);
+    $email->setSubject($emailSubject);
+    $email->addTo($emailTo, $nameTo);
+    // $email->addContent("text/html", $emailHtml);
+    if ($textBody == null) {
+        $email->setTemplateId($templateId);
+        $email->addSubstitution("firstname", $nameTo);
+        $email->addSubstitution("youremail", $emailTo);
+        $email->addSubstitution("linkurl", "http://perkfix.com/thanks/");
+        $email->addSubstitution("inserthyperlink", 'http://perkfix.com');
+        $email->addSubstitution("bookcall", "https://calendly.com/aj-perkfix");
+    }
+    else {
+        $email->addContent("text/html", $textBody);
+    }
+    
+    $sendgrid = new \SendGrid($API_KEY_SENDGRID);
+    
+    try {
+        $response = $sendgrid->send($email);
+        // print $response->statusCode() . "\n";
+        // print_r($response->headers());
+        // print $response->body() . "\n";
+    } catch (Exception $e) {
+        // echo 'Caught exception: ',  $e->getMessage(), "\n";
+    }
+    // die();
+
+}
+
+function send_email($request) {
+
+    $emailFrom = "aj@perkfix.com";
+    $nameFrom = "A J";
+
+    $emailTo = $request['email'];
+    $nameTo = $request['firstname'] . " " . $request['lastname'];
+
+    $emailSubject = "Verify From perkfix.com";
+
+    send_email_without_request($emailFrom, $nameFrom, $emailTo, $nameTo, $emailSubject);
+
+    $url = get_site_url() . '/authentication/?email='.$request['email'].'&firstname='.$request['firstname'].'&lastname='.$request['lastname'];
+    wp_redirect($url, 301);
+    exit();
+}
+
 function post_get_started($request) {
 
     $userdata = array(
@@ -525,66 +606,40 @@ function post_get_started($request) {
     $ret = array();
     // On success
     if (!is_wp_error($user_id)) {
-        // $to_email = $request['email'];
-        // $subject = "Simple Email Test via PHP";
-        // $body = "Hi,nn This is test email send by PHP Script";
-        // $headers = "From: sender\'s email";
-        
-
-        // if (mail($to_email, $subject, $body, $headers)) {
-        //     echo "Email successfully sent to $to_email...";exit();
-        // } else {
-        //     echo "Email sending failed...";exit();
-        // }
-
-        // sendgrid
-        include_once( ABSPATH.'wp-content/sendgrid-php/sendgrid-php.php');
-
-        $API_KEY_SENDGRID = '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';
-
-        $templateId = "d-f66183a7168b4df7b9e188f760d66e43";
-
-        $emailFrom = "aj@perkfix.com";
-        $nameFrom = "A J";
-
-        $emailSubject = "Verify From perkfix.com";
-
-        $emailTo = $request['email'];
-        $nameTo = $request['firstname'] . " " . $request['lastname'];
-
-        // $emailHtml = file_get_contents("sendmail.html");
-        
-        $email = new \SendGrid\Mail\Mail();
-        $email->setFrom($emailFrom, $nameFrom);
-        $email->setSubject($emailSubject);
-        $email->addTo($emailTo, $nameTo);
-        // $email->addContent("text/html", $emailHtml);
-        $email->setTemplateId($templateId);
-        $email->addSubstitution("firstname", $nameTo);
-        $email->addSubstitution("youremail", $emailTo);
-        $email->addSubstitution("linkurl", "http://perkfix.com/thanks/");
-        $email->addSubstitution("inserthyperlink", 'http://perkfix.com');
-        $email->addSubstitution("bookcall", "https://calendly.com/aj-perkfix");
-        
-        $sendgrid = new \SendGrid($API_KEY_SENDGRID);
-        
-        try {
-            $response = $sendgrid->send($email);
-            // print $response->statusCode() . "\n";
-            // print_r($response->headers());
-            // print $response->body() . "\n";
-        } catch (Exception $e) {
-            // echo 'Caught exception: ',  $e->getMessage(), "\n";
-        }
-        // die();
-
-        $url = get_site_url() . '/authentication/';
-        wp_redirect($url, 301);
+        send_email($request);
     } else {
         $url = get_site_url() . '/get-started/?error=wrong';
         // print_r($user_id); exit();
         wp_redirect($url, 301);
     }
+    exit();
+}
+
+function post_contact_us($request) {
+
+    $emailFrom = "aj@perkfix.com";
+    $nameFrom = "A J";
+
+    $emailTo = "aj@perkfix.com";
+    $nameTo = "A J";
+
+    $emailSubject = "Contact From perkfix.com";
+
+    // Set request body.
+    $message  = "<html>";
+    $message .=   "<body>";
+    $message .=     "<p><b>From:</b><br>" . $request['firstname'] . " " . $request['lastname'] . "</p>";
+    $message .=     "<p><b>Email:</b><br>" . $request['email'] . "</p>";
+    $message .=     "<p><b>Contact Number:</b><br>" . $request['contact_number'] . "</p>";
+    $message .=     "<p><b>Subject:</b><br>" . $request['subject'] . "</p>";
+    $message .=     "<p><b>Message:</b><br>" . $request['message'] . "</p>";
+    $message .=   "</body>";
+    $message .= "</html>";
+
+    send_email_without_request($emailFrom, $nameFrom, $emailTo, $nameTo, $emailSubject, $message);
+
+    $url = get_site_url();
+    wp_redirect($url, 301);
     exit();
 }
 

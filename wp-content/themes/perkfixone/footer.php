@@ -27,7 +27,7 @@
                         Have questions? Call a Perk Specialist or chat online.
                     </div>
                     <div class="subfooter-link">
-                        <a href="#">Contact us >&nbsp;&nbsp;<i class="fas fa-comment"></i>&nbsp;&nbsp;<i class="fas fa-phone-alt"></i></a>
+                        <a href="<?php echo site_url().'/contact/'; ?>">Contact us >&nbsp;&nbsp;<i class="fas fa-comment"></i></a>&nbsp;&nbsp;<a href="tel:19294005667"><i class="fas fa-phone-alt"></i></a>
                     </div>
                 </div>
                 <div class="subfooter-description">
@@ -90,7 +90,7 @@
                         Have questions? Call <br/>a Perk Specialist or <br/>chat online.
                     </div>
                     <div class="subfooter-link">
-                        <a href="#">Contact us >&nbsp;&nbsp;<i class="fas fa-comment"></i>&nbsp;&nbsp;<i class="fas fa-phone-alt"></i></a>
+                        <a href="<?php echo site_url().'/contact/'; ?>">Contact us >&nbsp;&nbsp;<i class="fas fa-comment"></i></a>&nbsp;&nbsp;<a href="tel:19294005667"><i class="fas fa-phone-alt"></i></a>
                     </div>
                 </div>
                 <div class="subfooter-description">

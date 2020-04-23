@@ -518,6 +518,74 @@ body .get-started .get-started-page .content .submit-btn {
   text-decoration: underline;
   font-size: 16px;
 }
+body .contact-content {
+  width: 960px;
+  margin: 30px auto 30px auto;
+}
+body .contact-content p {
+  font-size: 1.5em;
+}
+body .contact-content h1 {
+  font-size: 3em;
+}
+body .contact-content .top-part {
+  text-align: center;
+  margin: auto;
+  padding: 15px 0px;
+  border: 1px solid #616161;
+  width: 480px;
+  font-size: 1.3em;
+  color: #616161;
+}
+body .contact-content .content label {
+  font-size: 1.4em;
+  font-weight: bold;
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+  margin-top: 2%;
+}
+body .contact-content .content input[type=text] {
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1rem;
+  height: 2.5em;
+  margin: 1% 0;
+}
+body .contact-content .content .col-one {
+  width: 30%;
+}
+body .contact-content .content .col-two {
+  width: 61%;
+}
+body .contact-content .content textarea {
+  text-align: left;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 72%;
+  min-height: 300px;
+  height: 2.5em;
+  margin: 1% 0;
+}
+body .contact-content .content span.red {
+  color: red;
+}
+body .contact-content .content button {
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 8px;
+}
+body .contact-content .content .button-cancel {
+  padding: 12px 15px;
+}
+body .contact-content .content .button-send {
+  padding: 12px 27px;
+  font-size: 1.5em;
+  margin-left: 7px;
+  text-align: right;
+  margin-right: 2%;
+  color: #0091ff;
+}
 body .perkfix-home1 {
   width: 100%;
 }
