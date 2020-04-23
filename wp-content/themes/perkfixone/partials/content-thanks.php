@@ -57,7 +57,7 @@
                 margin-top: 24px;
             }
 </style>
-    <div class="auth" style="background-color: white;">
+    <div class="auth" style="background-color: white; height:auto !important;">
         <div class="auth-page" style="padding-top: 80px !important;">
             <h1 style="color: black;">Thanks for Signing up</h1>
             <div class="content">
@@ -65,7 +65,7 @@
                 <p style="color: black;">Let's setup a quick call to understand you needs.</p>
 
                 <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/steven-249/perkfix" style="min-width:320px;height:1630px;"></div>
+                <div class="calendly-inline-widget" data-url="https://calendly.com/steven-249/perkfix" style="min-width:320px;height:650px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
                 <!-- Calendly inline widget end -->
 

@@ -124,6 +124,7 @@ foreach ($parent_categories as $i=>$category) {
       $editor_image_1 = get_field('editor_image_1', 'category_'.$current_cat->term_id);
       $editor_image_2 = get_field('editor_image_2', 'category_'.$current_cat->term_id);
       //print_r($current_perkslist);
+      var_dump($editor_image_1);
     ?>
     <div class="perkfix-content-item">
       <div class="d-btn-back hidden">
