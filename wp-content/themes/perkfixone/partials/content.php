@@ -68,7 +68,7 @@
       <h1>Their goals,<br>&nbsp;are your goals.</h1>
     </div>
     <div class="content4">
-      <p class="txt-fitness">Our fitness perks let your<br/>employees push their boundaries at<br/>the gym — and at work. </p>
+      <p class="txt-fitness">Our fitness perks let your<br/>employees push their boundaries at<br/>the gym or home. </p>
       <img src="<?php bloginfo('template_url'); ?>/img/img-fitness-perks.png" class="fitness">
     </div>
   </div>

@@ -659,11 +659,12 @@ body .perkfix-home3 .content4 {
 body .perkfix-home3 .content4 .txt-fitness {
   text-align: left;
   position: absolute;
-  margin-top: 540px;
+  margin-top: 688px;
   margin-left: 13%;
   font-family: SFProText-Medium;
   font-size: 25px;
   color: white;
+  letter-spacing: 2px;
 }
 body .perkfix-home3 .content4 img {
   text-align: center;
