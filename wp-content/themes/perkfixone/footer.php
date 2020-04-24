@@ -47,7 +47,7 @@
                     <a href="<?php echo home_url('/aboutus');?>">About Us</a>
                 </div>
                 <div class="menu-item">
-                    Contact Us
+                    <a href="<?php echo site_url().'/contact/'; ?>">Contact Us</a>
                 </div>
                 <div class="menu-item">
                     Our Values
@@ -110,7 +110,7 @@
                     <a href="<?php echo home_url('/aboutus');?>">About Us</a>
                 </div>
                 <div class="menu-item">
-                    Contact Us
+                    <a href="<?php echo site_url().'/contact/'; ?>">Contact Us</a>
                 </div>
                 <div class="menu-item">
                     <a href="<?php echo home_url('/ourvalues');?>">Our Values</a>
