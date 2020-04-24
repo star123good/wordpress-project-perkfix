@@ -546,7 +546,7 @@ body {
   }
 
   .contact-content {
-    width: 960px;
+    max-width: 960px;
     margin : 30px auto 30px auto;
     p {
       font-size : 1.5em;
@@ -559,7 +559,7 @@ body {
       margin: auto;
       padding: 15px 0px;
       border: 1px solid rgba(97, 97, 97, 1);
-      width: 480px;
+      max-width: 480px;
       font-size: 1.3em;
       color: rgba(97, 97, 97, 1);
     }
