@@ -467,6 +467,63 @@ body {
     }
   }
 
+  .content-thanks {
+    .input-content {
+      display:flex;
+      align-items: center;
+      border-radius: 5px;
+      margin: 4px;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      height: 60px;
+      max-width: 374px;
+      background-color: rgba(216, 216, 216, 0.32);
+      border: 1px solid rgba(151, 151, 151, 1);
+      justify-content: center;
+    }
+    .flag {
+        margin: 7px;
+    }
+    .input-content span {
+        margin: 2px;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .input-content input {
+        border: 1px solid transparent;
+        font-size: 1.5rem;
+        max-width: 255px;
+        background:transparent;
+    }
+    .input-content input::placeholder {
+        color: rgba(0, 0, 0, 0.5);
+    }
+    .input-content input:active {
+        border: 1px solid transparent;
+    }
+    .input-content input:focus {
+        border: 1px solid transparent;
+        outline: none;
+    }
+    .call-content {
+        margin: 4px;
+    }
+    .call {
+        display:block;
+        border-radius: 5px;
+        margin-left: 8px;
+        padding: 18px 10px;
+        max-width: 158px;
+        font-size: 1.5rem;
+        color: white;
+        background-color: rgba(0, 200, 136, 1);
+        cursor: pointer;
+    }
+    .reference-content {
+        margin-top: 24px;
+    }
+  }
+
   .get-started {
     height: 100vh;
     background-color: black;
@@ -548,11 +605,15 @@ body {
   .contact-content {
     max-width: 960px;
     margin : 30px auto 30px auto;
+    padding: 0px 20px;
+    font-family: SFProText-Light;
     p {
-      font-size : 1.5em;
+      font-size : 1.2em;
+      font-family: SFProText-Light;
     }
     h1 {
-      font-size: 3em;
+      font-size: 2.4em;
+      font-family: SFProText-Bold;
     }
     .top-part {
       text-align: center;
@@ -560,7 +621,8 @@ body {
       padding: 15px 0px;
       border: 1px solid rgba(97, 97, 97, 1);
       max-width: 480px;
-      font-size: 1.3em;
+      font-size: 1.1em;
+      border-radius: 5px;
       color: rgba(97, 97, 97, 1);
     }
     .content {
@@ -597,10 +659,29 @@ body {
       span.red {
         color: red;
       }
-      button {
+      .myButton {
         font-size: 1.5em;
         font-weight: bold;
-        border-radius: 8px;
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+        background-color:#f9f9f9;
+        border-radius:6px;
+        border:1px solid #dcdcdc;
+        display:inline-block;
+        cursor:pointer;
+        font-family:Arial;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #ffffff;
+      }
+      .myButton:hover {
+        background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+        background-color:#e9e9e9;
+      }
+      .myButton:active {
+        position:relative;
+        top:1px;
       }
       .button-cancel {
         padding: 12px 15px;
@@ -614,6 +695,10 @@ body {
         color: rgba(0, 145, 255, 1);
       }
     } 
+    a {
+      text-decoration: none;
+      text-align: center;
+    }
   }
 
   .perkfix-home1 {

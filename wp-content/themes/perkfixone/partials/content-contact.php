@@ -35,10 +35,49 @@
                     <textarea cols="30" rows="10" name="message" required></textarea>
                 </div>
                 <div style="text-align: right;">
-                    <button class="button-cancel">Cancel</button>
-                    <button type="submit" class="button-send">Send</button>
+                    <button class="button-cancel myButton">Cancel</button>
+                    <button type="submit" class="button-send myButton">Send</button>
                 </div>
             </div>
         </form>
     </div>
+    <div style="margin-top: 55px;">
+        <h1>Need help sooner?</h1>
+        <p>Or you can book a call with one of our perk specialists.</p>
+    </div>
+    <hr>
 </div>
+<div>
+    <!-- Calendly inline widget begin -->
+    <div class="calendly-inline-widget" data-url="https://calendly.com/steven-249/perkfix" style="min-width:320px;height:650px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+    <!-- Calendly inline widget end -->
+</div>
+<div class="contact-content content-thanks">
+    <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+        <a href="https://calendly.com/event_types/user/me" style="color: rgba(0, 176, 255, 1); font-size: 1.3em;">Save & Exit</a>
+        <a href="https://calendly.com/event_types/user/me" style="color: rgba(0, 176, 255, 1); font-size: 1.3em;">Book Call</a>
+    </div>
+    <div style="text-align: center;">
+        <h3>OR</h3>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <div class="input-content">
+            <img class="flag" src="<?php bloginfo('template_url'); ?>/img/img-flag-us.png" width="36px">
+            <span style="color: black;">+1</span>
+            <input type="text" placeholder="Enter phone number">
+            <img class="phone" src="<?php bloginfo('template_url'); ?>/img/ico/ico-phone.png">
+        </div>
+        
+    </div>
+    <div class="call-content" style="display: flex; justify-content: space-around; margin-bottom: 50px;">
+        <a class="call" href="home_url();" style="color: white; background-color: gray; width: 120px;">Cancel</a>
+        <a class="call" href="tel:19294005667" style="color: white;">Call Me Now</a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $(".subfooter-title").html("");
+        $(".subfooter-title").css('height', '120px');
+    });
+</script>
