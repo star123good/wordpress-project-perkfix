@@ -60,6 +60,18 @@ add_action('rest_api_init', function() {
         'methods' => 'POST',
         'callback' => 'post_contact_us'
     ));
+
+    // org REST API
+    register_rest_custom_fields_post('org');
+
+    // perks REST API
+    register_rest_custom_fields_post('perks');
+
+    // team REST API
+    register_rest_custom_fields_post('team');
+
+    // user REST API
+    register_rest_custom_fields_user();
 });
 
 function get_search_results($request) {
@@ -680,4 +692,72 @@ body.login div#login h1 a {
 } 
 </style>
     <?php 
-} add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
+
+
+// get all custom fields from argument
+function get_custom_field_names($arg) {
+    $result = array();
+    $custom_fields = acf_get_field_groups($arg);
+    if (!empty($custom_fields)) {
+        $group_key = $custom_fields[0]['key'];
+        $fields = acf_get_fields($group_key);
+        foreach ($fields as $field) {
+            $result[] = $field['name'];
+        }
+    }
+    return $result;
+}
+
+// get custom field for post
+function get_custom_field_post($object, $field_name, $request) {
+    return get_field($field_name, $object['id']);
+}
+// update custom field for post
+function update_custom_field_post($field_value, $object, $field_name) {
+    return update_field($field_name, $field_value, $object->ID);
+}
+// get custom field for user
+function get_custom_field_user($object, $field_name, $request) {
+    return get_user_meta($object['id'], $field_name, true);
+}
+// update custom field for user
+function update_custom_field_user($field_value, $object, $field_name) {
+    return update_user_meta($object['id'], $field_name, $field_value);
+}
+
+// register RESTful API for post
+function register_rest_custom_fields_post($post_type) {
+    foreach (get_custom_field_names(array('post_type' => $post_type)) as $key) {
+        register_rest_field($post_type,
+            $key,
+            array(
+                'get_callback'    => 'get_custom_field_post',
+                'update_callback' => 'update_custom_field_post',
+                'schema'          => null
+            )
+        );
+    }
+}
+
+// register RESTful API for user
+function register_rest_custom_fields_user() {
+    foreach (get_custom_field_names(array('user_form' => 'all')) as $key) {
+        register_rest_field('user',
+            $key,
+            array(
+                'get_callback'    => 'get_custom_field_user',
+                'update_callback' => 'update_custom_field_user',
+                'schema'          => null
+            )
+        );
+    }
+}
+
+// rest users api get all users
+add_filter( 'rest_user_query' , 'custom_rest_user_query' );
+function custom_rest_user_query( $prepared_args, $request = null ) {
+  unset($prepared_args['has_published_posts']);
+  return $prepared_args;
+}

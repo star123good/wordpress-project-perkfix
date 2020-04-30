@@ -39,6 +39,7 @@ if ($build == "dev") {
 	define('NONCE_SALT',       '[W[n/B@J9lj[BDbw30Yz+tu:s-`Jg227-|TZ2y3Lpm@<3WjzW0hNO7Z.Y &wwU7d');
 
 	define( 'WP_DEBUG', true );
+	define( 'WP_DEBUG_LOG', true );
 } else if ($build == "prod") {
 	define( 'DB_NAME', 'pfdev' );
 	define( 'DB_USER', 'pfdevuser' );
