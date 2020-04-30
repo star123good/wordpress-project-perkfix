@@ -724,7 +724,7 @@ function get_custom_field_user($object, $field_name, $request) {
 }
 // update custom field for user
 function update_custom_field_user($field_value, $object, $field_name) {
-    return update_user_meta($object['id'], $field_name, $field_value);
+    return update_user_meta($object->ID, $field_name, $field_value);
 }
 
 // register RESTful API for post
