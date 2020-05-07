@@ -61,6 +61,11 @@ add_action('rest_api_init', function() {
         'callback' => 'post_contact_us'
     ));
 
+    register_rest_route( 'perkstore/v1', 'log_in', array(
+        'methods' => 'POST',
+        'callback' => 'post_log_in'
+    ));
+
     // org REST API
     register_rest_custom_fields_post('org');
 
@@ -530,6 +535,71 @@ function get_product_detail($request) {
     return $response;
 }
 
+// register user
+function create_new_user($register_email, $register_first_name, $register_last_name, $flag_create_org=true, $flag_create_team=true) {
+    
+    // insert new user
+    $default_password = 'test1234';
+
+    $user_data = array(
+        'user_pass' => $default_password,
+        'user_login' => $register_email, 
+        'user_email' => $register_email,
+        'first_name' => $register_first_name,
+        'last_name' => $register_last_name,
+        'show_admin_bar_front' => false,
+        'role' => 'hr_trial'
+    );
+
+    $user_id = wp_insert_user($user_data);
+    if (is_wp_error($user_id)) return $user_id;
+
+    // login
+    $user_verify = login_user($register_email, $default_password);
+    if (is_wp_error($user_verify)) return $user_verify;
+
+    // create organization
+    if ($flag_create_org) {
+        $org_data = array(
+            'post_title' => 'Organization - ' . $register_email,
+            'post_type' => 'org',
+            'post_author' => $user_id
+        );
+        $org_id = wp_insert_post($org_data);
+    }
+    if (is_wp_error($org_id)) return $org_id;
+    update_field('owner_id', $user_id, $org_id);
+
+    // create team
+    if ($flag_create_org) {
+        $team_data = array(
+            'post_title' => 'Team - ' . $register_email,
+            'post_type' => 'team',
+            'post_author' => $user_id
+        );
+        $team_id = wp_insert_post($team_data);
+    }
+    if (is_wp_error($team_id)) return $team_id;
+    update_field('org_id', $org_id, $team_id);
+
+    // update user
+    update_user_meta($user_id, 'team_id', $team_id);
+
+    return $user_id;
+}
+
+// login user
+function login_user($login_email, $login_pass, $login_remember=false) {
+
+    $login_data = array();  
+    $login_data['user_login'] = $login_email;  
+    $login_data['user_password'] = $login_pass;  
+    $login_data['remember'] = $login_remember;  
+    $user_verify = wp_signon( $login_data, false );
+
+    return $user_verify;
+}
+
 function send_email_without_request($emailFrom, $nameFrom, $emailTo, $nameTo, $emailSubject, $textBody=null) {
     
     // $to_email = $request['email'];
@@ -603,25 +673,16 @@ function send_email($request) {
 
 function post_get_started($request) {
 
-    $userdata = array(
-        'user_pass' => 'test1234',
-        'user_login' => $request['email'], 
-        'user_email' => $request['email'],
-        'first_name' => $request['firstname'],
-        'last_name' => $request['lastname'],
-        'show_admin_bar_front' => false,
-        'role' => 'hr_trial'
-    );
-
-    $user_id = wp_insert_user($userdata);
+    // register
+    $user_id = create_new_user($request['email'], $request['firstname'], $request['lastname']);
 
     $ret = array();
     // On success
     if (!is_wp_error($user_id)) {
         send_email($request);
     } else {
+        exit();
         $url = get_site_url() . '/get-started/?error=wrong';
-        // print_r($user_id); exit();
         wp_redirect($url, 301);
     }
     exit();
@@ -651,6 +712,21 @@ function post_contact_us($request) {
     send_email_without_request($emailFrom, $nameFrom, $emailTo, $nameTo, $emailSubject, $message);
 
     $url = get_site_url();
+    wp_redirect($url, 301);
+    exit();
+}
+
+function post_log_in($request) {
+
+    $result = login_user($request['login_email'], $request['login_pass']);
+    
+    if (!is_wp_error($result)) {
+        // On success
+        $url = get_site_url();
+    } else {
+        $url = get_site_url() . '/log-in';
+    }
+
     wp_redirect($url, 301);
     exit();
 }
