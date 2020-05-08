@@ -56,7 +56,9 @@ if ($build == "dev") {
 	define('LOGGED_IN_SALT',   'k)|A:PyV+qMdN!x76sTI&&<k^ ~$O{e{]{`OyU7a][05_M`Z.$UQ@d+,Q[z.u-eJ');
 	define('NONCE_SALT',       'Bq.Mp,hMuvNuUft9o+e>q?rep#>f_sV.,i_>N}TclexVYSqH<Xwejhjg|lwQ?:|S');
 
-	define( 'WP_DEBUG', false );
+	// define( 'WP_DEBUG', false );
+	define( 'WP_DEBUG', true );
+	define( 'WP_DEBUG_LOG', true );
 }
 
 /** MySQL hostname */

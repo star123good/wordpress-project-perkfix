@@ -8,6 +8,7 @@ wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
 !wp-content/sendgrid-php/
+!wp-content/recaptcha/
 
 # ignore these plugins
 wp-content/plugins/hello.php
