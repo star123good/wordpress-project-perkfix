@@ -21,13 +21,13 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-$build = "prod";
-// $build = "dev";
+// $build = "prod";
+$build = "dev";
 
 if ($build == "dev") {
 	define( 'DB_NAME', 'perkfix_dev' );
 	define( 'DB_USER', 'root' );
-	define( 'DB_PASSWORD', '' );
+	define( 'DB_PASSWORD', '123456' );
 
 	define('AUTH_KEY',         '-:5iA{; !f={D_XRL9I1TO5+HEV1-UtzB~2-qaZsev1EWr:|p+B4TBIxy ]^zP-^');
 	define('SECURE_AUTH_KEY',  '1?n#_a^.>[|7p #N$@kue,+f:&`I+#n}Bq;bH1UG66%CK@p-#qx5GT@H{F3thj+y');
