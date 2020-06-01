@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
-                url: 'wp/wp-admin/admin-ajax.php',
+                url: '../wp-admin/admin-ajax.php',
                 data: 'action=get_perkfix_names&k='+name,
                 success: function(data) {
                     response(data);
@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
-                url: 'wp/wp-admin/admin-ajax.php',
+                url: '../wp-admin/admin-ajax.php',
                 data: 'action=get_perkfix_names&k='+name,
                 success: function(data) {
                     response(data);
