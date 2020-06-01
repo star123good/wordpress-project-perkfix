@@ -10,6 +10,13 @@ function add_favicon() {
 add_action('login_head', 'add_favicon');
 add_action('admin_head', 'add_favicon');
 
+//add_filter('rest_url_prefix', 'custom_prefix');
+//function custom_prefix($slug) {
+//    return 'wp/wp-rest';
+//}
+
+flush_rewrite_rules(true);
+
 // Add code here.
 add_action('rest_api_init', function() {
     register_rest_route( 'perkstore/v1', 'search-results', array(
@@ -632,7 +639,7 @@ function send_email_without_request($emailFrom, $nameFrom, $emailTo, $nameTo, $e
         $email->setTemplateId($templateId);
         $email->addSubstitution("firstname", $nameTo);
         $email->addSubstitution("youremail", $emailTo);
-        $email->addSubstitution("linkurl", "http://perkfix.com/thanks/");
+        $email->addSubstitution("linkurl", "http://perkfix.com/wp/thanks/");
         $email->addSubstitution("inserthyperlink", 'http://perkfix.com');
         $email->addSubstitution("bookcall", "https://calendly.com/aj-perkfix");
     }

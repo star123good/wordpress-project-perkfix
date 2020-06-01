@@ -44,7 +44,7 @@ if ($build == "dev") {
 	define( 'DB_NAME', 'pfdev' );
 	define( 'DB_USER', 'pfdevuser' );
 	define( 'DB_PASSWORD', '!@#QWE123qwe' );
-	define('WP_HOME','http://perkfix.com');
+	define('WP_HOME','http://perkfix.com/wp');
 	define('WP_SITEURL','http://perkfix.com');
 
 	define('AUTH_KEY',         ')-(g5}0#$+F[6n{w$-IH>f*&.#!E)xnolTnyv?+KoQ69wF:GA[RV{B0JMqKB;3~,');

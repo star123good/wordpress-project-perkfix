@@ -808,7 +808,7 @@ foreach ($parent_categories as $i=>$category) {
       var catID = $(this).children("input[type=hidden]").val();
       //var pos = $(document).scrollTop();
       //window.location.href="?category_id="+catID+"&po="+pos;
-      var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/item-list/'+catID;
+      var endpoint = "<?php echo site_url(); ?>"+'/wp/wp-json/perkstore/v1/item-list/'+catID;
 
       $.ajax({
         url: endpoint,
@@ -829,7 +829,7 @@ foreach ($parent_categories as $i=>$category) {
       var itemID = $(this).parent().siblings("input[type=hidden].prod").val();
       var catID = $(this).parent().siblings("input[type=hidden].cat").val();
 
-      var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
+      var endpoint = "<?php echo site_url(); ?>"+'/wp/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
 
       $.ajax({
         url: endpoint,
@@ -888,7 +888,7 @@ foreach ($parent_categories as $i=>$category) {
       var itemID = $(this).children("input[type=hidden].prod").val();
       var catID = $(this).children("input[type=hidden].cat").val();
 
-      var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
+      var endpoint = "<?php echo site_url(); ?>"+'/wp/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
 
       $(".item-content-container").addClass("hidden");
       $(".item-detail-content-container").removeClass("hidden");
@@ -931,7 +931,7 @@ foreach ($parent_categories as $i=>$category) {
       var itemID = $(this).children("input[type=hidden].prod").val();
       var catID = $(this).children("input[type=hidden].cat").val();
 
-      var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
+      var endpoint = "<?php echo site_url(); ?>"+'/wp/wp-json/perkstore/v1/item-detail/'+catID+'/'+itemID;
 
 
       $(".item-content-container").addClass("hidden");
@@ -985,7 +985,7 @@ foreach ($parent_categories as $i=>$category) {
 
         var keyword = $(this).val();
 
-        var endpoint = "<?php echo site_url(); ?>"+'/wp-json/perkstore/v1/search-results';
+        var endpoint = "<?php echo site_url(); ?>"+'/wp/wp-json/perkstore/v1/search-results';
 
         $(".item-content-container").addClass("hidden");
         $(".item-detail-content-container").addClass("hidden");
